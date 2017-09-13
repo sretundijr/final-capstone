@@ -10,7 +10,7 @@ env:
 
 before_deploy:
   - npm install netlify-cli -g
-  - npm run build
+  - npm run export
 
 deploy:
   provider: script

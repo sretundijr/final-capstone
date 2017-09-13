@@ -5,16 +5,20 @@
   "main": "index.js",
   "scripts": {
     "test": "react-scripts test --env=jsdom",
-    "dev": "next",
-    "build": "next build && next export",
-    "start": "next start"
+    "dev": "node .",
+    "build": "next build",
+    "preexport": "npm run build",
+    "export": "next export",
+    "prestart": "npm run export",
+    "start": "serve out"
   },
   "author": "steve",
   "license": "ISC",
   "dependencies": {
     "next": "^3.2.2",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "serve": "^5.2.2"
   },
   "devDependencies": {
     "enzyme": "^2.9.1",
