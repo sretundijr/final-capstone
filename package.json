@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "react-scripts test --env=jsdom",
     "dev": "next",
     "build": "next build && next export",
     "start": "next start"
@@ -15,5 +15,10 @@
     "next": "^3.2.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
+  },
+  "devDependencies": {
+    "enzyme": "^2.9.1",
+    "react-scripts": "^1.0.13",
+    "react-test-renderer": "^15.6.1"
   }
 }
