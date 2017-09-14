@@ -1,8 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
 
-import WelcomeHeader from '../src/components/welcome-client';
-import IssueCount from '../src/components/issue-count';
+import WelcomeHeader from '../src/components/questionaire_components/welcome-client';
+import IssueCount from '../src/components/questionaire_components/issue-count';
 
 export default () => (
   <div>
