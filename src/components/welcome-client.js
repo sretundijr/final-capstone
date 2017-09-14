@@ -5,7 +5,7 @@ import { flexContainer } from '../styles/shared-styles';
 export default function () {
   return (
     <div>
-      <div style={flexContainer}>
+      <div>
         <h3>Welcome valued [client name here]</h3>
       </div>
       <div style={flexContainer}>
