@@ -1,23 +1,42 @@
 
 export default function mockClientIssueQuestionaire() {
-  return {
-    'Check Engine Light': [
-      'test question',
-    ],
-    'Driveability Issues': [
-      'test question',
-    ],
-    'Interior Electrical Issue': [
-      'test question',
-    ],
-    'Starting Issues': [
-      'test question',
-    ],
-    'Noise And Vibration Issue': [
-      'test question',
-    ],
-    'Heating And Cooling System': [
-      'test question',
-    ],
-  };
+  return [
+    {
+      issueType: 'Check Engine Light',
+      questions: [
+        'test question',
+        { question: 'blah', answer: ['yes', 'no'], multiple: true },
+      ],
+    },
+    {
+      issueType: 'Driveability Issues',
+      questions: [
+        'test question',
+      ],
+    },
+    {
+      issueType: 'Interior Electrical Issue',
+      questions: [
+        'test question',
+      ],
+    },
+    {
+      issueType: 'Starting Issues',
+      questions: [
+        'test question',
+      ],
+    },
+    {
+      issueType: 'Noise And Vibration Issue',
+      questions: [
+        'test question',
+      ],
+    },
+    {
+      issueType: 'Heating And Cooling System',
+      questions: [
+        'test question',
+      ],
+    },
+  ];
 }
