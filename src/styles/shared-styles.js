@@ -4,4 +4,9 @@ const flexContainer = {
   'justify-content': 'center',
 };
 
-module.exports = { flexContainer };
+const contentContainer = {
+  'max-width': '100%',
+  width: '600px',
+};
+
+module.exports = { flexContainer, contentContainer };

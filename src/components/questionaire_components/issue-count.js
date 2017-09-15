@@ -6,7 +6,7 @@ export default function () {
   return (
     <div>
       <div style={flexContainer}>
-        <h4>Please select the number of vehicle issues that you are experiences</h4>
+        <h3>Please select the number of vehicle issues that you are experiences</h3>
       </div>
       <div style={flexContainer}>
         <select name="" id="">

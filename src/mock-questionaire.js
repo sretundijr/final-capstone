@@ -1,22 +1,22 @@
 
 export default function mockClientIssueQuestionaire() {
   return {
-    checkEngineLight: [
+    'Check Engine Light': [
       'test question',
     ],
-    driveabilityIssues: [
+    'Driveability Issues': [
       'test question',
     ],
-    interiorElectricalIssue: [
+    'Interior Electrical Issue': [
       'test question',
     ],
-    startingIssues: [
+    'Starting Issues': [
       'test question',
     ],
-    noiseAndVibrationIssue: [
+    'Noise And Vibration Issue': [
       'test question',
     ],
-    heatAndCoolingSystem: [
+    'Heating And Cooling System': [
       'test question',
     ],
   };

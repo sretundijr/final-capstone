@@ -3,6 +3,7 @@ import Head from 'next/head';
 
 import WelcomeHeader from '../src/components/questionaire_components/welcome-client';
 import IssueCount from '../src/components/questionaire_components/issue-count';
+import IssueCategory from '../src/components/questionaire_components/issue-category';
 
 export default () => (
   <div>
@@ -12,5 +13,6 @@ export default () => (
     </Head>
     <WelcomeHeader />
     <IssueCount />
+    <IssueCategory />
   </div>
 );
