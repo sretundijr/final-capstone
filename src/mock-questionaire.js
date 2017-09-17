@@ -4,8 +4,12 @@ export default function mockClientIssueQuestionaire() {
     {
       issueType: 'Check Engine Light',
       questions: [
-        'test question',
-        { question: 'blah', answer: ['yes', 'no'], multiple: true },
+        {
+          question: 'Is there a driveability issue accompaning the check engine light? ' +
+          'Example: Runs rough, does not make any power, etc.',
+          answer: ['yes', 'no'],
+          multiple: true,
+        },
       ],
     },
     {
