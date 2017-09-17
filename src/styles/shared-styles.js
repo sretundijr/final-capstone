@@ -7,6 +7,7 @@ export const flexContainer = `.flex-container
 
 export const contentContainer = `.content-container
   {
+    text-align: center;
     max-width: 100%;
     width: 600px;
   }`;
