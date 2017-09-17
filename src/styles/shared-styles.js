@@ -1,12 +1,19 @@
 
-const flexContainer = {
-  display: 'flex',
-  'justify-content': 'center',
-};
+// const flexContainer = {
+//   display: 'flex',
+//   'justify-content': 'center',
+// };
 
-const contentContainer = {
-  'max-width': '100%',
-  width: '600px',
-};
+export const flexContainer = `.flex-container 
+  { 
+    display: flex; 
+    justify-content: center;
+  }`;
 
-module.exports = { flexContainer, contentContainer };
+export const contentContainer = `.content-container
+  {
+    max-width: 100%;
+    width: 600px;
+  }`;
+
+// module.exports = { flexContainer, contentContainer };
