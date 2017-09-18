@@ -8,7 +8,15 @@ export default function mockClientIssueQuestionaire() {
           question: 'Is there a driveability issue accompaning the check engine light? ' +
           'Example: Runs rough, does not make any power, etc.',
           answer: ['yes', 'no'],
-          multiple: true,
+          multipleBranch: true,
+          multipleChoice: true,
+          // branch to driveability after completing the remaining questions?
+        },
+        {
+          question: 'How long has the fault light been on?',
+          answer: '',
+          multipleBranch: false,
+          multipleChoice: false,
         },
       ],
     },

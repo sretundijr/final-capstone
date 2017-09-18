@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 import { flexContainer } from '../../styles/shared-styles';
 import mockQuestionaire from '../../mock-questionaire';
 
-export default function () {
+export default function issueCategory(props) {
   const issueSelection = mockQuestionaire()
     .map(item =>
       <option key={item.issueType.toString()} value={item.issueType}>{item.issueType}</option>);
@@ -13,7 +13,8 @@ export default function () {
         <h3>Please select a category</h3>
       </div>
       <div className="flex-container">
-        <select name="" id="">
+        <select name="" id="" onChange={props.onChange}>
+          <option value="default">Select One</option>
           {issueSelection}
         </select>
       </div>
@@ -21,3 +22,7 @@ export default function () {
     </div>
   );
 }
+
+issueCategory.propsType = {
+  onChange: PropTypes.func,
+};

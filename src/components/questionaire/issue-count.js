@@ -1,14 +1,14 @@
 import React from 'react';
 
-import { flexContainer } from '../../styles/shared-styles';
+// import { flexContainer } from '../../styles/shared-styles';
 
 export default function () {
   return (
     <div>
-      <div style={flexContainer}>
+      <div>
         <h3>Please select the number of vehicle issues that you are experiences</h3>
       </div>
-      <div style={flexContainer}>
+      <div>
         <select name="" id="">
           <option value="1">1</option>
           <option value="2">2</option>
