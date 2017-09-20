@@ -23,6 +23,6 @@ export default function issueCategory(props) {
   );
 }
 
-issueCategory.propsType = {
-  onChange: PropTypes.func,
+issueCategory.propTypes = {
+  onChange: PropTypes.func.isRequired,
 };

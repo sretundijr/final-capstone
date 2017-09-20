@@ -1,18 +1,16 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 import Questions from '../../mock-questionaire';
 
 import { flexContainer, contentContainer } from '../../styles/shared-styles';
 
-// modify so props renders a single item as opposed to mapping through
-// and only map through the list of answers
-export default function (props) {
-  const answers = Questions()[0].questions;
-  const element = answers.map((item) => {
+// todo requires state change to control radio buttons
+export default function MultipleChoice(props) {
+  const element = props.list.map((item) => {
     return (
-      <div>
-        <label htmlFor="answer">{item.answer}</label>
-        <input id="answer" type="checkbox" />
+      <div key={item}>
+        <label htmlFor="answer">{item}</label>
+        <input id="answer" type="radio" value="answer" />
       </div>
     );
   });
@@ -26,3 +24,8 @@ export default function (props) {
     </div>
   );
 }
+
+// todo
+MultipleChoice.propTypes = {
+  list: PropTypes.arrayOf(PropTypes.string),
+};

@@ -4,7 +4,6 @@ import Head from 'next/head';
 import WelcomeHeader from '../src/components/questionaire/welcome-client';
 import IssueCategory from '../src/components/questionaire/issue-category';
 import Questions from '../src/components/questionaire/question';
-import MultipleChoice from '../src/components/questionaire/multiple-choice';
 
 import MockQuestionaire from '../src/mock-questionaire';
 
@@ -13,19 +12,18 @@ export class TroubleShootingQuestionaire extends React.Component {
     super(props);
     this.state = {
       questionType: this.questionaire,
-      questionComponent: this.questionComponent,
       questions: this.questions,
+
     };
   }
-  setCategory(e) {
+  setCategory(category) {
     this.setState(() => {
-      this.questionType = MockQuestionaire().filter(questions => e === questions.issueType);
-      console.log(this.questionType[0]);
+      this.questionType = MockQuestionaire().filter(questions => category === questions.issueType);
       this.questions = this.questionType[0].questions;
-      if (this.questionType[0].MultipleChoice && this.questionType[0].multipleBranch) {
-        this.questionComponent = <MultipleChoice />;
-      }
     });
+  }
+  setUserAnswer(answer) {
+
   }
   render() {
     return (
@@ -36,8 +34,10 @@ export class TroubleShootingQuestionaire extends React.Component {
         </Head>
         <WelcomeHeader />
         <IssueCategory onChange={e => this.setCategory(e.target.value)} />
-        <Questions questions={this.questions} />
-        {/* <MultipleChoice /> */}
+        <Questions
+          questions={this.questions}
+          onChange={e => this.setUserAnswer(e.target.value)}
+        />
       </div>
     );
   }
@@ -48,6 +48,4 @@ TroubleShootingQuestionaire.defaultProps = {
 };
 
 export default TroubleShootingQuestionaire;
-// TroubleShootingQuestionaire.propTypes = {
-//   children: React.PropTypes.node.isRequired,
-// };
+
