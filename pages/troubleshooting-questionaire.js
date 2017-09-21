@@ -11,21 +11,24 @@ export class TroubleShootingQuestionaire extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      questionType: this.questionaire,
-      questions: this.questions,
-
+      selectedIssue: '',
+      questions: [],
+      userInput: [],
     };
   }
   setCategory(category) {
-    this.setState(() => {
-      this.questionType = MockQuestionaire().filter(questions => category === questions.issueType);
-      this.questions = this.questionType[0].questions;
+    const userSelectedQuestionType = MockQuestionaire()
+      .filter(questions => category === questions.issueType);
+    this.setState({
+      selectedIssue: category,
+      questions: userSelectedQuestionType[0].questions,
     });
   }
   setUserAnswer(answer) {
-
+    console.log(answer);
   }
   render() {
+    console.log(this.state);
     return (
       <div>
         <Head>
@@ -35,7 +38,7 @@ export class TroubleShootingQuestionaire extends React.Component {
         <WelcomeHeader />
         <IssueCategory onChange={e => this.setCategory(e.target.value)} />
         <Questions
-          questions={this.questions}
+          questions={this.state.questions}
           onChange={e => this.setUserAnswer(e.target.value)}
         />
       </div>

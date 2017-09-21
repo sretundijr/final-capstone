@@ -1,22 +1,22 @@
 import React, { PropTypes } from 'react';
 
-// import Questions from '../../mock-questionaire';
 import MultipleChoice from './multiple-choice';
 import TextAnswer from './text-answer';
 
 import { flexContainer, contentContainer } from '../../styles/shared-styles';
 
-const determineAnswerType = (questionObject) => {
+const determineAnswerType = (questionObject, callback) => {
+  console.log(callback);
   if (questionObject.multipleChoice) {
     return (
       <div>
-        <MultipleChoice list={questionObject.answer} />
+        <MultipleChoice onChange={callback} list={questionObject.answer} />
       </div>
     );
   }
   return (
     <div>
-      <TextAnswer />
+      <TextAnswer onChange={callback} />
     </div>
   );
 };
@@ -30,7 +30,7 @@ export default function question(props) {
           <h4>
             {item.question}
           </h4>
-          {determineAnswerType(item)}
+          {determineAnswerType(item, props.onChange)}
         </div>
         <style jsx>{contentContainer}</style>
         <style jsx>{flexContainer}</style>
@@ -50,6 +50,7 @@ question.defaultProps = {
 
 // todo fix proptypes deprecation warning
 question.propTypes = {
+  onChange: PropTypes.func,
   questions: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string,
     question: PropTypes.string,

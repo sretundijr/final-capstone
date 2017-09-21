@@ -1,3 +1,3 @@
 # final-capstone
 
-[live project](http://hawker-panda-52605.netlify.com/trouble-shooting-questionaire/)
+[live project](http://hawker-panda-52605.netlify.com/troubleshooting-questionaire/)
