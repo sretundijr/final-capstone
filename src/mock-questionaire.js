@@ -21,12 +21,47 @@ export default function mockClientIssueQuestionaire() {
           // multipleBranch: false,
           multipleChoice: false,
         },
+        {
+          id: '12',
+          question: 'Did something happen prior to the light coming on?',
+          answer: [''],
+          multipleChoice: false,
+        },
+        {
+          id: '1',
+          question: 'Has another shop attempted to fix the issue or did the issue occur shortly after vehicle service?',
+          multipleChoice: false,
+          answer: [''],
+        },
       ],
     },
     {
       issueType: 'Driveability Issues',
       questions: [
-        'test question',
+        {
+          id: '234',
+          question: 'Are you experiencing misfires or hesitations?',
+          multipleChoice: true,
+          answer: ['yes', 'no'],
+        },
+        {
+          id: '23456',
+          question: 'Is the vehicle driveable?',
+          multipleChoice: true,
+          answer: ['yes', 'no'],
+        },
+        {
+          id: '765',
+          question: 'Is the issue intermittent?',
+          multipleChoice: true,
+          answer: ['yes', 'no'],
+        },
+        {
+          id: '0987',
+          question: 'Please describe what is going on?',
+          multipleChoice: false,
+          answer: [''],
+        },
       ],
     },
     {

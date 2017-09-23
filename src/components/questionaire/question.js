@@ -6,11 +6,15 @@ import TextAnswer from './text-answer';
 import { flexContainer, contentContainer } from '../../styles/shared-styles';
 
 const determineAnswerType = (questionObject, callback) => {
-  console.log(callback);
+  // console.log(questionObject);
   if (questionObject.multipleChoice) {
     return (
       <div>
-        <MultipleChoice onChange={callback} list={questionObject.answer} />
+        <MultipleChoice
+          question={questionObject.question}
+          onChange={callback}
+          list={questionObject.answer}
+        />
       </div>
     );
   }
@@ -22,7 +26,7 @@ const determineAnswerType = (questionObject, callback) => {
 };
 
 export default function question(props) {
-  console.log(props);
+  // console.log(props);
   const questionElement = props.questions.map((item) => {
     return (
       <div key={item.id} className="flex-container">

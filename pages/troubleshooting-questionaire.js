@@ -13,8 +13,9 @@ export class TroubleShootingQuestionaire extends React.Component {
     this.state = {
       selectedIssue: '',
       questions: [],
-      userInput: [],
+      userInput: {},
     };
+    this.setUserAnswer = this.setUserAnswer.bind(this);
   }
   setCategory(category) {
     const userSelectedQuestionType = MockQuestionaire()
@@ -24,8 +25,15 @@ export class TroubleShootingQuestionaire extends React.Component {
       questions: userSelectedQuestionType[0].questions,
     });
   }
-  setUserAnswer(answer) {
-    console.log(answer);
+  setUserAnswer(question, answer) {
+    const input = {};
+    input[question] = answer;
+    console.log(input);
+    this.setState((state) => {
+      return {
+        userInput: Object.assign({}, state.userInput, input),
+      };
+    });
   }
   render() {
     console.log(this.state);
@@ -39,7 +47,7 @@ export class TroubleShootingQuestionaire extends React.Component {
         <IssueCategory onChange={e => this.setCategory(e.target.value)} />
         <Questions
           questions={this.state.questions}
-          onChange={e => this.setUserAnswer(e.target.value)}
+          onChange={this.setUserAnswer}
         />
       </div>
     );

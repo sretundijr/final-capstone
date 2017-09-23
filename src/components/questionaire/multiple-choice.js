@@ -8,7 +8,12 @@ export default function MultipleChoice(props) {
     return (
       <div key={item}>
         <label htmlFor="answer">{item}</label>
-        <input onChange={props.onChange} id="answer" type="radio" value={item} />
+        <input
+          onChange={() => props.onChange(props.question, item)}
+          id="answer"
+          type="radio"
+          value={item}
+        />
       </div>
     );
   });
