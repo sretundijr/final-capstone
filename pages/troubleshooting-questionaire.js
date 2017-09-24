@@ -48,6 +48,7 @@ export class TroubleShootingQuestionaire extends React.Component {
         <Questions
           questions={this.state.questions}
           onChange={this.setUserAnswer}
+          checked={this.state.userInput}
         />
       </div>
     );

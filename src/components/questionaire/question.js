@@ -5,8 +5,8 @@ import TextAnswer from './text-answer';
 
 import { flexContainer, contentContainer } from '../../styles/shared-styles';
 
-const determineAnswerType = (questionObject, callback) => {
-  // console.log(questionObject);
+const determineAnswerType = (checked, questionObject, callback) => {
+  console.log(questionObject);
   if (questionObject.multipleChoice) {
     return (
       <div>
@@ -14,6 +14,7 @@ const determineAnswerType = (questionObject, callback) => {
           question={questionObject.question}
           onChange={callback}
           list={questionObject.answer}
+          checked={checked}
         />
       </div>
     );
@@ -34,7 +35,7 @@ export default function question(props) {
           <h4>
             {item.question}
           </h4>
-          {determineAnswerType(item, props.onChange)}
+          {determineAnswerType(props.checked, item, props.onChange)}
         </div>
         <style jsx>{contentContainer}</style>
         <style jsx>{flexContainer}</style>

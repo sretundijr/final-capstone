@@ -4,6 +4,7 @@ import { flexContainer, contentContainer } from '../../styles/shared-styles';
 
 // todo requires state change to control radio buttons
 export default function MultipleChoice(props) {
+  console.log(props);
   const element = props.list.map((item) => {
     return (
       <div key={item}>
@@ -13,6 +14,10 @@ export default function MultipleChoice(props) {
           id="answer"
           type="radio"
           value={item}
+          checked={
+            (props.checked.hasOwnProperty(props.question) &&
+              props.checked[props.question] === item)
+          }
         />
       </div>
     );
