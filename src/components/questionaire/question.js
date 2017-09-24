@@ -21,7 +21,10 @@ const determineAnswerType = (checked, questionObject, callback) => {
   }
   return (
     <div>
-      <TextAnswer onChange={callback} />
+      <TextAnswer
+        onChange={callback}
+        question={questionObject.question}
+      />
     </div>
   );
 };

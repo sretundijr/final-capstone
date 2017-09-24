@@ -28,7 +28,6 @@ export class TroubleShootingQuestionaire extends React.Component {
   setUserAnswer(question, answer) {
     const input = {};
     input[question] = answer;
-    console.log(input);
     this.setState((state) => {
       return {
         userInput: Object.assign({}, state.userInput, input),

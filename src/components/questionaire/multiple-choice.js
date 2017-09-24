@@ -33,8 +33,13 @@ export default function MultipleChoice(props) {
   );
 }
 
+MultipleChoice.defaultProps = {
+  list: [],
+  question: '',
+};
+
 // todo
 MultipleChoice.propTypes = {
-  onChange: PropTypes.func,
   list: PropTypes.arrayOf(PropTypes.string),
+  question: PropTypes.string,
 };
