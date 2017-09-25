@@ -1,7 +1,5 @@
 import React from 'react';
 
-// import { flexContainer } from '../../styles/shared-styles';
-
 export default function () {
   return (
     <div>

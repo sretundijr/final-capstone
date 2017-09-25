@@ -3,20 +3,20 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import TroubleshootingQuestionaire from '../../pages/troubleshooting-questionaire';
+import TroubleshootingQuestionnaire from '../../pages/troubleshooting-questionnaire';
 
-jest.mock('../mock-questionaire');
-import MockQuestionaire from '../mock-questionaire';
+jest.mock('../mock-questionnaire');
+import MockQuestionaire from '../mock-questionnaire';
 
 const mockQuestionObject = () => MockQuestionaire
   .mockReturnValueOnce([{ issueType: 'foo', questions: ['hello'] }]);
 
 describe('testing troubleshooting questionaire', () => {
   it('should render without crashing', () => {
-    shallow(<TroubleshootingQuestionaire />);
+    shallow(<TroubleshootingQuestionnaire />);
   });
 
-  const wrapper = shallow(<TroubleshootingQuestionaire />);
+  const wrapper = shallow(<TroubleshootingQuestionnaire />);
 
   describe('#setCategory', () => {
     it('modify state of property selected issue', () => {
