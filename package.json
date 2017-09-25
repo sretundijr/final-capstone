@@ -7,7 +7,8 @@
       "!**/out/**",
       "!**/.next/**",
       "!**/coverage/**",
-      "!**/next.config.js"
+      "!**/next.config.js",
+      "!**/src/mock-questionnaire.js"
     ]
   },
   "version": "1.0.0",
