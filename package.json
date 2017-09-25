@@ -1,10 +1,17 @@
 {
   "name": "final-capstone",
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/node_modules/**"
+    ]
+  },
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "react-scripts test --env=jsdom",
+    "test": "jest",
     "dev": "next",
     "build": "next build && next export",
     "preexport": "npm run build",
@@ -21,10 +28,13 @@
     "serve": "^5.2.2"
   },
   "devDependencies": {
+    "babel-jest": "^21.0.2",
     "enzyme": "^2.9.1",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.1.0",
-    "react-scripts": "^1.0.13",
-    "react-test-renderer": "^15.6.1"
+    "jest": "^21.1.0",
+    "react-addons-test-utils": "^15.6.0",
+    "react-test-renderer": "^15.6.1",
+    "regenerator-runtime": "^0.11.0"
   }
 }
