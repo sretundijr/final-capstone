@@ -3,8 +3,8 @@ import React, { PropTypes } from 'react';
 import { flexContainer } from '../../styles/shared-styles';
 import mockQuestionaire from '../../mock-questionaire';
 
-export default function issueCategory(props) {
-  const issueSelection = mockQuestionaire()
+export default function IssueCategory(props) {
+  const issueSelection = props.categories
     .map(item =>
       <option key={item.issueType.toString()} value={item.issueType}>{item.issueType}</option>);
   return (
@@ -23,6 +23,16 @@ export default function issueCategory(props) {
   );
 }
 
-issueCategory.propTypes = {
+IssueCategory.defaultProps = {
+  categories: [],
+};
+
+IssueCategory.propTypes = {
+  categories: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string,
+    question: PropTypes.string,
+    answer: PropTypes.arrayOf(PropTypes.string),
+    MultipleChoice: PropTypes.bool,
+  })),
   onChange: PropTypes.func.isRequired,
 };
