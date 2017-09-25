@@ -1,7 +1,6 @@
 {
   "name": "final-capstone",
   "jest": {
-    "collectCoverage": true,
     "collectCoverageFrom": [
       "**/*.{js,jsx}",
       "!**/node_modules/**"
@@ -11,6 +10,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test-coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls.js",
     "test": "jest",
     "dev": "next",
     "build": "next build && next export",
@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "babel-jest": "^21.0.2",
+    "coveralls": "^2.13.1",
     "enzyme": "^2.9.1",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.1.0",
