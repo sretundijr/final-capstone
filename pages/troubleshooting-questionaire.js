@@ -7,6 +7,8 @@ import Questions from '../src/components/questionaire/question';
 
 import MockQuestionaire from '../src/mock-questionaire';
 
+import { footer } from '../src/styles/shared-styles';
+
 export class TroubleShootingQuestionaire extends React.Component {
   constructor(props) {
     super(props);
@@ -35,7 +37,7 @@ export class TroubleShootingQuestionaire extends React.Component {
     });
   }
   render() {
-    console.log(this.state);
+    console.log(this.state.userInput);
     return (
       <div>
         <Head>
@@ -49,6 +51,10 @@ export class TroubleShootingQuestionaire extends React.Component {
           onChange={this.setUserAnswer}
           checked={this.state.userInput}
         />
+        <div>
+          <footer className="footer" />
+          <style jsx>{footer}</style>
+        </div>
       </div>
     );
   }

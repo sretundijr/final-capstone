@@ -11,3 +11,8 @@ export const contentContainer = `.content-container
     max-width: 100%;
     width: 600px;
   }`;
+
+export const footer = `.footer
+  {
+    height: 200px;
+  }`;

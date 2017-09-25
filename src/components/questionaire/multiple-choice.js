@@ -1,10 +1,11 @@
 import React, { PropTypes } from 'react';
 
 import { flexContainer, contentContainer } from '../../styles/shared-styles';
+import { radioInput, radioSpacing } from '../../styles/multiChoice-styles';
 
 // todo requires state change to control radio buttons
 export default function MultipleChoice(props) {
-  console.log(props);
+  // console.log(props);
   const element = props.list.map((item) => {
     return (
       <div key={item}>
@@ -18,15 +19,18 @@ export default function MultipleChoice(props) {
             (props.checked.hasOwnProperty(props.question) &&
               props.checked[props.question] === item)
           }
+          className="radio-spacing"
         />
+        <style jsx>{radioSpacing}</style>
       </div>
     );
   });
   return (
     <div className="flex-container">
-      <h6 className="content-container">
+      <div>
         {element}
-      </h6>
+      </div>
+      <style jsx>{radioInput}</style>
       <style jsx>{contentContainer}</style>
       <style jsx>{flexContainer}</style>
     </div>
