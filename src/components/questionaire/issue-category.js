@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 
 import { flexContainer } from '../../styles/shared-styles';
-import mockQuestionaire from '../../mock-questionaire';
 
 export default function IssueCategory(props) {
   const issueSelection = props.categories

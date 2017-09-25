@@ -3,7 +3,6 @@ import React, { PropTypes } from 'react';
 import { flexContainer, contentContainer } from '../../styles/shared-styles';
 import { radioInput, radioSpacing } from '../../styles/multiChoice-styles';
 
-// todo requires state change to control radio buttons
 export default function MultipleChoice(props) {
   // console.log(props);
   const element = props.list.map((item) => {
