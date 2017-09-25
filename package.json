@@ -5,7 +5,9 @@
       "**/*.{js,jsx}",
       "!**/node_modules/**",
       "!**/out/**",
-      "!**/.next/**"
+      "!**/.next/**",
+      "!**/coverage/**",
+      "!**/next.config.js"
     ]
   },
   "version": "1.0.0",
