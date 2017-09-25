@@ -10,15 +10,12 @@ export default function mockClientIssueQuestionaire() {
           question: 'Is there a driveability issue accompaning the check engine light? ' +
           'Example: Runs rough, does not make any power, etc.',
           answer: ['yes', 'no'],
-          // multipleBranch: true,
           multipleChoice: true,
-          // branch to driveability after completing the remaining questions?
         },
         {
           id: '1234',
           question: 'How long has the fault light been on?',
           answer: [''],
-          // multipleBranch: false,
           multipleChoice: false,
         },
         {
@@ -67,7 +64,31 @@ export default function mockClientIssueQuestionaire() {
     {
       issueType: 'Interior Electrical Issue',
       questions: [
-        'test question',
+        {
+          id: '89787',
+          question: 'Please select the component category that you are expeirencing the issue.',
+          multipleChoice: true,
+          answer: [
+            'Windows',
+            'Seats',
+            'Navigation',
+            'Radio',
+            'Heating and AC controls',
+            'Comfort Features',
+          ],
+        },
+        {
+          id: '789797',
+          question: 'Please describe in as much detail, what happens.',
+          multipleChoice: false,
+          answer: [],
+        },
+        {
+          id: '897807087',
+          question: 'How often does the issue occur?',
+          multipleChoice: true,
+          answer: ['Every couple of days', 'Always', 'Once', 'Ocassionally'],
+        },
       ],
     },
     {
