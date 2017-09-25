@@ -1,5 +1,5 @@
 
-export default function mockClientIssueQuestionaire() {
+export default function mockClientIssueQuestionnaire() {
   return [
     {
       issueType: 'Check Engine Light',

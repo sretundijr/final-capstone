@@ -5,11 +5,11 @@ import WelcomeHeader from '../src/components/questionaire/welcome-client';
 import IssueCategory from '../src/components/questionaire/issue-category';
 import Questions from '../src/components/questionaire/question';
 
-import MockQuestionaire from '../src/mock-questionaire';
+import MockQuestionaire from '../src/mock-questionnaire';
 
 import { footer } from '../src/styles/shared-styles';
 
-export class TroubleShootingQuestionaire extends React.Component {
+export class TroubleShootingQuestionnaire extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -37,7 +37,7 @@ export class TroubleShootingQuestionaire extends React.Component {
     });
   }
   render() {
-    console.log(this.state.userInput);
+    // console.log(this.state.userInput);
     return (
       <div>
         <Head>
@@ -45,7 +45,7 @@ export class TroubleShootingQuestionaire extends React.Component {
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         </Head>
         <WelcomeHeader />
-        <IssueCategory onChange={e => this.setCategory(e.target.value)} />
+        <IssueCategory categories={MockQuestionaire()} onChange={e => this.setCategory(e.target.value)} />
         <Questions
           questions={this.state.questions}
           onChange={this.setUserAnswer}
@@ -60,9 +60,9 @@ export class TroubleShootingQuestionaire extends React.Component {
   }
 }
 
-TroubleShootingQuestionaire.defaultProps = {
+TroubleShootingQuestionnaire.defaultProps = {
   questions: [],
 };
 
-export default TroubleShootingQuestionaire;
+export default TroubleShootingQuestionnaire;
 

@@ -3,7 +3,7 @@ module.exports = {
     return {
       '/': { page: '/' },
       '/home': { page: '/home' },
-      '/troubleshooting-questionaire': { page: '/troubleshooting-questionaire' },
+      '/troubleshooting-questionnaire': { page: '/troubleshooting-questionnaire' },
       // '/p/learn-nextjs': { page: '/post', query: { title: 'learn-nextjs' } },
       // '/p/deploy-nextjs': { page: '/post', query: { title: 'deploy-nextjs' } }
     };
