@@ -2,8 +2,12 @@
 
 import MockQuestionnaire from './mock-questionnaire';
 
-export const saveUserInputToLocalStorage = (input) => {
-  localStorage.setItem('user-input', JSON.stringify(input));
+export const localStorageMock = (input) => {
+  return {
+    setItem: localStorage.setItem('user-input', JSON.stringify(input)),
+  };
 };
 
-export const getMockQuestionnaire = () => MockQuestionnaire();
+// Object.defineProperty(window, 'localStorage', { value: localStorageMock });
+
+export const getQuestionnaire = () => MockQuestionnaire();

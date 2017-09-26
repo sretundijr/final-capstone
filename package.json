@@ -1,6 +1,7 @@
 {
   "name": "final-capstone",
   "jest": {
+    "setupTestFrameworkScriptFile": "./src/questionnaire-api.js",
     "collectCoverageFrom": [
       "**/*.{js,jsx}",
       "!**/node_modules/**",

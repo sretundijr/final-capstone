@@ -8,8 +8,7 @@ import Questions from '../src/components/questionaire/question';
 import Submit from '../src/components/questionaire/submit';
 
 // helpers
-import { saveUserInputToLocalStorage, getMockQuestionnaire } from '../src/questionnaire-api';
-import MockQuestionaire from '../src/mock-questionnaire';
+import MockQuestionnaire from '../src/mock-questionnaire';
 
 // styles
 import { footer } from '../src/styles/shared-styles';
@@ -27,7 +26,7 @@ export class TroubleShootingQuestionnaire extends React.Component {
     this.setUserAnswer = this.setUserAnswer.bind(this);
   }
   setCategory(category) {
-    const userSelectedQuestionType = getMockQuestionnaire()
+    const userSelectedQuestionType = MockQuestionnaire()
       .filter(questions => category === questions.issueType);
     this.setState({
       selectedIssue: category,
@@ -49,7 +48,7 @@ export class TroubleShootingQuestionnaire extends React.Component {
     const allQuestions = this.state.questions.length;
     if (this.state.renderSubmit && questionsAnswered === allQuestions) {
       return (
-        <Submit onClick={saveUserInputToLocalStorage(this.state.userInput)} />
+        <Submit onClick={{}} />
       );
     }
     return '';
@@ -63,7 +62,10 @@ export class TroubleShootingQuestionnaire extends React.Component {
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         </Head>
         <WelcomeHeader />
-        <IssueCategory categories={getMockQuestionnaire()} onChange={e => this.setCategory(e.target.value)} />
+        <IssueCategory
+          categories={MockQuestionnaire()}
+          onChange={e => this.setCategory(e.target.value)}
+        />
         <Questions
           questions={this.state.questions}
           onChange={this.setUserAnswer}
