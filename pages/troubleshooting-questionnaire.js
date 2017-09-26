@@ -4,6 +4,7 @@ import Head from 'next/head';
 import WelcomeHeader from '../src/components/questionaire/welcome-client';
 import IssueCategory from '../src/components/questionaire/issue-category';
 import Questions from '../src/components/questionaire/question';
+import Submit from '../src/components/questionaire/submit';
 
 import MockQuestionaire from '../src/mock-questionnaire';
 
@@ -16,6 +17,8 @@ export class TroubleShootingQuestionnaire extends React.Component {
       selectedIssue: '',
       questions: [],
       userInput: {},
+      renderSubmit: false,
+      questionsAnswered: 0,
     };
     this.setUserAnswer = this.setUserAnswer.bind(this);
   }
@@ -25,6 +28,7 @@ export class TroubleShootingQuestionnaire extends React.Component {
     this.setState({
       selectedIssue: category,
       questions: userSelectedQuestionType[0].questions,
+      renderSubmit: true,
     });
   }
   setUserAnswer(question, answer) {
@@ -36,12 +40,22 @@ export class TroubleShootingQuestionnaire extends React.Component {
       };
     });
   }
+  renderSubmit() {
+    const questionsAnswered = Object.keys(this.state.userInput).length;
+    const allQuestions = this.state.questions.length;
+    if (this.state.renderSubmit && questionsAnswered === allQuestions) {
+      return (
+        <Submit />
+      );
+    }
+    return '';
+  }
   render() {
-    // console.log(this.state.userInput);
+    // console.log(this.state);
     return (
       <div>
         <Head>
-          <title>My page title</title>
+          <title>Troubleshooting Questionnaire</title>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         </Head>
         <WelcomeHeader />
@@ -51,6 +65,7 @@ export class TroubleShootingQuestionnaire extends React.Component {
           onChange={this.setUserAnswer}
           checked={this.state.userInput}
         />
+        {this.renderSubmit()}
         <div>
           <footer className="footer" />
           <style jsx>{footer}</style>

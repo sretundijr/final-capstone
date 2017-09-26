@@ -4,7 +4,7 @@ module.exports = {
       '/': { page: '/' },
       '/home': { page: '/home' },
       '/troubleshooting-questionnaire': { page: '/troubleshooting-questionnaire' },
-      // '/p/learn-nextjs': { page: '/post', query: { title: 'learn-nextjs' } },
+      '/thank-you': { page: '/thank-you' },
       // '/p/deploy-nextjs': { page: '/post', query: { title: 'deploy-nextjs' } }
     };
   },
