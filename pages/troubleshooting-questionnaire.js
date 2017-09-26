@@ -1,13 +1,17 @@
 import React from 'react';
 import Head from 'next/head';
 
+// components
 import WelcomeHeader from '../src/components/questionaire/welcome-client';
 import IssueCategory from '../src/components/questionaire/issue-category';
 import Questions from '../src/components/questionaire/question';
 import Submit from '../src/components/questionaire/submit';
 
-import MockQuestionaire from '../src/mock-questionnaire';
+// helpers
+import { saveUserInputToLocalStorage, getMockQuestionnaire } from '../src/questionnaire-api';
+// import MockQuestionaire from '../src/mock-questionnaire';
 
+// styles
 import { footer } from '../src/styles/shared-styles';
 
 export class TroubleShootingQuestionnaire extends React.Component {
@@ -23,7 +27,7 @@ export class TroubleShootingQuestionnaire extends React.Component {
     this.setUserAnswer = this.setUserAnswer.bind(this);
   }
   setCategory(category) {
-    const userSelectedQuestionType = MockQuestionaire()
+    const userSelectedQuestionType = getMockQuestionnaire()
       .filter(questions => category === questions.issueType);
     this.setState({
       selectedIssue: category,
@@ -45,7 +49,7 @@ export class TroubleShootingQuestionnaire extends React.Component {
     const allQuestions = this.state.questions.length;
     if (this.state.renderSubmit && questionsAnswered === allQuestions) {
       return (
-        <Submit />
+        <Submit onClick={saveUserInputToLocalStorage(this.state.userInput)} />
       );
     }
     return '';
