@@ -7,7 +7,3 @@ export const saveUserInputToLocalStorage = (input) => {
 };
 
 export const getMockQuestionnaire = () => MockQuestionnaire();
-
-
-// todo add mock questionnaire to this
-

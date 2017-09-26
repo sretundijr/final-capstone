@@ -9,7 +9,7 @@ import Submit from '../src/components/questionaire/submit';
 
 // helpers
 import { saveUserInputToLocalStorage, getMockQuestionnaire } from '../src/questionnaire-api';
-// import MockQuestionaire from '../src/mock-questionnaire';
+import MockQuestionaire from '../src/mock-questionnaire';
 
 // styles
 import { footer } from '../src/styles/shared-styles';
@@ -63,7 +63,7 @@ export class TroubleShootingQuestionnaire extends React.Component {
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         </Head>
         <WelcomeHeader />
-        <IssueCategory categories={MockQuestionaire()} onChange={e => this.setCategory(e.target.value)} />
+        <IssueCategory categories={getMockQuestionnaire()} onChange={e => this.setCategory(e.target.value)} />
         <Questions
           questions={this.state.questions}
           onChange={this.setUserAnswer}
