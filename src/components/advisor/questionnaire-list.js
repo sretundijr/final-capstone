@@ -10,6 +10,7 @@ export default function ReturnedQuestionnaire(props) {
         <td className="">{item.customerEmail}</td>
         <td className="">{item.appointmentDate}</td>
         <td><button>View Questionnaire</button></td>
+        <td><button>Archive</button></td>
       </tr>
     );
   });

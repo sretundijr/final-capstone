@@ -2,7 +2,7 @@
 export default function MockQuestionnaireList() {
   return [
     {
-      customerName: 'steve',
+      customerName: 'Steve Retundi',
       customerEmail: 'steve@question.com',
       appointmentDate: '11-11-2017',
     },
