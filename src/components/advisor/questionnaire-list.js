@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 import { customerTable, title } from '../../styles/questionnaire-list-style';
 
@@ -9,6 +9,7 @@ export default function ReturnedQuestionnaire(props) {
         <td className="">{item.customerName}</td>
         <td className="">{item.customerEmail}</td>
         <td className="">{item.appointmentDate}</td>
+        <td><button>View Questionnaire</button></td>
       </tr>
     );
   });
@@ -32,3 +33,12 @@ export default function ReturnedQuestionnaire(props) {
     </div >
   );
 }
+
+ReturnedQuestionnaire.defaultProps = {
+  list: [],
+};
+
+// todo
+ReturnedQuestionnaire.propTypes = {
+  list: PropTypes.arrayOf(PropTypes.string),
+};

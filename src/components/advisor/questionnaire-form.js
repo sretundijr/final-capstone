@@ -50,10 +50,10 @@ export default class QuestionnaireForm extends React.Component {
     });
   }
   handleSubmit() {
-    // makes api call redirect to advisor dashboard
+    // makes api call behind the scenes
+    console.log(this.state);
   }
   render() {
-    console.log(this.state);
     return (
       <div>
         <Head>
