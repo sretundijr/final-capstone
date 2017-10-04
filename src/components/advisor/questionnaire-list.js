@@ -16,7 +16,7 @@ export default function ReturnedQuestionnaire(props) {
   });
   return (
     <div>
-      <h4 className="title">Returned Questionnaires</h4>
+      <h2 className="title">Returned Questionnaires</h2>
       <table className="customer-table">
         <thead>
           <tr>

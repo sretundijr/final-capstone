@@ -5,14 +5,7 @@ import DateInput from './date-input';
 import EmailInput from './email-input';
 import TextInput from './text-input';
 
-import {
-  advisorContainer,
-  centerContainer,
-  mainContainer,
-  submitButton,
-  buttonContainer,
-  componentContainer,
-} from '../../styles/advisor-container';
+import { advisorContainer } from '../../styles/questionnaire-form';
 
 export default class QuestionnaireForm extends React.Component {
   constructor(props) {
@@ -118,12 +111,7 @@ export default class QuestionnaireForm extends React.Component {
               <button className="submit-button" onClick={this.handleSubmit()}>Submit</button>
             </div>
           </div>
-          <style jsx>{componentContainer}</style>
-          <style jsx>{buttonContainer}</style>
-          <style jsx>{submitButton}</style>
           <style jsx>{advisorContainer}</style>
-          <style jsx>{centerContainer}</style>
-          <style jsx>{mainContainer}</style>
         </div>
       </div>
     );
