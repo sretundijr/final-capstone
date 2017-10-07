@@ -1,37 +1,39 @@
 
 export const advisorContainer = `
-  .advisor-container {
-    display: grid;
-    grid-template-columns: repeat(2, [col-start] 250px [col-end]);
-    grid-gap: 40px;
-    justify-content: center;
-    grid-auto-columns: auto;
-  }
+.form-style-4{
+  width: 450px;
+  font-size: 16px;
+  background: #495C70;
+  padding: 30px 30px 15px 30px;
+  border: 5px solid #53687E;
+}
+.form-style-4 input[type=submit],
+.form-style-4 label
+{
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 16px;
+    color: #fff;
 
-  .main-container {
-    width: 100%;
-  }
-
-  .center-container {
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .component-container {
-    text-align: center;
-  }
-
-  .button-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-  }
-
-  .submit-button {
-    width: 100px;
-    height: 25px;
-    background-color: white;
-  }
+}
+.form-style-4 label {
+    display:block;
+    margin-bottom: 10px;
+}
+.form-style-4 label > span{
+    display: inline-block;
+    float: left;
+    width: 150px;
+}
+.form-style-4 input[type=submit],
+.form-style-4 input[type=button]{
+    background: #576E86;
+    border: none;
+    padding: 8px 10px 8px 10px;
+    border-radius: 5px;
+    color: #A8BACE;
+}
+.form-style-4 input[type=submit]:hover {
+background: #394D61;
+}
 `;
 

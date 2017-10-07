@@ -49,9 +49,11 @@ export default class QuestionnaireForm extends React.Component {
       appointmentDate: date,
     });
   }
-  handleSubmit() {
+  handleSubmit(event) {
     // makes api call behind the scenes
-    console.log(this.state);
+    // console.log(event);
+    // console.log(this.state);
+    event.preventDefault();
   }
   render() {
     return (
@@ -61,56 +63,77 @@ export default class QuestionnaireForm extends React.Component {
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         </Head>
         <div className="main-container">
-          <div className="center-container">
-            <h2>To send a questionnaire fill in the required info below</h2>
-          </div>
-          <div className="center-container">
-            <h4>Enter your shop or dealership name</h4>
-            <TextInput
-              onChange={e => this.setShopName(e.target.value)}
-              value={this.state.shopName}
-            />
-          </div>
-          <div className="advisor-container">
-            <div className="component-container">
-              <h4>Enter your name</h4>
+          <form className="form-style-4" onSubmit={this.handleSubmit}>
+            <label htmlFor="shop-name">
+              <span>
+                shop or dealership
+              </span>
               <TextInput
+                name="shop-name"
+                onChange={e => this.setShopName(e.target.value)}
+                value={this.state.shopName}
+              />
+            </label>
+            <label htmlFor="advisor-name">
+              <span>
+                Your Name
+              </span>
+              <TextInput
+                name="advisor-name"
                 onChange={e => this.setAdvisorName(e.target.value)}
                 value={this.state.advisorName}
               />
-            </div>
-            <div className="component-container">
-              <h4>Please enter your email address</h4>
+            </label>
+            <label htmlFor="advisor-email">
+              <span>
+                Your Email
+              </span>
               <EmailInput
+                name="advisor-email"
                 onChange={e => this.setAdvisorEmail(e.target.value)}
                 value={this.state.advisorEmail}
               />
-            </div>
-            <div className="component-container">
-              <h4>Please enter your customers name</h4>
+            </label>
+            <label htmlFor="customer-name">
+              <span>
+                Customers Name
+              </span>
               <TextInput
+                name="customer-name"
                 onChange={e => this.setCustomerName(e.target.value)}
                 value={this.state.customerName}
               />
-            </div>
-            <div className="component-container">
-              <h4>Please enter the customers email address</h4>
+            </label>
+            <label htmlFor="customer-email">
+              <span>
+                Customers Email
+              </span>
               <EmailInput
+                name="customer-email"
                 onChange={e => this.setCustomerEmail(e.target.value)}
                 value={this.state.customerEmail}
               />
-            </div>
-            <div className="component-container">
-              <h4>Please enter your customers appointment date</h4>
+            </label>
+            <label htmlFor="appointment-date">
+              <span>
+                Appointment Date
+              </span>
               <DateInput
+                name="appointment-date"
                 onChange={e => this.setAppointmentDate(e.target.value)}
                 value={this.state.appointmentDate}
               />
-            </div>
-            <div className="button-container">
-              <button className="submit-button" onClick={this.handleSubmit()}>Submit</button>
-            </div>
-          </div>
+            </label>
+            <label htmlFor="submit">
+              <span>
+                something
+              </span>
+              <input
+                type="submit"
+                value="Submit"
+              />
+            </label>
+          </form>
           <style jsx>{advisorContainer}</style>
         </div>
       </div>
