@@ -1,7 +1,15 @@
 
 export const advisorContainer = `
+.main-container {
+    display: flex;
+    justify-content: center;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;    
+}
 .form-style-4{
-  width: 450px;
+  max-width: 500px;
+  width: 100%;
   font-size: 16px;
   background: #495C70;
   padding: 30px 30px 15px 30px;
@@ -13,16 +21,18 @@ export const advisorContainer = `
     font-family: Georgia, "Times New Roman", Times, serif;
     font-size: 16px;
     color: #fff;
-
+    margin-top: 10px;    
 }
 .form-style-4 label {
     display:block;
     margin-bottom: 10px;
+    margin-top: 10px;    
 }
 .form-style-4 label > span{
     display: inline-block;
     float: left;
     width: 150px;
+    margin-top: 10px;
 }
 .form-style-4 input[type=submit],
 .form-style-4 input[type=button]{

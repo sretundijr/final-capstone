@@ -66,7 +66,7 @@ export default class QuestionnaireForm extends React.Component {
           <form className="form-style-4" onSubmit={this.handleSubmit}>
             <label htmlFor="shop-name">
               <span>
-                shop or dealership
+                Shop Name
               </span>
               <TextInput
                 name="shop-name"
@@ -126,7 +126,7 @@ export default class QuestionnaireForm extends React.Component {
             </label>
             <label htmlFor="submit">
               <span>
-                something
+                Send Email
               </span>
               <input
                 type="submit"

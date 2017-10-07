@@ -17,11 +17,11 @@ export default function DateInput(props) {
           color: #fff;
           background: transparent;
           border: none;
-          border-bottom: 1px dashed #83A4C5;
+          border-bottom: 1px solid #83A4C5;
           width: 275px;
           outline: none;
           padding: 0px 0px 0px 0px;
-          font-style: italic;   
+          margin-top: 10px;
         }
         input:focus {
           border-bottom: 1px dashed #D9FFA9;
