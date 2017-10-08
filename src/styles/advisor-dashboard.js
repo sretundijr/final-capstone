@@ -27,10 +27,24 @@ export const advisorDash = `
  }
 
  .list-container {
-   margin-top: 200px;
+   margin-top: 100px;
  }
 
  #questionnaire-form {
    height: 100px;
  }
+  
+ #returned {
+   height: 100px;
+ }
+
+ @media only screen and (max-width: 900px) {
+  #questionnaire-form {
+   height: 50px;
+ }
+  
+ #returned {
+   height: 50px;
+ }
+}
 `;

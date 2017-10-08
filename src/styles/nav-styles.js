@@ -16,6 +16,7 @@ export const navBar = `
     background: #576E86;    
     width: 100%;
     margin: 10px;
+    outline: none;
   }
 `;
 
