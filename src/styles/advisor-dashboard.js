@@ -18,7 +18,7 @@ export const advisorDash = `
   top: 0;
 }
 .title {
-  font-size: 20px;
+  font-size: 24px;
   color: #495C70;
   text-align: center;
 }

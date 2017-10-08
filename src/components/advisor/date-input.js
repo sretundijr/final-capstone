@@ -5,6 +5,7 @@ export default function DateInput(props) {
     <div>
       <div>
         <input
+          required
           onChange={props.onChange}
           value={props.value}
           type="date"

@@ -4,7 +4,7 @@ export default function TextInput(props) {
   return (
     <div>
       <div>
-        <input value={props.value} onChange={props.onChange} type="text" />
+        <input required value={props.value} onChange={props.onChange} type="text" />
       </div>
       <style jsx>{`
         input {

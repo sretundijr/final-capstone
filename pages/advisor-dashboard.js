@@ -22,12 +22,12 @@ export default function AdvisorDashboard() {
         </div>
         <div id="questionnaire-form" />
         <div className="form-container" >
-          <h4 className="title">Send a Questionnaire</h4>
+          <h2 className="title">Send a Questionnaire</h2>
           <QuestionnaireForm />
         </div>
         <div id="returned" />
         <div className="list-container">
-          <h4 className="title">Returned Questionnaires</h4>
+          <h2 className="title">Returned Questionnaires</h2>
           <QuestionnaireList list={MockList()} />
         </div>
         <div className="footer" />
