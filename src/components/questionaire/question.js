@@ -33,6 +33,22 @@ const determineAnswerType = (checked, questionObject, callback) => {
 
 const iterateIndex = index => index + 1;
 
+const decrementIndex = index => index - 1;
+
+const renderBackButton = (index) => {
+  if (index < 1) {
+    return '';
+  }
+  return (
+    <div>
+      <Link href={`#question-${decrementIndex(index)}`}>
+        <button className="next-btn">Back</button>
+      </Link>
+      <style jsx>{questionPage}</style>
+    </div>
+  );
+};
+
 const renderNextButton = (index, list) => {
   if ((index + 1) === list.length) {
     return '';
@@ -61,6 +77,7 @@ export default function question(props) {
           <div>
             {determineAnswerType(props.checked, item, props.onChange)}
           </div>
+          {renderBackButton(index)}
           {renderNextButton(index, props.questions)}
         </div>
         <style jsx>{questionPage}</style>
@@ -81,7 +98,6 @@ question.defaultProps = {
 
 // todo fix proptypes deprecation warning
 question.propTypes = {
-  onChange: PropTypes.func,
   questions: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string,
     question: PropTypes.string,
