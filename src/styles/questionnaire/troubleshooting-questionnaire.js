@@ -4,7 +4,8 @@ export const questionPage = `
     background-color: rgb(181, 186, 189);
     color: #F5F5F5;
     font-size: 20px;
-    width: 100vw;    
+    width: 100vw;   
+    height: 100vh; 
   }
   .welcome-container {
     height: 100vh;

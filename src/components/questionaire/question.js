@@ -79,6 +79,7 @@ export default function question(props) {
           </div>
           {renderBackButton(index)}
           {renderNextButton(index, props.questions)}
+          {props.renderSubmit}
         </div>
         <style jsx>{questionPage}</style>
         <style jsx>{flexContainer}</style>
@@ -98,6 +99,7 @@ question.defaultProps = {
 
 // todo fix proptypes deprecation warning
 question.propTypes = {
+  renderSubmit: PropTypes.func,
   questions: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string,
     question: PropTypes.string,
