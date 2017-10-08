@@ -9,7 +9,7 @@ import NavBar from '../src/components/advisor/nav-bar';
 import { advisorDash } from '../src/styles/advisor/advisor-dashboard';
 
 import MockList from '../src/mock-list';
-import { getCustomers } from '../src/api/customer-info';
+// import { getCustomers } from '../src/api/customer-info';
 
 export default function AdvisorDashboard() {
   // console.log(getCustomers());
