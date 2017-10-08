@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react';
 import MultipleChoice from './multiple-choice';
 import TextAnswer from './text-answer';
 
-import { flexContainer, contentContainer } from '../../styles/shared-styles';
+import { flexContainer } from '../../styles/questionnaire/shared-styles';
 
 const determineAnswerType = (checked, questionObject, callback) => {
   // console.log(questionObject);
@@ -44,7 +44,6 @@ export default function question(props) {
             {determineAnswerType(props.checked, item, props.onChange)}
           </div>
         </div>
-        <style jsx>{contentContainer}</style>
         <style jsx>{flexContainer}</style>
       </div>
     );

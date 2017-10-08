@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { flexContainer, contentContainer } from '../../styles/shared-styles';
+import { flexContainer } from '../../styles/questionnaire/shared-styles';
 
 export default function () {
   return (
@@ -21,7 +21,6 @@ export default function () {
         </h3>
       </div>
       <style jsx>{flexContainer}</style>
-      <style jsx>{contentContainer}</style>
     </div >
   );
 }

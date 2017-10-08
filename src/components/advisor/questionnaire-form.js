@@ -5,7 +5,7 @@ import DateInput from './date-input';
 import EmailInput from './email-input';
 import TextInput from './text-input';
 
-import { advisorContainer } from '../../styles/questionnaire-form';
+import { advisorContainer } from '../../styles/advisor/questionnaire-form';
 
 export default class QuestionnaireForm extends React.Component {
   constructor(props) {

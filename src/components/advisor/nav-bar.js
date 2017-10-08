@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-import { navBar } from '../../styles/nav-styles';
+import { navBar } from '../../styles/advisor/nav-styles';
 
 
 export default function NavBar() {

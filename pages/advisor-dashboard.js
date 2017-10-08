@@ -5,7 +5,7 @@ import QuestionnaireList from '../src/components/advisor/questionnaire-list';
 import QuestionnaireForm from '../src/components/advisor/questionnaire-form';
 import NavBar from '../src/components/advisor/nav-bar';
 
-import { advisorDash } from '../src/styles/advisor-dashboard';
+import { advisorDash } from '../src/styles/advisor/advisor-dashboard';
 
 import MockList from '../src/mock-list';
 

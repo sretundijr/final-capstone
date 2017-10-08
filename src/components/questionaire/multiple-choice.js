@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 
-import { flexContainer, contentContainer } from '../../styles/shared-styles';
-import { radioInput, radioSpacing } from '../../styles/multiChoice-styles';
+import { flexContainer } from '../../styles/questionnaire/shared-styles';
+import { radioInput, radioSpacing } from '../../styles/questionnaire/multiChoice-styles';
 
 export default function MultipleChoice(props) {
   // console.log(props);
@@ -30,7 +30,6 @@ export default function MultipleChoice(props) {
         {element}
       </div>
       <style jsx>{radioInput}</style>
-      <style jsx>{contentContainer}</style>
       <style jsx>{flexContainer}</style>
     </div>
   );

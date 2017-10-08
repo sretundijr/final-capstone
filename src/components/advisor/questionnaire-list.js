@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-import { customerContainer } from '../../styles/questionnaire-list-style';
+import { customerContainer } from '../../styles/advisor/questionnaire-list-style';
 
 export default function ReturnedQuestionnaire(props) {
   const list = props.list.map((item) => {

@@ -1,8 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 
-import { flexContainer, contentContainer } from '../../styles/shared-styles';
-import { submit } from '../../styles/submit-styles';
+import { flexContainer } from '../../styles/questionnaire/shared-styles';
+import { submit } from '../../styles/questionnaire/submit-styles';
 
 export default function Submit(props) {
   return (
@@ -14,7 +14,6 @@ export default function Submit(props) {
       </div>
       <style jsx>{submit}</style>
       <style jsx>{flexContainer}</style>
-      <style jsx>{contentContainer}</style>
     </div>
   );
 }

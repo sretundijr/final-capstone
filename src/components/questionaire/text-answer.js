@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 
-import { flexContainer, contentContainer } from '../../styles/shared-styles';
-import { textInput } from '../../styles/text-answer-styles';
+import { flexContainer } from '../../styles/questionnaire/shared-styles';
+import { textInput } from '../../styles/questionnaire/text-answer-styles';
 
 export default function TextAnswer(props) {
   return (
@@ -17,7 +17,6 @@ export default function TextAnswer(props) {
       </div>
       <style jsx>{textInput}</style>
       <style jsx>{flexContainer}</style>
-      <style jsx>{contentContainer}</style>
     </div>
   );
 }

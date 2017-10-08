@@ -11,7 +11,7 @@ import Submit from '../src/components/questionaire/submit';
 import MockQuestionnaire from '../src/mock-questionnaire';
 
 // styles
-import { footer } from '../src/styles/shared-styles';
+import { flexContainer } from '../src/styles/questionnaire/shared-styles';
 
 export class TroubleShootingQuestionnaire extends React.Component {
   constructor(props) {
@@ -74,7 +74,7 @@ export class TroubleShootingQuestionnaire extends React.Component {
         {this.renderSubmit()}
         <div>
           <footer className="footer" />
-          <style jsx>{footer}</style>
+          <style jsx>{flexContainer}</style>
         </div>
       </div>
     );
