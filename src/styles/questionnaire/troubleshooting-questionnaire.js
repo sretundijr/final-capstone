@@ -36,4 +36,14 @@ export const questionPage = `
     color: #fff;
     border-radius: 5px;
   }
+
+  @media only screen and (max-width: 900px) {
+    .component-container {
+        width: 100vw;
+        background: #495C70;
+        margin-top: 10px;
+        margin-bottom: 50px;
+        padding: 50px;
+    }
+  }
 `;
