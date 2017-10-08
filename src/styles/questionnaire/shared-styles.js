@@ -13,7 +13,9 @@ export const flexContainer = `
   }
   .footer
   {
+    padding: 20px;
+    width: 100vw;
     background-color: rgb(181, 186, 189);
-    height: 300px;
+    height: 100px;
   }
   `;

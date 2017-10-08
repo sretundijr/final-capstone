@@ -4,13 +4,17 @@ export const questionPage = `
     background-color: rgb(181, 186, 189);
     color: #F5F5F5;
     font-size: 20px;
+    width: 100vw;    
   }
   .welcome-container {
     height: 100vh;
     width: 100vw;
     background: #495C70;    
+    padding: 20px;
+    text-align: center;    
   }
   .component-container {
+      height: 100vh;
       background: #495C70;
       margin-top: 100px;
       margin-bottom: 300px;

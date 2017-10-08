@@ -86,18 +86,16 @@ export class TroubleShootingQuestionnaire extends React.Component {
             />
             {this.renderStartButton()}
           </div>
-          <div>
+          <div className="main-container">
             <Questions
               questions={this.state.questions}
               onChange={this.setUserAnswer}
               checked={this.state.userInput}
             />
-          </div>
-          <div>
             {this.renderSubmit()}
           </div>
-          <div>
-            <footer className="footer" />
+          <div className="footer">
+            <footer />
           </div>
         </div>
         <style jsx>{flexContainer}</style>
