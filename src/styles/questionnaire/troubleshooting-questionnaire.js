@@ -6,9 +6,9 @@ export const questionPage = `
     font-size: 20px;
   }
   .welcome-container {
+    height: 100vh;
+    width: 100vw;
     background: #495C70;    
-    margin-top: auto;
-    padding-bottom: 50px;
   }
   .component-container {
       background: #495C70;
@@ -16,7 +16,16 @@ export const questionPage = `
       margin-bottom: 300px;
       padding: 50px;
   }
-
+  .start-btn{
+    font-size: 16px;
+    margin-top: 75px;
+    height: 25px;
+    width: 200px;
+    border: none;
+    background: #576E86;
+    color: #fff;
+    border-radius: 5px;
+  }
   .next-btn {
     width: 100px;
     border: none;

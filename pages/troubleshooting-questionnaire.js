@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link'
 
 // components
 import WelcomeHeader from '../src/components/questionaire/welcome-client';
@@ -35,6 +36,20 @@ export class TroubleShootingQuestionnaire extends React.Component {
       renderSubmit: true,
     });
   }
+  renderStartButton(issue) {
+    if (issue) {
+      return (
+        <div className="flex-container">
+          <Link href="#question-0">
+            <button className="start-btn">Start</button>
+          </Link>
+          <style jsx>{flexContainer}</style>
+          <style jsx>{questionPage}</style>
+        </div>
+      );
+    }
+    return '';
+  }
   setUserAnswer(question, answer) {
     const input = {};
     input[question] = answer;
@@ -69,6 +84,7 @@ export class TroubleShootingQuestionnaire extends React.Component {
               categories={MockQuestionnaire()}
               onChange={e => this.setCategory(e.target.value)}
             />
+            {this.renderStartButton(this.state.selectedIssue)}
           </div>
           <div>
             <Questions

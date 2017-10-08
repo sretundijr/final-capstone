@@ -1,6 +1,7 @@
 export const submit = `.submit
   {
-    width: 100px;
+    height: 50px;
+    width: 250px;
     border: none;
     background: #576E86;
     color: #fff;
