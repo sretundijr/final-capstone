@@ -5,6 +5,8 @@ import DateInput from './date-input';
 import EmailInput from './email-input';
 import TextInput from './text-input';
 
+import { saveCustomer } from '../../api/customer-info';
+
 import { advisorContainer } from '../../styles/advisor/questionnaire-form';
 
 export default class QuestionnaireForm extends React.Component {
@@ -51,9 +53,8 @@ export default class QuestionnaireForm extends React.Component {
   }
   handleSubmit(event) {
     // makes api call behind the scenes
-    // console.log(event);
-    // console.log(this.state);
     event.preventDefault();
+    saveCustomer(this.state);
   }
   render() {
     return (
@@ -63,7 +64,7 @@ export default class QuestionnaireForm extends React.Component {
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         </Head>
         <div className="main-container">
-          <form className="form-style-4" onSubmit={this.handleSubmit}>
+          <form onSubmit={e => this.handleSubmit(e)} className="form-style-4">
             <label htmlFor="shop-name">
               <span>
                 Shop Name
