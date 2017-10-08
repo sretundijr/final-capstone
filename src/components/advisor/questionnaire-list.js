@@ -17,9 +17,6 @@ export default function ReturnedQuestionnaire(props) {
   });
   return (
     <div className="container">
-      <div className="title-container">
-        <h2 className="title">Returned Questionnaires</h2>
-      </div>
       <div className="customer-container">
         <ul className="header-row">
           <li className="customer-item">Name</li>

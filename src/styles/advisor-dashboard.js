@@ -17,12 +17,20 @@ export const advisorDash = `
   position: fixed;
   top: 0;
 }
-
+.title {
+  font-size: 20px;
+  color: #495C70;
+  text-align: center;
+}
  .form-container {
-   margin-top: 200px;
+   margin-top: 100px;
  }
 
  .list-container {
    margin-top: 200px;
+ }
+
+ #questionnaire-form {
+   height: 100px;
  }
 `;

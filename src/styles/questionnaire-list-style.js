@@ -10,9 +10,6 @@ export const customerContainer = `
 .customer-container {
   align-self: center;
 }
-.title-container {
- text-align: center;
-}
 .customer-row {
   text-align: center;
   max-width: 100%;

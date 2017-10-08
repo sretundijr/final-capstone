@@ -20,11 +20,18 @@ export default function AdvisorDashboard() {
         <div className="advisor-nav">
           <NavBar />
         </div>
-        <div className="form-container">
+        <div id="questionnaire-form">
+        </div>
+
+        <div className="form-container" >
+          <h4 className="title">Send a Questionnaire</h4>
           <QuestionnaireForm />
         </div>
-        <div className="list-container">
-          <QuestionnaireList list={MockList()} />
+        <div id="returned">
+          <div className="list-container">
+            <h4 className="title">Returned Questionnaires</h4>
+            <QuestionnaireList list={MockList()} />
+          </div>
         </div>
         <div className="footer">
 
