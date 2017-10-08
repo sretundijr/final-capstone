@@ -13,6 +13,7 @@ export const flexContainer = `
   }
   .footer
   {
-    height: 200px;
+    background-color: rgb(181, 186, 189);
+    height: 300px;
   }
   `;

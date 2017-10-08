@@ -1,9 +1,11 @@
 import React, { PropTypes } from 'react';
+import Link from 'next/link';
 
 import MultipleChoice from './multiple-choice';
 import TextAnswer from './text-answer';
 
 import { flexContainer } from '../../styles/questionnaire/shared-styles';
+import { questionPage } from '../../styles/questionnaire/troubleshooting-questionnaire';
 
 const determineAnswerType = (checked, questionObject, callback) => {
   // console.log(questionObject);
@@ -29,12 +31,28 @@ const determineAnswerType = (checked, questionObject, callback) => {
   );
 };
 
+const iterateIndex = index => index + 1;
+
+const renderNextButton = (index, list) => {
+  if ((index + 1) === list.length) {
+    return '';
+  }
+  return (
+    <div>
+      <Link href={`#question-${iterateIndex(index)}`}>
+        <button className="next-btn">Next</button>
+      </Link>
+      <style jsx>{questionPage}</style>
+    </div>
+  );
+};
+
 export default function question(props) {
   // console.log(props);
-  const questionElement = props.questions.map((item) => {
+  const questionElement = props.questions.map((item, index) => {
     return (
       <div key={item.id} className="flex-container">
-        <div className="content-container">
+        <div id={`question-${index}`} className="content-container component-container">
           <div>
             <h4>
               {item.question}
@@ -43,9 +61,11 @@ export default function question(props) {
           <div>
             {determineAnswerType(props.checked, item, props.onChange)}
           </div>
+          {renderNextButton(index, props.questions)}
         </div>
+        <style jsx>{questionPage}</style>
         <style jsx>{flexContainer}</style>
-      </div>
+      </div >
     );
   });
   return (

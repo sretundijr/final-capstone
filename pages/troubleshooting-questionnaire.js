@@ -12,6 +12,7 @@ import MockQuestionnaire from '../src/mock-questionnaire';
 
 // styles
 import { flexContainer } from '../src/styles/questionnaire/shared-styles';
+import { questionPage } from '../src/styles/questionnaire/troubleshooting-questionnaire';
 
 export class TroubleShootingQuestionnaire extends React.Component {
   constructor(props) {
@@ -61,21 +62,30 @@ export class TroubleShootingQuestionnaire extends React.Component {
           <title>Troubleshooting Questionnaire</title>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         </Head>
-        <WelcomeHeader />
-        <IssueCategory
-          categories={MockQuestionnaire()}
-          onChange={e => this.setCategory(e.target.value)}
-        />
-        <Questions
-          questions={this.state.questions}
-          onChange={this.setUserAnswer}
-          checked={this.state.userInput}
-        />
-        {this.renderSubmit()}
-        <div>
-          <footer className="footer" />
-          <style jsx>{flexContainer}</style>
+        <div className="background">
+          <div className="welcome-container">
+            <WelcomeHeader />
+            <IssueCategory
+              categories={MockQuestionnaire()}
+              onChange={e => this.setCategory(e.target.value)}
+            />
+          </div>
+          <div>
+            <Questions
+              questions={this.state.questions}
+              onChange={this.setUserAnswer}
+              checked={this.state.userInput}
+            />
+          </div>
+          <div>
+            {this.renderSubmit()}
+          </div>
+          <div>
+            <footer className="footer" />
+          </div>
         </div>
+        <style jsx>{flexContainer}</style>
+        <style jsx>{questionPage}</style>
       </div>
     );
   }
