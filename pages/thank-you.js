@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 
-import { flexContainer, contentContainer } from '../src/styles/shared-styles';
+import { flexContainer, contentContainer } from '../src/styles/questionnaire/shared-styles';
 
 export default function ThankYou() {
   return (
