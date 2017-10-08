@@ -1,36 +1,39 @@
 import React, { PropTypes } from 'react';
 
-import { customerTable, title } from '../../styles/questionnaire-list-style';
+import { customerContainer } from '../../styles/questionnaire-list-style';
 
 export default function ReturnedQuestionnaire(props) {
   const list = props.list.map((item) => {
     return (
-      <tr key={item.customerName}>
-        <td className="">{item.customerName}</td>
-        <td className="">{item.customerEmail}</td>
-        <td className="">{item.appointmentDate}</td>
-        <td><button>View Questionnaire</button></td>
-        <td><button>Archive</button></td>
-      </tr>
+      <ul className="customer-row" key={item.customerName}>
+        <li className="customer-item">{item.customerName}</li>
+        <li className="customer-item">{item.customerEmail}</li>
+        <li className="customer-item">{item.appointmentDate}</li>
+        <li className="customer-item"><button>View Questionnaire</button></li>
+        <li className="customer-item"><button>Archive</button></li>
+        <style jsx>{customerContainer}</style>
+      </ul>
     );
   });
   return (
-    <div>
-      <h2 className="title">Returned Questionnaires</h2>
-      <table className="customer-table">
-        <thead>
-          <tr>
-            <th className="">Customer Name</th>
-            <th className="">Customer Email</th>
-            <th className="">Appointment Date</th>
-          </tr>
-        </thead>
-        <tbody>
-          {list}
-        </tbody>
-      </table>
-      <style jsx>{title}</style>
-      <style jsx>{customerTable}</style>
+    <div className="container">
+      <div className="title-container">
+        <h2 className="title">Returned Questionnaires</h2>
+      </div>
+      <div className="customer-container">
+        <ul className="header-row">
+          <li className="customer-item">Name</li>
+          <li className="customer-item">Email</li>
+          <li className="customer-item">Appointment Date</li>
+          <li className="customer-item">View</li>
+          <li className="customer-item">Archive</li>
+        </ul>
+        <hr className="header-row" />
+      </div>
+      <div className="customer-container">
+        {list}
+      </div>
+      <style jsx>{customerContainer}</style>
     </div >
   );
 }

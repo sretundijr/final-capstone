@@ -26,8 +26,11 @@ export default function AdvisorDashboard() {
         <div className="list-container">
           <QuestionnaireList list={MockList()} />
         </div>
-        <style jsx>{advisorDash}</style>
+        <div className="footer">
+
+        </div>
       </div>
+      <style jsx>{advisorDash}</style>
     </div>
   );
 }

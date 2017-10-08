@@ -1,7 +1,7 @@
 export const navBar = `
   .advisor-nav {
     height: 40px;
-    background-color: red;
+    background: #576E86;
   }
 
   .flex-container {

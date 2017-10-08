@@ -1,8 +1,15 @@
 
 export const advisorDash = `
 .page {
-  margin: 0;
-  padding: 0;
+  background-color: rgb(181, 186, 189);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.footer {
+  height: 200px;
 }
 
 .advisor-nav {
@@ -12,10 +19,10 @@ export const advisorDash = `
 }
 
  .form-container {
-   margin-top: 100px;
+   margin-top: 200px;
  }
 
  .list-container {
-   margin: 100px;
+   margin-top: 200px;
  }
 `;
