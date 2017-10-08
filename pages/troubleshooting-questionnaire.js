@@ -36,8 +36,17 @@ export class TroubleShootingQuestionnaire extends React.Component {
       renderSubmit: true,
     });
   }
-  renderStartButton(issue) {
-    if (issue) {
+  setUserAnswer(question, answer) {
+    const input = {};
+    input[question] = answer;
+    this.setState((state) => {
+      return {
+        userInput: Object.assign({}, state.userInput, input),
+      };
+    });
+  }
+  renderStartButton() {
+    if (this.state.selectedIssue) {
       return (
         <div className="flex-container">
           <Link href="#question-0">
@@ -49,15 +58,6 @@ export class TroubleShootingQuestionnaire extends React.Component {
       );
     }
     return '';
-  }
-  setUserAnswer(question, answer) {
-    const input = {};
-    input[question] = answer;
-    this.setState((state) => {
-      return {
-        userInput: Object.assign({}, state.userInput, input),
-      };
-    });
   }
   renderSubmit() {
     const questionsAnswered = Object.keys(this.state.userInput).length;
@@ -84,7 +84,7 @@ export class TroubleShootingQuestionnaire extends React.Component {
               categories={MockQuestionnaire()}
               onChange={e => this.setCategory(e.target.value)}
             />
-            {this.renderStartButton(this.state.selectedIssue)}
+            {this.renderStartButton()}
           </div>
           <div>
             <Questions

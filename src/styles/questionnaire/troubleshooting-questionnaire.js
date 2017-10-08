@@ -17,9 +17,9 @@ export const questionPage = `
       padding: 50px;
   }
   .start-btn{
-    font-size: 16px;
+    font-size: 20px;
     margin-top: 75px;
-    height: 25px;
+    height: 40px;
     width: 200px;
     border: none;
     background: #576E86;
@@ -27,7 +27,10 @@ export const questionPage = `
     border-radius: 5px;
   }
   .next-btn {
-    width: 100px;
+    font-size: 20px;    
+    margin: 20px;
+    width: 200px;
+    height: 40px;
     border: none;
     background: #576E86;
     color: #fff;
