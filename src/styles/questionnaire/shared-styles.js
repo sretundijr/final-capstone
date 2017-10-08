@@ -11,6 +11,9 @@ export const flexContainer = `
     max-width: 100%;
     width: 600px;
   }
+  .main-container {
+    background-color: rgb(181, 186, 189);    
+  }
   .footer
   {
     padding: 20px;
