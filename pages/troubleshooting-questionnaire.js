@@ -11,6 +11,9 @@ import Submit from '../src/components/questionaire/submit';
 // helpers
 import MockQuestionnaire from '../src/mock-questionnaire';
 
+// api
+import { getShopAndCustomerData } from '../src/api/questionnaire';
+
 // styles
 import { flexContainer } from '../src/styles/questionnaire/shared-styles';
 import { questionPage } from '../src/styles/questionnaire/troubleshooting-questionnaire';
@@ -24,8 +27,21 @@ export class TroubleShootingQuestionnaire extends React.Component {
       userInput: {},
       renderSubmit: false,
       questionsAnswered: 0,
+      shopName: '',
+      AdvisorName: '',
+      appointmentDate: '',
+      customerName: '',
     };
     this.setUserAnswer = this.setUserAnswer.bind(this);
+  }
+  async componentDidMount() {
+    const headerData = await getShopAndCustomerData();
+    this.setState({
+      shopName: headerData.shopName,
+      advisorName: headerData.advisorName,
+      appointmentDate: headerData.appointmentDate,
+      customerName: headerData.customerName,
+    });
   }
   setCategory(category) {
     const userSelectedQuestionType = MockQuestionnaire()
@@ -79,7 +95,12 @@ export class TroubleShootingQuestionnaire extends React.Component {
         </Head>
         <div className="background">
           <div className="welcome-container">
-            <WelcomeHeader />
+            <WelcomeHeader
+              shopName={this.state.shopName}
+              advisorName={this.state.advisorName}
+              customerName={this.state.customerName}
+              appointmentDate={this.state.appointmentDate}
+            />
             <IssueCategory
               categories={MockQuestionnaire()}
               onChange={e => this.setCategory(e.target.value)}
