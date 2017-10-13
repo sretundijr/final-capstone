@@ -1,9 +1,11 @@
 import React, { PropTypes } from 'react';
 import Link from 'next/link';
 
+// components
 import MultipleChoice from './multiple-choice';
 import TextAnswer from './text-answer';
 
+// styles
 import { flexContainer } from '../../styles/questionnaire/shared-styles';
 import { questionPage } from '../../styles/questionnaire/troubleshooting-questionnaire';
 

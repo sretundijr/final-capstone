@@ -1,5 +1,4 @@
 import React from 'react';
-import Head from 'next/head';
 
 import DateInput from './date-input';
 import EmailInput from './email-input';
