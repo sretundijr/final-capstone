@@ -49,8 +49,8 @@ const renderBackButton = (index) => {
   );
 };
 
-const renderNextButton = (index, list) => {
-  if ((index + 1) === list.length) {
+export const renderNextButton = (index, listLength) => {
+  if ((index + 1) === listLength) {
     return '';
   }
   return (
@@ -64,8 +64,8 @@ const renderNextButton = (index, list) => {
 };
 
 export default function question(props) {
-  // console.log(props);
-  const questionElement = props.questions.map((item, index) => {
+  console.log(props.checked);
+  const questionElement = props.questions.map((item, index, arr) => {
     return (
       <div key={item.id} className="flex-container">
         <div id={`question-${index}`} className="content-container component-container">
@@ -78,7 +78,7 @@ export default function question(props) {
             {determineAnswerType(props.checked, item, props.onChange)}
           </div>
           {renderBackButton(index)}
-          {renderNextButton(index, props.questions)}
+          {renderNextButton(index, arr.length)}
           {props.renderSubmit}
         </div>
         <style jsx>{questionPage}</style>
