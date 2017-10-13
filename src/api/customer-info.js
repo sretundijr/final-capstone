@@ -24,3 +24,11 @@ export function getCustomers() {
       .then(info => JSON.parse(info))
   );
 }
+
+export function getAdvisorInfo() {
+
+}
+
+export function saveAdvisorInfo(advisorObj) {
+  localStorage.setItem('advisor', JSON.stringify(advisorObj));
+}
