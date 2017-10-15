@@ -76,6 +76,7 @@ export default class QuestionnaireForm extends React.Component {
                 Shop Name
               </span>
               <TextInput
+                id="shop-name"
                 name="shop-name"
                 onChange={e => this.setShopName(e.target.value)}
                 value={this.state.shopName}

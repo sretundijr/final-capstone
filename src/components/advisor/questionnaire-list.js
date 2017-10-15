@@ -6,7 +6,7 @@ export default function ReturnedQuestionnaire(props) {
   const list = props.list.map((item) => {
     return (
       <ul className="customer-row" key={item.id}>
-        <li className="customer-item">{item.customerName}</li>
+        <li className="customer-item name">{item.customerName}</li>
         <li className="customer-item">{item.customerEmail}</li>
         <li className="customer-item">{item.appointmentDate}</li>
         <li className="customer-item"><button>View Questionnaire</button></li>

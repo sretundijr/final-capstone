@@ -1,4 +1,4 @@
-/* global describe it expect */
+/* global describe it expect jest */
 
 import React from 'react';
 import { shallow } from 'enzyme';
@@ -67,6 +67,13 @@ describe('testing the questionnaire form component', () => {
     it('should set appointment date', () => {
       wrapper.instance().setAppointmentDate('10-25-2017');
       expect(wrapper.state().appointmentDate).toEqual('10-25-2017');
+    });
+  });
+  describe('#text input onChange', () => {
+    it('should simulate onChange event', () => {
+      const onChange = () => {};
+      const shallowWrapper = shallow(<QuestionnaireForm onChange={onChange} />);
+      expect(shallowWrapper.find('#shop-name').prop('onChange')).toBeInstanceOf(Function);
     });
   });
 });
