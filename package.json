@@ -8,7 +8,12 @@
       "!**/.next/**",
       "!**/coverage/**",
       "!**/next.config.js",
-      "!**/src/mock-questionnaire.js"
+      "!**/src/mock-questionnaire.js",
+      "!**/src/mock-list.js",
+      "!**/src/advisor-store.js",
+      "!**/src/actions/**",
+      "!**/src/reducers/**",
+      "!**/stories/**"
     ]
   },
   "version": "1.0.0",
