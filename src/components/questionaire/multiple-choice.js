@@ -4,7 +4,7 @@ import { flexContainer } from '../../styles/questionnaire/shared-styles';
 import { radioInput, radioSpacing } from '../../styles/questionnaire/multiChoice-styles';
 
 export default function MultipleChoice(props) {
-  // console.log(props);
+  console.log(props.checked);
   const element = props.list.map((item) => {
     return (
       <div key={item}>

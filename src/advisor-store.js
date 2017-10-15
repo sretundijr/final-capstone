@@ -7,4 +7,4 @@ import advisorReducer from './reducers/advisor';
 
 export const initStore = initialState => createStore(advisorReducer, initialState);
 
-export default function nextConnect() { nextConnectRedux(initStore); }
+export const nextConnect = nextConnectRedux(initStore);

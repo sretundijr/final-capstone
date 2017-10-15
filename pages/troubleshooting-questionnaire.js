@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -5,14 +6,14 @@ import Link from 'next/link';
 // components
 import WelcomeHeader from '../src/components/questionaire/welcome-client';
 import IssueCategory from '../src/components/questionaire/issue-category';
-import Questions from '../src/components/questionaire/question';
+import SingleQuestion from '../src/components/questionaire/single-question';
 import Submit from '../src/components/questionaire/submit';
 
 // helpers
 import MockQuestionnaire from '../src/mock-questionnaire';
 
 // api
-import { getShopAndCustomerData } from '../src/api/questionnaire';
+// import { getShopAndCustomerData } from '../src/api/questionnaire';
 
 // styles
 import { flexContainer } from '../src/styles/questionnaire/shared-styles';
@@ -31,18 +32,21 @@ export class TroubleShootingQuestionnaire extends React.Component {
       AdvisorName: '',
       appointmentDate: '',
       customerName: '',
+      questionIndex: 0,
     };
     this.setUserAnswer = this.setUserAnswer.bind(this);
+    this.incrementQuestionIndex = this.incrementQuestionIndex.bind(this);
+    this.decrementQuestionIndex = this.decrementQuestionIndex.bind(this);    
   }
-  async componentDidMount() {
-    const headerData = await getShopAndCustomerData();
-    this.setState({
-      shopName: headerData.shopName,
-      advisorName: headerData.advisorName,
-      appointmentDate: headerData.appointmentDate,
-      customerName: headerData.customerName,
-    });
-  }
+  // async componentDidMount() {
+  //   const headerData = await getShopAndCustomerData();
+  //   this.setState({
+  //     shopName: headerData.shopName,
+  //     advisorName: headerData.advisorName,
+  //     appointmentDate: headerData.appointmentDate,
+  //     customerName: headerData.customerName,
+  //   });
+  // }
   setCategory(category) {
     const userSelectedQuestionType = MockQuestionnaire()
       .filter(questions => category === questions.issueType);
@@ -55,10 +59,19 @@ export class TroubleShootingQuestionnaire extends React.Component {
   setUserAnswer(question, answer) {
     const input = {};
     input[question] = answer;
-    this.setState((state) => {
-      return {
-        userInput: Object.assign({}, state.userInput, input),
-      };
+    this.setState(state => ({
+      userInput: Object.assign({}, state.userInput, input),
+    }));
+  }
+  incrementQuestionIndex() {
+    this.setState({
+      questionIndex: this.state.questionIndex + 1,
+    });
+  }
+  decrementQuestionIndex() {
+    console.log(this.state.questionIndex);
+    this.setState({
+      questionIndex: this.state.questionIndex - 1,
     });
   }
   renderStartButton() {
@@ -75,12 +88,53 @@ export class TroubleShootingQuestionnaire extends React.Component {
     }
     return '';
   }
+  renderNextButton() {
+    return (
+      <div>
+        <button
+          onClick={this.incrementQuestionIndex}
+          className="next-btn"
+        >Next
+        </button>
+        <style jsx>{questionPage}</style>
+      </div>
+    );
+  }
+  renderBackButton() {
+    if (this.state.questionIndex > 0) {
+      return (
+        <div>
+          <button
+            onClick={this.decrementQuestionIndex}
+            className="next-btn"
+          >Back
+          </button>
+          <style jsx>{questionPage}</style>
+        </div>
+      );
+    }
+  }
   renderSubmit() {
     const questionsAnswered = Object.keys(this.state.userInput).length;
     const allQuestions = this.state.questions.length;
     if (this.state.renderSubmit && questionsAnswered === allQuestions) {
       return (
         <Submit onClick={{}} />
+      );
+    }
+    return '';
+  }
+  renderQuestion() {
+    if (this.state.questions.length > 0) {
+      return (
+        <SingleQuestion
+          question={this.state.questions[this.state.questionIndex]}
+          onChange={this.setUserAnswer}
+          checked={this.state.userInput}
+          renderNextButton={this.renderNextButton()}
+          renderBackButton={this.renderBackButton()}
+          renderSubmit={this.renderSubmit()}
+        />
       );
     }
     return '';
@@ -105,15 +159,9 @@ export class TroubleShootingQuestionnaire extends React.Component {
               categories={MockQuestionnaire()}
               onChange={e => this.setCategory(e.target.value)}
             />
-            {this.renderStartButton()}
           </div>
           <div className="main-container">
-            <Questions
-              questions={this.state.questions}
-              onChange={this.setUserAnswer}
-              checked={this.state.userInput}
-              renderSubmit={this.renderSubmit()}
-            />
+            {this.renderQuestion()}
           </div>
         </div>
         <style jsx>{flexContainer}</style>
