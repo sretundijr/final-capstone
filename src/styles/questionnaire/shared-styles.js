@@ -21,4 +21,4 @@ export const flexContainer = `
     background-color: rgb(181, 186, 189);
     height: 100px;
   }
-  `;
+`;

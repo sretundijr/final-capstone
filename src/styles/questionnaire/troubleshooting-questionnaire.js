@@ -3,27 +3,24 @@ export const questionPage = `
   .background {
     background-color: rgb(181, 186, 189);
     color: #F5F5F5;
-    font-size: 20px;
+    font-size: 1.5vw;
     width: 100vw;   
     height: 100vh; 
   }
   .welcome-container {
-    height: 100vh;
+    height: 55vh;
     width: 100vw;
     background: #495C70;    
-    padding: 20px;
     text-align: center;    
   }
   .component-container {
-      height: 100vh;
+      height: 50vh;
       background: #495C70;
-      margin-top: 100px;
+      margin-top: 10px;
       margin-bottom: 300px;
-      padding: 50px;
   }
   .start-btn{
-    font-size: 20px;
-    margin-top: 75px;
+    margin-top: 10px;
     height: 40px;
     width: 200px;
     border: none;
@@ -32,7 +29,6 @@ export const questionPage = `
     border-radius: 5px;
   }
   .next-btn {
-    font-size: 20px;    
     margin: 20px;
     width: 200px;
     height: 40px;
@@ -44,11 +40,38 @@ export const questionPage = `
 
   @media only screen and (max-width: 900px) {
     .component-container {
-        width: 100vw;
-        background: #495C70;
-        margin-top: 10px;
-        margin-bottom: 50px;
-        padding: 50px;
+      width: 100vw;
+      background: #495C70;
+      margin-top: 10px;
+      margin-bottom: 50px;
+      padding: 50px;
+    }
+    .background {
+      font-size: 2.0vw;
+    }
+  }
+  @media only screen and (max-width: 1400px) {
+    .component-container {
+      width: 100vw;
+      background: #495C70;
+      margin-top: 10px;
+      margin-bottom: 50px;
+      padding: 50px;
+    }
+    .background {
+      font-size: 1.75vw;
+    }
+  }
+  @media only screen and (max-width: 450px) {
+    .component-container {
+      width: 100vw;
+      background: #495C70;
+      margin-top: 10px;
+      margin-bottom: 50px;
+      padding: 50px;
+    }
+    .background {
+      font-size: 4.0vw;
     }
   }
 `;
