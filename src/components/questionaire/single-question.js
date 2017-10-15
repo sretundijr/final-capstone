@@ -10,11 +10,11 @@ import TextAnswer from './text-answer';
 import { flexContainer } from '../../styles/questionnaire/shared-styles';
 import { questionPage } from '../../styles/questionnaire/troubleshooting-questionnaire';
 
-const determineAnswerType = (checked, questionObject, callback) => {
+export const determineAnswerType = (checked, questionObject, callback) => {
   // console.log(questionObject.multipleChoice);
   if (questionObject.multipleChoice) {
     return (
-      <div>
+      <div className="multi-choice-container">
         <MultipleChoice
           question={questionObject.question}
           onChange={callback}
@@ -25,7 +25,7 @@ const determineAnswerType = (checked, questionObject, callback) => {
     );
   }
   return (
-    <div>
+    <div className="single-choice-container">
       <TextAnswer
         onChange={callback}
         question={questionObject.question}
