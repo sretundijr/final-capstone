@@ -15,13 +15,13 @@ describe('testing the questionnaire list component', () => {
       const customerList = [
         {
           id: 1,
-          customerName: 'hi',
+          customerName: 'steve',
           customerEmail: 'hi@hello.com',
           appointmentDate: '11/11/2017',
         },
       ];
       const shallowRender = shallow(<QuestionnaireList list={customerList} />);
-      expect(shallowRender.find('.name').text()).toEqual('hi');
+      expect(shallowRender.html()).toContain('steve');
     });
   });
 });

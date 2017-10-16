@@ -4,6 +4,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import SingleQuestion, { determineAnswerType } from '../components/questionaire/single-question';
+import TextAnswer from '../components/questionaire/text-answer';
 import MultipleChoice from '../components/questionaire/multiple-choice';
 
 describe('testing single question component', () => {
@@ -31,7 +32,7 @@ describe('testing single question component', () => {
         <div>
           {determineAnswerType(userQuestionAndAnswer, questionObject, callback)}
         </div>);
-      expect(render.find('.single-choice-container').text()).toEqual('<TextAnswer />');
+      expect(render.find(TextAnswer).length).toEqual(1);
     });
     it('should render a multi answer text field', () => {
       questionObject.multipleChoice = true;
@@ -39,7 +40,7 @@ describe('testing single question component', () => {
         <div>
           {determineAnswerType(userQuestionAndAnswer, questionObject, callback)}
         </div>);
-      expect(render.find('.multi-choice-container').text()).toEqual('<MultipleChoice />');
+      expect(render.find(MultipleChoice).length).toEqual(1);
     });
   });
 });
