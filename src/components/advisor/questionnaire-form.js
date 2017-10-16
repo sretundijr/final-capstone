@@ -100,6 +100,7 @@ export default class QuestionnaireForm extends React.Component {
                 name="advisor-email"
                 onChange={e => this.setAdvisorEmail(e.target.value)}
                 value={this.state.advisorEmail}
+                autocomplete="on"
               />
             </label>
             <label htmlFor="customer-name">

@@ -4,7 +4,14 @@ export default function EmailInput(props) {
   return (
     <div>
       <div>
-        <input required value={props.value} onChange={props.onChange} type="email" id="email-address" />
+        <input
+          required
+          value={props.value}
+          onChange={props.onChange}
+          type="email"
+          id="email-address"
+          autoComplete={props.autoComplete}
+        />
       </div>
       <style jsx>{`
         input {
