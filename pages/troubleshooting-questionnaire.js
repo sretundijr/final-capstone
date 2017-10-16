@@ -36,7 +36,7 @@ export class TroubleShootingQuestionnaire extends React.Component {
     };
     this.setUserAnswer = this.setUserAnswer.bind(this);
     this.incrementQuestionIndex = this.incrementQuestionIndex.bind(this);
-    this.decrementQuestionIndex = this.decrementQuestionIndex.bind(this);    
+    this.decrementQuestionIndex = this.decrementQuestionIndex.bind(this);
   }
   // async componentDidMount() {
   //   const headerData = await getShopAndCustomerData();
@@ -62,6 +62,14 @@ export class TroubleShootingQuestionnaire extends React.Component {
     this.setState(state => ({
       userInput: Object.assign({}, state.userInput, input),
     }));
+  }
+  getUserAnswer() {
+    const answer = this.state.userInput[this.state.questions[this.state.questionIndex].question];
+    console.log(answer);
+    if (answer === undefined) {
+      return '';
+    }
+    return answer;
   }
   incrementQuestionIndex() {
     this.setState({
@@ -134,6 +142,7 @@ export class TroubleShootingQuestionnaire extends React.Component {
           renderNextButton={this.renderNextButton()}
           renderBackButton={this.renderBackButton()}
           renderSubmit={this.renderSubmit()}
+          value={this.getUserAnswer()}
         />
       );
     }

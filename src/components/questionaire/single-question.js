@@ -10,7 +10,7 @@ import TextAnswer from './text-answer';
 import { flexContainer } from '../../styles/questionnaire/shared-styles';
 import { questionPage } from '../../styles/questionnaire/troubleshooting-questionnaire';
 
-export const determineAnswerType = (checked, questionObject, callback) => {
+export const determineAnswerType = (checked, questionObject, callback, value) => {
   // console.log(questionObject.multipleChoice);
   if (questionObject.multipleChoice) {
     return (
@@ -29,6 +29,7 @@ export const determineAnswerType = (checked, questionObject, callback) => {
       <TextAnswer
         onChange={callback}
         question={questionObject.question}
+        value={value}
       />
     </div>
   );
@@ -45,7 +46,7 @@ export default function SingleQuestion(props) {
           </h4>
         </div>
         <div>
-          {determineAnswerType(props.checked, props.question, props.onChange)}
+          {determineAnswerType(props.checked, props.question, props.onChange, props.value)}
         </div>
         {props.renderBackButton}
         {props.renderNextButton}
