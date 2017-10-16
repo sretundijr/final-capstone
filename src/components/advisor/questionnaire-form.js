@@ -120,6 +120,7 @@ export default class QuestionnaireForm extends React.Component {
                 name="customer-email"
                 onChange={e => this.setCustomerEmail(e.target.value)}
                 value={this.state.customerEmail}
+                autocomplete="off"
               />
             </label>
             <label htmlFor="appointment-date">
