@@ -8,16 +8,16 @@ export const questionPage = `
     height: 100vh; 
   }
   .welcome-container {
-    height: 55vh;
+    height: 60vh;
     width: 100vw;
     background: #495C70;    
     text-align: center;    
   }
   .component-container {
-      height: 50vh;
+      height: 60vh;
       background: #495C70;
       margin-top: 10px;
-      margin-bottom: 300px;
+      margin-bottom: 150px;
   }
   .start-btn{
     margin-top: 10px;

@@ -12,7 +12,7 @@ export const flexContainer = `
     width: 600px;
   }
   .main-container {
-    background-color: rgb(181, 186, 189);    
+    background-color: rgb(181, 186, 189);   
   }
   .footer
   {

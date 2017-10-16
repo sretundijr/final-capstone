@@ -121,6 +121,7 @@ export class TroubleShootingQuestionnaire extends React.Component {
         </div>
       );
     }
+    return '';
   }
   renderSubmit() {
     const questionsAnswered = Object.keys(this.state.userInput).length;
