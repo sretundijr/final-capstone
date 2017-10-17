@@ -14,7 +14,7 @@ export const questionPage = `
     text-align: center;    
   }
   .component-container {
-      height: 60vh;
+      height: 65vh;
       background: #495C70;
       margin-top: 10px;
       margin-bottom: 150px;

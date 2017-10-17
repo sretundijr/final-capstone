@@ -41,8 +41,9 @@ export default function SingleQuestion(props) {
     <div key={0} className="flex-container">
       <div id={`question-${0}`} className="content-container component-container">
         <div>
+          <h5>{`Question Numer ${props.currentQuestion} of ${props.numberOfQuestions}`}</h5>
           <h4>
-            {props.question.question} 
+            {props.question.question}
           </h4>
         </div>
         <div>

@@ -54,6 +54,7 @@ export class TroubleShootingQuestionnaire extends React.Component {
       selectedIssue: category,
       questions: userSelectedQuestionType[0].questions,
       renderSubmit: true,
+      questionIndex: 0,
     });
   }
   setUserAnswer(question, answer) {
@@ -137,6 +138,8 @@ export class TroubleShootingQuestionnaire extends React.Component {
     if (this.state.questions.length > 0) {
       return (
         <SingleQuestion
+          currentQuestion={this.state.questionIndex + 1}
+          numberOfQuestions={this.state.questions.length}
           question={this.state.questions[this.state.questionIndex]}
           onChange={this.setUserAnswer}
           checked={this.state.userInput}
