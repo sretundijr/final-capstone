@@ -20,14 +20,34 @@ export default () => (
       <style jsx>
         {`
           .register-container {
-            padding-top: 5vh;
+            border-radius: 5px;
+            padding-top: 2vh;
             margin: 0 auto;
             width: 350px;
-            height: 40vh;
+            height: 75vh;
             display: flex;
             justify-content: center;
             background-color: #495C70;
             color: white;       
+          }
+          @media only screen and (max-width: 900px) {
+            .register-container {
+              width: 350px;
+              height: 50vh;
+            }
+          }
+          @media only screen and (max-width: 700px) {
+            .register-container {
+              width: 100vw;
+              height: 110vh;
+              padding-bottom: 6vh;
+            }
+          }
+          @media only screen and (max-width: 450px) {
+            .register-container {
+              width: 100%;
+              height: 75vh;            
+            }
           }
         `}
       </style>
@@ -37,11 +57,12 @@ export default () => (
       <style jsx>
         {`
           .login-container {
-            padding-top: 5vh;
+            border-radius: 5px;            
+            padding-top: 2vh;
             margin: 0 auto;
             margin-top: 20px;
             width: 350px;
-            height: 40vh;
+            height: 50vh;
             display: flex;
             justify-content: center;
             background-color: #495C70;
