@@ -3,7 +3,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Login from '../components/advisor/login';
+import Login from '../components/landing_page/login';
 
 describe('testing login component', () => {
   it('should render without crashing', () => {

@@ -3,7 +3,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Register from '../components/advisor/register';
+import Register from '../components/landing_page/register';
 
 describe('testing Register component', () => {
   it('should render without crashing', () => {
