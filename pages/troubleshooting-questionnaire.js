@@ -130,7 +130,6 @@ export class TroubleShootingQuestionnaire extends React.Component {
   renderSubmit() {
     const questionsAnswered = Object.keys(this.state.userInput).length;
     const allQuestions = this.state.questions.length;
-    console.log(questionsAnswered);
     if (this.state.renderSubmit && questionsAnswered === allQuestions) {
       return (
         <Submit onClick={{}} />
