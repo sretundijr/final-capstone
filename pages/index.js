@@ -4,6 +4,7 @@ import Head from 'next/head';
 
 import Register from '../src/components/advisor/register';
 import Login from '../src/components/advisor/login';
+import Slider from '../src/components/slider';
 
 export default () => (
   <div>
@@ -11,10 +12,11 @@ export default () => (
       <title>My page title</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
-    Welcome to next.js! Does it work with travis
-    <Link href="/home">
-      <a>link</a>
-    </Link>
+    <div>
+      <nav>
+        <Slider />
+      </nav>
+    </div>
     <div className="register-container">
       <Register />
       <style jsx>
@@ -23,6 +25,7 @@ export default () => (
             border-radius: 5px;
             padding-top: 2vh;
             margin: 0 auto;
+            margin-top: 100px;            
             width: 350px;
             height: 75vh;
             display: flex;
