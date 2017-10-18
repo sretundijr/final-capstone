@@ -37,19 +37,6 @@ export const questionPage = `
     color: #fff;
     border-radius: 5px;
   }
-
-  @media only screen and (max-width: 900px) {
-    .component-container {
-      width: 100vw;
-      background: #495C70;
-      margin-top: 10px;
-      margin-bottom: 50px;
-      padding: 50px;
-    }
-    .background {
-      font-size: 2.0vw;
-    }
-  }
   @media only screen and (max-width: 1400px) {
     .component-container {
       width: 100vw;
@@ -60,6 +47,18 @@ export const questionPage = `
     }
     .background {
       font-size: 1.75vw;
+    }
+  }
+  @media only screen and (max-width: 900px) {
+    .component-container {
+      width: 100vw;
+      background: #495C70;
+      margin-top: 10px;
+      margin-bottom: 50px;
+      padding: 50px;
+    }
+    .background {
+      font-size: 2.0vw;
     }
   }
   @media only screen and (max-width: 450px) {
