@@ -34,10 +34,10 @@ export default class Slider extends React.Component {
         </div>
         <div className={this.state.navOutput}>
           <ul>
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">SIGN UP</a></li>
-            <li><a href="#">SIGN IN</a></li>
-            <li><a href="#">CONTACT</a></li>
+            <li><a onClick={this.props.onClick} href="#">HOME</a></li>
+            <li><a onClick={this.props.onClick} href="#">SIGN UP</a></li>
+            <li><a onClick={this.props.onClick} href="#">SIGN IN</a></li>
+            <li><a onClick={this.props.onClick} href="#">CONTACT</a></li>
           </ul>
         </div>
         <style jsx>
@@ -49,9 +49,10 @@ export default class Slider extends React.Component {
               outline: none;
               width: 10vw;
               height: 2vw;
+              font-size: 1.8vw;              
             }
             .top-bar {
-              height: 70px;
+              height: 8vh;
               width: 100vw;
               background-color: #495C70;
               position: fixed;
@@ -63,7 +64,7 @@ export default class Slider extends React.Component {
             }
             .top-bar .logo a {
                 color: #fff;
-                font-size: 25px;
+                font-size: 1.8vw;
                 text-transform: uppercase;
                 text-decoration: none;
                 letter-spacing: 5px;
@@ -80,14 +81,16 @@ export default class Slider extends React.Component {
             /*nav*/
             
             .nav {
-              display: none;            
+             display: none;
+              background-color: rgb(181, 186, 189);              
             }
             .nav-view {
               position: fixed;            
               right: 0;
-              top: 70px;
-              width: 250px;
-              height: calc(100vh - 70px);
+              top: 8vh;
+              width: 15vw;
+              height: 100vh;
+              z-index: 10;
               background-color: #495C70;
               transform: translateX(0);          
               transition: transform 10.0s ease-in-out; 

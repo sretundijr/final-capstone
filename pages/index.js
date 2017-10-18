@@ -2,21 +2,14 @@ import React from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 
-import Register from '../src/components/advisor/register';
-import Login from '../src/components/advisor/login';
-import Slider from '../src/components/slider';
+import Register from '../src/components/landing_page/register';
+import Login from '../src/components/landing_page/login';
+import Slider from '../src/components/landing_page/slider';
+import Home from '../src/components/landing_page/home';
+import ContactUs from '../src/components/landing_page/contact_us';
 
-export default () => (
-  <div>
-    <Head>
-      <title>My page title</title>
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-    </Head>
-    <div>
-      <nav>
-        <Slider />
-      </nav>
-    </div>
+const renderSignUp = () => {
+  return (
     <div className="register-container">
       <Register />
       <style jsx>
@@ -55,24 +48,109 @@ export default () => (
         `}
       </style>
     </div>
+  );
+};
+
+const renderLogin = () => {
+  return (
     <div className="login-container">
       <Login />
       <style jsx>
         {`
+        .login-container {
+          border-radius: 5px;
+          padding-top: 2vh;
+          margin: 0 auto;
+          margin-top: 100px;            
+          width: 350px;
+          height: 75vh;
+          display: flex;
+          justify-content: center;
+          background-color: #495C70;
+          color: white;       
+        }
+        @media only screen and (max-width: 900px) {
           .login-container {
-            border-radius: 5px;            
-            padding-top: 2vh;
-            margin: 0 auto;
-            margin-top: 20px;
             width: 350px;
             height: 50vh;
-            display: flex;
-            justify-content: center;
-            background-color: #495C70;
-            color: white;       
           }
-        `}
+        }
+        @media only screen and (max-width: 700px) {
+          .login-container {
+            width: 100vw;
+            height: 110vh;
+            padding-bottom: 6vh;
+          }
+        }
+        @media only screen and (max-width: 450px) {
+          .login-container {
+            width: 100%;
+            height: 75vh;            
+          }
+        }
+      `}
       </style>
     </div>
-  </div>
-);
+  );
+};
+
+
+export default class Index extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      userSelection: 'HOME',
+    };
+    this.handleUserSelection = this.handleUserSelection.bind(this);
+  }
+  handleUserSelection(selection) {
+    this.setState({
+      userSelection: selection,
+    });
+  }
+  renderUserSelection() {
+    if (this.state.userSelection === 'SIGN IN') {
+      return renderLogin();
+    } else if (this.state.userSelection === 'SIGN UP') {
+      return renderSignUp();
+    } else if (this.state.userSelection === 'HOME') {
+      return <Home />;
+    } else if (this.state.userSelection === 'CONTACT') {
+      return <ContactUs />;
+    }
+    return '';
+  }
+  render() {
+    return (
+      <div>
+        <Head>
+          <title>My page title</title>
+          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        </Head>
+        <div className="landing-page">
+          <div>
+            <nav>
+              <Slider onClick={e => this.handleUserSelection(e.target.text)} />
+            </nav>
+          </div>
+          <main>
+            {this.renderUserSelection()}
+          </main>
+          <style jsx>
+            {`
+            main {
+              background-color: rgb(181, 186, 189);
+              height: 100vh;
+              width: 100vw;
+              position: fixed;
+              top: 8vh;
+              left: 0;
+            }
+          `}
+          </style>
+        </div>
+      </div>
+    );
+  }
+}
+

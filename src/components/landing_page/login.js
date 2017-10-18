@@ -1,8 +1,8 @@
 
 import React from 'react';
 
-import EmailInput from './email-input';
-import PasswordInput from './password-input';
+import EmailInput from '../advisor/password-input';
+import PasswordInput from '../advisor/email-input';
 
 export default function Login() {
   return (

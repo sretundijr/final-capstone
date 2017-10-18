@@ -1,11 +1,9 @@
 
 import React from 'react';
 
-import TextInput from './text-input';
-import EmailInput from './email-input';
-import PasswordInput from './password-input';
-
-import AdvisorContainer from '../../styles/advisor/questionnaire-form';
+import TextInput from '../advisor/text-input';
+import EmailInput from '../advisor/email-input';
+import PasswordInput from '../advisor/password-input';
 
 export default function Register() {
   return (
@@ -14,7 +12,7 @@ export default function Register() {
         <h4>Sign Up</h4>
       </div>
       <div>
-        <form className="form-style-4">
+        <form>
           <label htmlFor="shop-name">
             <span>
               Shop Name
@@ -170,7 +168,6 @@ export default function Register() {
           }
         `}
       </style>
-      <style js>{AdvisorContainer}</style>
     </div>
   );
 }
