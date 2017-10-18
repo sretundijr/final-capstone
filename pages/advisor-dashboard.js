@@ -41,7 +41,7 @@ export default class AdvisorDashboard extends React.Component {
         </Head>
         <div className="page">
           <div className="advisor-nav">
-            <NavBar />
+            <NavBar firstButton={'Send Questionnaire'} secondButton={'Returned Questionnaires'} />
           </div>
           <div id="questionnaire-form" />
           <div className="form-container" >
