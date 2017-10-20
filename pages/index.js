@@ -6,7 +6,7 @@ import Register from '../src/components/landing_page/register';
 import Login from '../src/components/landing_page/login';
 import Slider from '../src/components/landing_page/slider';
 import Home from '../src/components/landing_page/home';
-import ContactUs from '../src/components/landing_page/contact_us';
+import Contact from '../src/components/landing_page/contact';
 
 const renderSignUp = () => {
   return (
@@ -116,7 +116,7 @@ export default class Index extends React.Component {
     } else if (this.state.userSelection === 'HOME') {
       return <Home />;
     } else if (this.state.userSelection === 'CONTACT') {
-      return <ContactUs />;
+      return <Contact />;
     }
     return '';
   }
