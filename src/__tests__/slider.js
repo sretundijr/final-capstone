@@ -28,4 +28,11 @@ describe('testing issue category component', () => {
       expect(wrapper.state().navOutput).toEqual('nav');
     });
   });
+  describe('click event on navigation container', () => {
+    it('change state similar to the test above', () => {
+      const wrapper = shallow(<Slider />);
+      wrapper.find('.nav').simulate('click');
+      expect(wrapper.state().navOutput).toEqual('nav-view');
+    });
+  });
 });
