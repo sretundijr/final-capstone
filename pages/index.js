@@ -1,5 +1,5 @@
+
 import React from 'react';
-import Link from 'next/link';
 import Head from 'next/head';
 
 import Register from '../src/components/landing_page/register';

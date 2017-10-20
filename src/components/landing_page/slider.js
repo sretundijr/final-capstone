@@ -6,12 +6,10 @@ export default class Slider extends React.Component {
     super(props);
     this.state = {
       navOutput: 'nav',
-      navShown: false,
     };
   }
   navEvent() {
-    this.state.navShown = !this.state.navShown;
-    if (this.state.navShown) {
+    if (this.state.navOutput === 'nav') {
       this.setState({
         navOutput: 'nav-view',
       });
@@ -32,7 +30,11 @@ export default class Slider extends React.Component {
             <button onClick={() => this.navEvent()} className="menu-btn">Menu</button>
           </div>
         </div>
-        <div className={this.state.navOutput}>
+        <div
+          role="presentation"
+          onClick={() => this.navEvent()}
+          className={this.state.navOutput}
+        >
           <ul>
             <li><a onClick={this.props.onClick} href="#">HOME</a></li>
             <li><a onClick={this.props.onClick} href="#">SIGN UP</a></li>
@@ -92,8 +94,6 @@ export default class Slider extends React.Component {
               height: 100vh;
               z-index: 10;
               background-color: #495C70;
-              transform: translateX(0);          
-              transition: transform 10.0s ease-in-out; 
             }
             .nav-view ul {
                 margin: 0;
@@ -120,8 +120,9 @@ export default class Slider extends React.Component {
             }
             @media only screen and (max-width: 450px) {
               .nav-view {
-                top: 70px;
-                width: 100vw;
+                position: absolute;
+                top: 0;
+                left: 0;
               }
             }
           `}
