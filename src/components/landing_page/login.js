@@ -52,16 +52,16 @@ export default function Login() {
             margin-bottom: 10px;
           }
           div {
-            font-size: 1.3vw;
+            font-size: 1.3vw;            
           }
           h4 {
             font-size: 1.5vw;
             margin-bottom: 20px;
             padding-bottom: 20px;
-            text-align: center;            
+            text-align: center;
           }
           .submit {
-            margin-top: 20px;
+            margin-top: 20px;            
             font-size: 20px;    
             width: 100%;
             height: 40px;
@@ -72,13 +72,45 @@ export default function Login() {
             outline: none;
           }
           @media only screen and (max-width: 900px) {
-          }
-          @media only screen and (max-width: 700px) {
             div {
-             font-size: 1vw;
+              font-size: 2.5vw;
+             }
+             h4 {
+               margin-bottom: 0;
+               font-size: 3.0vw;
+             }
+             .submit {
+               width: 100%;
+               height: 4vh;
+               border: none;
+               background: #576E86;
+               color: #fff;
+               border-radius: 5px;
+               outline: none;
+             }
+             .input-container {
+               margin-bottom: 2vh;
+             }
+          }
+          @media only screen and (max-width: 750px) {
+            div {
+             font-size: 2.5vw;
             }
             h4 {
-              font-size: 2vw;
+              margin-bottom: 0;
+              font-size: 3vw;
+            }
+            .submit {
+              width: 100%;
+              height: 8vh;
+              border: none;
+              background: #576E86;
+              color: #fff;
+              border-radius: 5px;
+              outline: none;
+            }
+            .input-container {
+              margin-bottom: 2vh;
             }
           }
           @media only screen and (max-width: 450px) {
@@ -87,6 +119,14 @@ export default function Login() {
             }
             h4 {
               font-size: 6vw;
+            }
+            .submit {
+              width: 100%;
+              border: none;
+              background: #576E86;
+              color: #fff;
+              border-radius: 5px;
+              outline: none;
             }
           }
         `}

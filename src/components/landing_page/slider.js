@@ -60,13 +60,14 @@ export default class Slider extends React.Component {
               position: fixed;
               top: 0;
               left: 0;
+              z-index: 5;
             }
             .top-bar .logo {
                 padding: 20px;
             }
             .top-bar .logo a {
                 color: #fff;
-                font-size: 1.8vw;
+                font-size: 2.0vw;
                 text-transform: uppercase;
                 text-decoration: none;
                 letter-spacing: 5px;
@@ -75,10 +76,6 @@ export default class Slider extends React.Component {
                 position: absolute;
                 right: 20px;
                 top: 20px;
-            }
-            .top-bar .menu a {
-                color: #fff;
-                font-size: 27px;
             }
             /*nav*/
             
@@ -111,18 +108,60 @@ export default class Slider extends React.Component {
                 border-bottom: solid 1px rgba(255, 255, 255, 0.4);
                 text-decoration: none;
             }
-            @media only screen and (max-width: 700px) {
+            @media only screen and (max-width: 900px) {
               .nav-view {
-                top: 70px;
-                width: 100vw;
-                text-align: center;
+                position: fixed;            
+                right: 0;
+                top: 8vh;
+                width: 15vw;
+                height: 100vh;
+                z-index: 10;
+                background-color: #495C70;
+              }
+              .top-bar {
+                height: 8vh;
+              }
+            }
+            @media only screen and (max-width: 750px) {
+              .nav-view {
+                top: 12vh;
+                width: 20vw;
+              }
+              .top-bar {
+                height: 12vh;                
+              }
+              .top-bar .logo a {
+                font-size: 2.5vw;              
+              }
+              .menu-btn {
+                font-size: 2.5vw;
               }
             }
             @media only screen and (max-width: 450px) {
               .nav-view {
+                text-align: center;
                 position: absolute;
-                top: 0;
-                left: 0;
+                width: 100vw;
+                top: 10vh;
+              }
+              .top-bar {
+                height: 10vh;
+              }
+              .top-bar .logo a {
+                color: #fff;
+                font-size: 4.0vw;              
+                text-transform: uppercase;
+                text-decoration: none;
+                letter-spacing: 5px;
+              }
+              .menu-btn {
+                background-color: #495C70;
+                color: white;
+                border: none;
+                outline: none;
+                width: 10vw;
+                height: 2vw;
+                font-size: 4.0vw;              
               }
             }
           `}

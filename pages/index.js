@@ -29,20 +29,18 @@ const renderSignUp = () => {
           @media only screen and (max-width: 900px) {
             .register-container {
               width: 350px;
-              height: 50vh;
+              height: 600px;
+              margin-top: 2vh;                         
             }
           }
-          @media only screen and (max-width: 700px) {
-            .register-container {
-              width: 100vw;
-              height: 110vh;
-              padding-bottom: 6vh;
-            }
+          @media only screen and (max-width: 750px) {
+            margin-top: 2vh;                           
           }
           @media only screen and (max-width: 450px) {
             .register-container {
-              width: 100%;
-              height: 75vh;            
+              width: 100vw;
+              height: 100vh; 
+              margin-top: 2vh;            
             }
           }
         `}
@@ -67,25 +65,25 @@ const renderLogin = () => {
           display: flex;
           justify-content: center;
           background-color: #495C70;
-          color: white;       
+          color: white;   
         }
         @media only screen and (max-width: 900px) {
           .login-container {
             width: 350px;
-            height: 50vh;
+            height: 600px;            
+            margin-top: 2vh;    
           }
         }
-        @media only screen and (max-width: 700px) {
+        @media only screen and (max-width: 750px) {
           .login-container {
-            width: 100vw;
-            height: 110vh;
-            padding-bottom: 6vh;
+            margin-top: 2vh;                                     
           }
         }
         @media only screen and (max-width: 450px) {
           .login-container {
-            width: 100%;
-            height: 75vh;            
+            width: 100vw;
+            height: 100vh; 
+            margin-top: 2vh;            
           }
         }
       `}
@@ -145,6 +143,22 @@ export default class Index extends React.Component {
               position: fixed;
               top: 8vh;
               left: 0;
+            }
+            @media only screen and (max-width: 900px) {
+             main {
+             }
+            }
+            @media only screen and (max-width: 750px) {
+              main {
+                top: 12vh;
+                height 600px;
+              }
+            } 
+            @media only screen and (max-width: 450px) {
+              main {
+                top: 8vh;
+                height: 100vh;
+              }
             }
           `}
           </style>

@@ -129,7 +129,7 @@ export default function Register() {
                margin-bottom: 2vh;
              }
           }
-          @media only screen and (max-width: 700px) {
+          @media only screen and (max-width: 750px) {
             div {
              font-size: 2.5vw;
             }
