@@ -152,15 +152,12 @@ export default class Slider extends React.Component {
                 font-size: 4.0vw;              
                 text-transform: uppercase;
                 text-decoration: none;
-                letter-spacing: 5px;
               }
               .menu-btn {
                 background-color: #495C70;
                 color: white;
                 border: none;
                 outline: none;
-                width: 10vw;
-                height: 2vw;
                 font-size: 4.0vw;              
               }
             }

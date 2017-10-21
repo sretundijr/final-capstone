@@ -76,7 +76,7 @@ const renderLogin = () => {
         }
         @media only screen and (max-width: 750px) {
           .login-container {
-            margin-top: 2vh;                                     
+            margin-top: 2vh;
           }
         }
         @media only screen and (max-width: 450px) {
@@ -150,12 +150,14 @@ export default class Index extends React.Component {
             }
             @media only screen and (max-width: 750px) {
               main {
+                position: absolute;
                 top: 12vh;
-                height 600px;
+                height 650px;
               }
             } 
             @media only screen and (max-width: 450px) {
               main {
+                position: fixed;
                 top: 8vh;
                 height: 100vh;
               }
