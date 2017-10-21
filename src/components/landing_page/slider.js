@@ -44,15 +44,6 @@ export default class Slider extends React.Component {
         </div>
         <style jsx>
           {`
-            .menu-btn {
-              background-color: #495C70;
-              color: white;
-              border: none;
-              outline: none;
-              width: 10vw;
-              height: 2vw;
-              font-size: 1.8vw;              
-            }
             .top-bar {
               height: 8vh;
               width: 100vw;
@@ -63,7 +54,9 @@ export default class Slider extends React.Component {
               z-index: 5;
             }
             .top-bar .logo {
-                padding: 20px;
+                position: absolute;
+                top: 15px;
+                left: 15px;
             }
             .top-bar .logo a {
                 color: #fff;
@@ -74,8 +67,18 @@ export default class Slider extends React.Component {
             }
             .top-bar .menu {
                 position: absolute;
-                right: 20px;
-                top: 20px;
+                right: 15px;
+                top: 15px;
+            }
+            .menu-btn {
+              border: none;
+              outline: none;
+              background-color: #495C70;              
+              color: #fff;
+              font-size: 2.0vw;
+              text-transform: uppercase;
+              text-decoration: none;
+              letter-spacing: 5px;            
             }
             /*nav*/
             
@@ -147,10 +150,10 @@ export default class Slider extends React.Component {
               .top-bar {
                 height: 10vh;
               }
-              .top-bar .menu {
+              .top-bar .logo {
                 position: absolute;
-                right: 10vw;
-                top: 10px;
+                top: 15px;
+                left: 15px;
               }
               .top-bar .logo a {
                 color: #fff;
@@ -158,11 +161,13 @@ export default class Slider extends React.Component {
                 text-transform: uppercase;
                 text-decoration: none;
               }
+              .top-bar .menu {
+                position: absolute;
+                right: 15px;
+                top: 10px;
+              }
               .menu-btn {
                 height: 5vh;
-                color: white;
-                border: none;
-                outline: none;
                 font-size: 4.0vw;              
               }
 
