@@ -24,7 +24,8 @@ export default function PasswordInput(props) {
         input:focus {
           border-bottom: 1px dashed #D9FFA9;
         }
-      `}</style>
+      `}
+      </style>
     </div>
   );
 }

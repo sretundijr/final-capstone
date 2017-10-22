@@ -7,8 +7,7 @@ export default function Home() {
       <div>
         <h4>Hello World</h4>
       </div>
-      <style jsx>
-        {`
+      <style jsx>{`
           h4 {
             text-align: center;
             padding-top: 200px;

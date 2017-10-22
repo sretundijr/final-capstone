@@ -48,8 +48,7 @@ export default function Login(props) {
           </div>
         </div>
       </form>
-      <style jsx>
-        {`
+      <style jsx>{`
           .login-container {
             border-radius: 5px;
             padding-top: 2vh;

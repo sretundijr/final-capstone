@@ -83,8 +83,7 @@ export default function Register(props) {
           </form>
         </div>
       </div>
-      <style jsx>
-        {`
+      <style jsx>{`
           .register-container {
             border-radius: 5px;
             padding-top: 2vh;

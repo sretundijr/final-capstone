@@ -7,8 +7,7 @@ export default function ContactUs() {
       <div>
         <h4>Contact Me</h4>
       </div>
-      <style jsx>
-        {`
+      <style jsx>{`
         h4 {
           text-align: center;
           padding-top: 200px;

@@ -20,8 +20,7 @@ export default function Slider(props) {
           <li><button onClick={props.onClick} href="#" value="contact">CONTACT</button></li>
         </ul>
       </div>
-      <style jsx>
-        {`
+      <style jsx>{`
             .top-bar {
               height: 8vh;
               width: 100vw;

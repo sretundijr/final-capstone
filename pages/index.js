@@ -92,8 +92,7 @@ export default class Index extends React.Component {
           <main>
             {this.renderUserSelection()}
           </main>
-          <style jsx>
-            {`
+          <style jsx>{`
             main {
               background-color: rgb(181, 186, 189);
               height: 100vh;
