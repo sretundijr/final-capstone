@@ -1,4 +1,4 @@
-/* global describe it expect */
+/* global describe it expect jest */
 
 import React from 'react';
 import { shallow } from 'enzyme';
@@ -9,30 +9,20 @@ describe('testing slider component', () => {
   it('should render without crashing', () => {
     shallow(<Slider />);
   });
-
-  describe('#navEvent', () => {
-    it('navOutput change, starts as "nav"', () => {
-      const render = shallow(<Slider />);
-      render.instance().navEvent();
-      expect(render.state().navOutput).toEqual('nav-view');
-    });
-  });
-  describe('#button click event', () => {
+  it('should render 4 menu buttons', () => {
     const wrapper = shallow(<Slider />);
-    it('should return nav-view', () => {
-      wrapper.find('.menu button').simulate('click');
-      expect(wrapper.state().navOutput).toEqual('nav-view');
-    });
-    it('should return nav', () => {
-      wrapper.find('.menu button').simulate('click');
-      expect(wrapper.state().navOutput).toEqual('nav');
-    });
+    expect(wrapper.find('ul li button').length).toEqual(4);
   });
-  describe('click event on navigation container', () => {
-    it('change state similar to the test above', () => {
-      const wrapper = shallow(<Slider />);
-      wrapper.find('.nav').simulate('click');
-      expect(wrapper.state().navOutput).toEqual('nav-view');
+  describe('#menu button click event', () => {
+    const mockFn = jest.fn();
+    const wrapper = shallow(<Slider onClick={mockFn} />);
+    it('should simulate click', () => {
+      wrapper.find('.menu button').simulate('click');
+      expect(mockFn).toHaveBeenCalled();
+    });
+    it('simulate click event in menu', () => {
+      wrapper.find('ul li button').first().simulate('click');
+      expect(mockFn).toHaveBeenCalled();
     });
   });
 });

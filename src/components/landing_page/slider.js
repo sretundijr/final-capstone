@@ -12,15 +12,12 @@ export default function Slider(props) {
           <button onClick={props.onClick} className="menu-btn">Menu</button>
         </div>
       </div>
-      <div
-        role="presentation"
-        className={props.navOutput}
-      >
+      <div id="nav-container" className={props.navOutput}>
         <ul>
-          <li><a onClick={props.onClick} href="#">HOME</a></li>
-          <li><a onClick={props.onClick} href="#">SIGN UP</a></li>
-          <li><a onClick={props.onClick} href="#">SIGN IN</a></li>
-          <li><a onClick={props.onClick} href="#">CONTACT</a></li>
+          <li><button onClick={props.onClick} href="#" value="home">HOME</button></li>
+          <li><button onClick={props.onClick} href="#" value="sign-up">SIGN UP</button></li>
+          <li><button onClick={props.onClick} href="#" value="sign-in">SIGN IN</button></li>
+          <li><button onClick={props.onClick} href="#" value="contact">CONTACT</button></li>
         </ul>
       </div>
       <style jsx>
@@ -87,13 +84,17 @@ export default function Slider(props) {
                 margin: 0;
                 padding: 0;
                 list-style-type: none;
+                border-bottom: 1px solid #fff;
             }
-            .nav-view a {
-                color: #fff;
-                display: block;
-                padding: 10px;
-                border-bottom: solid 1px rgba(255, 255, 255, 0.4);
-                text-decoration: none;
+            .nav-view button {
+              border: none;
+              outline: none;
+              background-color: #495C70;              
+              color: #fff;
+              font-size: 1.5vw;
+              text-transform: uppercase;
+              text-decoration: none;
+              letter-spacing: 5px;
             }
             @media only screen and (max-width: 900px) {
               .nav-view {
@@ -114,6 +115,10 @@ export default function Slider(props) {
                 top: 12vh;
                 width: 20vw;
               }
+              .nav-view button {
+                margin-top: 10px;
+                font-size: 2vw;                
+              }
               .top-bar {
                 height: 12vh;                
               }
@@ -130,6 +135,10 @@ export default function Slider(props) {
                 position: absolute;
                 width: 100vw;
                 top: 10vh;
+              }
+              .nav-view button {
+                margin-top: 20px;
+                font-size: 4vw;                
               }
               .top-bar {
                 height: 12vh;
@@ -153,7 +162,7 @@ export default function Slider(props) {
                 text-align: center;
               }
               .menu-btn {
-                font-size: 4.0vw;              
+                font-size: 4.0vw;           
               }
 
             }

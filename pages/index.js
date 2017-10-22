@@ -97,36 +97,40 @@ export default class Index extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      userSelection: 'HOME',
+      userSelection: 'home',
       navOutput: 'nav',
     };
     this.handleUserSelection = this.handleUserSelection.bind(this);
   }
   handleUserSelection(selection) {
+    let selectedComponent = selection;
+    if (selection === '') {
+      selectedComponent = this.state.userSelection;
+    }
     if (this.state.navOutput === 'nav') {
       this.setState({
         navOutput: 'nav-view',
-        userSelection: selection,
+        userSelection: selectedComponent,
       });
     } else {
       this.setState({
         navOutput: 'nav',
-        userSelection: selection,
+        userSelection: selectedComponent,
 
       });
     }
   }
   renderUserSelection() {
-    if (this.state.userSelection === 'SIGN IN') {
+    if (this.state.userSelection === 'sign-in') {
       return renderLogin();
-    } else if (this.state.userSelection === 'SIGN UP') {
+    } else if (this.state.userSelection === 'sign-up') {
       return renderSignUp();
-    } else if (this.state.userSelection === 'HOME') {
+    } else if (this.state.userSelection === 'home') {
       return <Home />;
-    } else if (this.state.userSelection === 'CONTACT') {
+    } else if (this.state.userSelection === 'contact') {
       return <Contact />;
     }
-    return '';
+    return <Home />;
   }
   render() {
     return (
@@ -138,7 +142,7 @@ export default class Index extends React.Component {
         <div className="landing-page">
           <div>
             <nav>
-              <Slider navOutput={this.state.navOutput} onClick={e => this.handleUserSelection(e.target.text)} />
+              <Slider navOutput={this.state.navOutput} onClick={e => this.handleUserSelection(e.target.value)} />
             </nav>
           </div>
           <main>
