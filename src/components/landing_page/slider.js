@@ -151,12 +151,13 @@ export default class Slider extends React.Component {
                 top: 10vh;
               }
               .top-bar {
-                height: 10vh;
+                height: 12vh;
               }
               .top-bar .logo {
-                position: absolute;
-                top: 15px;
-                left: 15px;
+                position: relative;
+                top: 1vh;
+                left: 0;
+                text-align: center;
               }
               .top-bar .logo button {
                 color: #fff;
@@ -165,9 +166,10 @@ export default class Slider extends React.Component {
                 text-decoration: none;
               }
               .top-bar .menu {
-                position: absolute;
-                right: 15px;
-                top: 15px;
+                position: relative;
+                top: 3vh;
+                right: 0;
+                text-align: center;
               }
               .menu-btn {
                 font-size: 4.0vw;              
