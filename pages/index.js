@@ -98,13 +98,23 @@ export default class Index extends React.Component {
     super(props);
     this.state = {
       userSelection: 'HOME',
+      navOutput: 'nav',
     };
     this.handleUserSelection = this.handleUserSelection.bind(this);
   }
   handleUserSelection(selection) {
-    this.setState({
-      userSelection: selection,
-    });
+    if (this.state.navOutput === 'nav') {
+      this.setState({
+        navOutput: 'nav-view',
+        userSelection: selection,
+      });
+    } else {
+      this.setState({
+        navOutput: 'nav',
+        userSelection: selection,
+
+      });
+    }
   }
   renderUserSelection() {
     if (this.state.userSelection === 'SIGN IN') {
@@ -128,7 +138,7 @@ export default class Index extends React.Component {
         <div className="landing-page">
           <div>
             <nav>
-              <Slider onClick={e => this.handleUserSelection(e.target.text)} />
+              <Slider navOutput={this.state.navOutput} onClick={e => this.handleUserSelection(e.target.text)} />
             </nav>
           </div>
           <main>

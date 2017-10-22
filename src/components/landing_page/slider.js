@@ -1,49 +1,30 @@
 
 import React from 'react';
 
-export default class Slider extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      navOutput: 'nav',
-    };
-  }
-  navEvent() {
-    if (this.state.navOutput === 'nav') {
-      this.setState({
-        navOutput: 'nav-view',
-      });
-    } else {
-      this.setState({
-        navOutput: 'nav',
-      });
-    }
-  }
-  render() {
-    return (
-      <div>
-        <div className="top-bar">
-          <div className="logo">
-            <button>Technician Assist</button>
-          </div>
-          <div className="menu">
-            <button onClick={() => this.navEvent()} className="menu-btn">Menu</button>
-          </div>
+export default function Slider(props) {
+  return (
+    <div>
+      <div className="top-bar">
+        <div className="logo">
+          <button>Technician Assist</button>
         </div>
-        <div
-          role="presentation"
-          onClick={() => this.navEvent()}
-          className={this.state.navOutput}
-        >
-          <ul>
-            <li><a onClick={this.props.onClick} href="#">HOME</a></li>
-            <li><a onClick={this.props.onClick} href="#">SIGN UP</a></li>
-            <li><a onClick={this.props.onClick} href="#">SIGN IN</a></li>
-            <li><a onClick={this.props.onClick} href="#">CONTACT</a></li>
-          </ul>
+        <div className="menu">
+          <button onClick={props.onClick} className="menu-btn">Menu</button>
         </div>
-        <style jsx>
-          {`
+      </div>
+      <div
+        role="presentation"
+        className={props.navOutput}
+      >
+        <ul>
+          <li><a onClick={props.onClick} href="#">HOME</a></li>
+          <li><a onClick={props.onClick} href="#">SIGN UP</a></li>
+          <li><a onClick={props.onClick} href="#">SIGN IN</a></li>
+          <li><a onClick={props.onClick} href="#">CONTACT</a></li>
+        </ul>
+      </div>
+      <style jsx>
+        {`
             .top-bar {
               height: 8vh;
               width: 100vw;
@@ -177,8 +158,7 @@ export default class Slider extends React.Component {
 
             }
           `}
-        </style>
-      </div>
-    );
-  }
+      </style>
+    </div>
+  );
 }
