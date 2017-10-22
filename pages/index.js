@@ -109,14 +109,14 @@ export default class Index extends React.Component {
               main {
                 position: absolute;
                 top: 12vh;
-                height 650px;
+                height: auto;
               }
             } 
             @media only screen and (max-width: 450px) {
               main {
-                position: fixed;
+                position: absolute;
                 top: 8vh;
-                height: 100vh;
+                height: auto;
               }
             }
           `}
