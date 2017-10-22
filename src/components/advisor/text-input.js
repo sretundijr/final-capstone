@@ -1,10 +1,11 @@
 import React from 'react';
 
 export default function TextInput(props) {
+  console.log(props);
   return (
     <div>
       <div>
-        <input required value={props.value} onChange={props.onChange} type="text" />
+        <input name={props.name} required value={props.value} onChange={props.onChange} type="text" />
       </div>
       <style jsx>{`
         input {

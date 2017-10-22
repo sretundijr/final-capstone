@@ -2,96 +2,11 @@
 import React from 'react';
 import Head from 'next/head';
 
-import Register from '../src/components/landing_page/register';
-import Login from '../src/components/landing_page/login';
 import Slider from '../src/components/landing_page/slider';
 import Home from '../src/components/landing_page/home';
 import Contact from '../src/components/landing_page/contact';
-
-const renderSignUp = () => {
-  return (
-    <div className="register-container">
-      <Register />
-      <style jsx>
-        {`
-          .register-container {
-            border-radius: 5px;
-            padding-top: 2vh;
-            margin: 0 auto;
-            margin-top: 100px;            
-            width: 350px;
-            height: 75vh;
-            display: flex;
-            justify-content: center;
-            background-color: #495C70;
-            color: white;       
-          }
-          @media only screen and (max-width: 900px) {
-            .register-container {
-              width: 350px;
-              height: 600px;
-              margin-top: 2vh;                         
-            }
-          }
-          @media only screen and (max-width: 750px) {
-            margin-top: 2vh;                           
-          }
-          @media only screen and (max-width: 450px) {
-            .register-container {
-              width: 100vw;
-              height: 100vh; 
-              margin-top: 2vh;            
-            }
-          }
-        `}
-      </style>
-    </div>
-  );
-};
-
-const renderLogin = () => {
-  return (
-    <div className="login-container">
-      <Login />
-      <style jsx>
-        {`
-        .login-container {
-          border-radius: 5px;
-          padding-top: 2vh;
-          margin: 0 auto;
-          margin-top: 100px;            
-          width: 350px;
-          height: 75vh;
-          display: flex;
-          justify-content: center;
-          background-color: #495C70;
-          color: white;   
-        }
-        @media only screen and (max-width: 900px) {
-          .login-container {
-            width: 350px;
-            height: 600px;            
-            margin-top: 2vh;    
-          }
-        }
-        @media only screen and (max-width: 750px) {
-          .login-container {
-            margin-top: 2vh;
-          }
-        }
-        @media only screen and (max-width: 450px) {
-          .login-container {
-            width: 100vw;
-            height: 100vh; 
-            margin-top: 2vh;            
-          }
-        }
-      `}
-      </style>
-    </div>
-  );
-};
-
+import Login from '../src/components/landing_page/login';
+import Register from '../src/components/landing_page/register';
 
 export default class Index extends React.Component {
   constructor(props) {
@@ -99,6 +14,11 @@ export default class Index extends React.Component {
     this.state = {
       userSelection: 'home',
       navOutput: 'nav',
+      shopName: '',
+      advisorName: '',
+      advisorEmail: '',
+      advisorPassword: '',
+      passwordConfirmation: '',
     };
     this.handleUserSelection = this.handleUserSelection.bind(this);
   }
@@ -120,11 +40,35 @@ export default class Index extends React.Component {
       });
     }
   }
+  handleLogin(e) {
+    console.log(e.target.value);
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  }
+  handleRegistrationSubmission(e) {
+    console.log(e.target.value);
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  }
   renderUserSelection() {
     if (this.state.userSelection === 'sign-in') {
-      return renderLogin();
+      return (
+        <Login
+          email={this.state.advisorEmail}
+          onChange={e => this.handleLogin(e)}
+        />
+      );
     } else if (this.state.userSelection === 'sign-up') {
-      return renderSignUp();
+      return (
+        <Register
+          advisorName={this.state.advisorName}
+          email={this.state.advisorEmail}
+          shopName={this.state.shopName}
+          onChange={e => this.handleRegistrationSubmission(e)}
+        />
+      );
     } else if (this.state.userSelection === 'home') {
       return <Home />;
     } else if (this.state.userSelection === 'contact') {

@@ -1,53 +1,67 @@
 
 import React from 'react';
 
-import EmailInput from '../advisor/password-input';
-import PasswordInput from '../advisor/email-input';
+import EmailInput from '../advisor/email-input';
+import PasswordInput from '../advisor/password-input';
 
-export default function Login() {
+export default function Login(props) {
+  console.log(props);
   return (
-    <div>
-      <div>
-        <h4>Sign In</h4>
-      </div>
-      <div>
-        <label htmlFor="advisor-email">
-          <span>
-            Your Email
-          </span>
-          <div className="input-container">
-            <EmailInput
-              name="advisor-email"
-              onChange={''}
-              value={''}
-            />
-          </div>
-        </label>
-      </div>
-      <div>
-        <label htmlFor="password">
-          <span>
-            Password
-          </span>
-          <div className="input-container">
-            <PasswordInput
-              name="password"
-              onChange={''}
-              value={''}
-            />
-          </div>
-        </label>
+    <div className="login-container">
+      <form onSubmit={props.onSubmit}>
         <div>
-          <input
-            type="submit"
-            onChange={''}
-            value="Submit"
-            className="submit"
-          />
+          <h4>Sign In</h4>
         </div>
-      </div>
+        <div>
+          <label htmlFor="advisor-email">
+            <span>
+              Your Email
+            </span>
+            <div className="input-container">
+              <EmailInput
+                name="advisorEmail"
+                onChange={props.onChange}
+                value={props.email}
+              />
+            </div>
+          </label>
+        </div>
+        <div>
+          <label htmlFor="password">
+            <span>
+              Password
+            </span>
+            <div className="input-container">
+              <PasswordInput
+                name="advisorPassword"
+                onChange={props.onChange}
+              />
+            </div>
+          </label>
+          <div>
+            <input
+              type="submit"
+              onChange={''}
+              value="Submit"
+              className="submit"
+            />
+          </div>
+        </div>
+      </form>
       <style jsx>
         {`
+          .login-container {
+            border-radius: 5px;
+            padding-top: 2vh;
+            margin: 0 auto;
+            margin-top: 100px;            
+            width: 350px;
+            height: 75vh;
+            display: flex;
+            justify-content: center;
+            background-color: #495C70;
+            color: white;   
+          }
           .input-container {
             margin-bottom: 10px;
           }
@@ -72,6 +86,11 @@ export default function Login() {
             outline: none;
           }
           @media only screen and (max-width: 900px) {
+            .login-container {
+              width: 350px;
+              height: 600px;            
+              margin-top: 2vh;    
+            }
             div {
               font-size: 2.5vw;
              }
@@ -93,6 +112,9 @@ export default function Login() {
              }
           }
           @media only screen and (max-width: 750px) {
+            .login-container {
+              margin-top: 2vh;
+            }
             div {
              font-size: 2.5vw;
             }
@@ -114,6 +136,11 @@ export default function Login() {
             }
           }
           @media only screen and (max-width: 450px) {
+            .login-container {
+              width: 100vw;
+              height: 100vh; 
+              margin-top: 2vh;            
+            }
             div {
              font-size: 5.2vw;
             }

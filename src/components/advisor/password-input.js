@@ -1,11 +1,12 @@
 
 import React from 'react';
 
-export default function PasswordInput() {
+export default function PasswordInput(props) {
+  console.log(props);
   return (
     <div>
       <div>
-        <input type="password" />
+        <input name={props.name} type="password" onChange={props.onChange} />
       </div>
       <style jsx>{`
         input {

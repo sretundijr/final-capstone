@@ -5,86 +5,98 @@ import TextInput from '../advisor/text-input';
 import EmailInput from '../advisor/email-input';
 import PasswordInput from '../advisor/password-input';
 
-export default function Register() {
+export default function Register(props) {
   return (
-    <div className="registration-form">
-      <div>
-        <h4>Sign Up</h4>
-      </div>
-      <div>
-        <form>
-          <label htmlFor="shop-name">
-            <span>
-              Shop Name
-            </span>
+    <div className="register-container">
+      <div className="registration-form">
+        <div>
+          <h4>Sign Up</h4>
+        </div>
+        <div>
+          <form>
+            <label htmlFor="shop-name">
+              <span>
+                Shop Name
+              </span>
+              <div className="input-container">
+                <TextInput
+                  name="shopName"
+                  onChange={props.onChange}
+                  value={props.shopName}
+                />
+              </div>
+            </label>
+            <label htmlFor="advisor-name">
+              <span>
+                Your Name
+              </span>
+              <div className="input-container">
+                <TextInput
+                  name="advisorName"
+                  onChange={props.onChange}
+                  value={props.advisorName}
+                />
+              </div>
+            </label>
+            <label htmlFor="advisor-email">
+              <span>
+                Your Email
+              </span>
+              <div className="input-container">
+                <EmailInput
+                  name="advisorEmail"
+                  onChange={props.onChange}
+                  value={props.email}
+                />
+              </div>
+            </label>
+            <label htmlFor="password">
+              <span>
+                Password
+              </span>
+              <div className="input-container">
+                <PasswordInput
+                  name="advisorPassword"
+                  onChange={props.onChange}
+                />
+              </div>
+            </label>
+            <label htmlFor="confirm-password">
+              <span>
+                Confirm Password
+              </span>
+              <div className="input-container">
+                <PasswordInput
+                  name="confirmPassword"
+                  onChange={props.onChange}
+                />
+              </div>
+            </label>
             <div className="input-container">
-              <TextInput
-                name="shop-name"
+              <input
+                type="submit"
                 onChange={''}
-                value={''}
+                value="Submit"
+                className="submit"
               />
             </div>
-          </label>
-          <label htmlFor="advisor-name">
-            <span>
-              Your Name
-            </span>
-            <div className="input-container">
-              <TextInput
-                name="advisor-name"
-                onChange={''}
-                value={''}
-              />
-            </div>
-          </label>
-          <label htmlFor="advisor-email">
-            <span>
-              Your Email
-            </span>
-            <div className="input-container">
-              <EmailInput
-                name="advisor-email"
-                onChange={''}
-                value={''}
-              />
-            </div>
-          </label>
-          <label htmlFor="password">
-            <span>
-              Password
-            </span>
-            <div className="input-container">
-              <PasswordInput
-                name="password"
-                onChange={''}
-                value={''}
-              />
-            </div>
-          </label>
-          <label htmlFor="confirm-password">
-            <span>
-              Confirm Password
-            </span>
-            <div className="input-container">
-              <PasswordInput
-                name="confirm-password"
-                onChange={''}
-                value={''}
-              />
-            </div>
-          </label>
-          <div className="input-container">
-            <input
-              type="submit"
-              onChange={''}
-              value="Submit"
-              className="submit"
-            />
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
       <style jsx>
         {`
+          .register-container {
+            border-radius: 5px;
+            padding-top: 2vh;
+            margin: 0 auto;
+            margin-top: 100px;            
+            width: 350px;
+            height: 75vh;
+            display: flex;
+            justify-content: center;
+            background-color: #495C70;
+            color: white;       
+          }
           .input-container {
             margin-bottom: 10px;
           }
@@ -109,6 +121,11 @@ export default function Register() {
             outline: none;
           }
           @media only screen and (max-width: 900px) {
+            .register-container {
+              width: 350px;
+              height: 600px;
+              margin-top: 2vh;                         
+            }
             div {
               font-size: 2.5vw;
              }
@@ -130,6 +147,9 @@ export default function Register() {
              }
           }
           @media only screen and (max-width: 750px) {
+            .register-container {
+              margin-top: 2vh;                           
+            }
             div {
              font-size: 2.5vw;
             }
@@ -151,6 +171,11 @@ export default function Register() {
             }
           }
           @media only screen and (max-width: 450px) {
+            .register-container {
+              width: 100vw;
+              height: 100vh; 
+              margin-top: 2vh;            
+            }
             div {
              font-size: 5.2vw;
             }

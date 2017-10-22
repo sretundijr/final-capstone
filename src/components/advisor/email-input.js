@@ -1,11 +1,13 @@
 import React from 'react';
 
 export default function EmailInput(props) {
+  console.log(props);
   return (
     <div>
       <div>
         <input
           required
+          name={props.name}
           value={props.value}
           onChange={props.onChange}
           type="email"
