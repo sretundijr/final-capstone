@@ -5,7 +5,7 @@ import { shallow } from 'enzyme';
 
 import Slider from '../components/landing_page/slider';
 
-describe('testing issue category component', () => {
+describe('testing slider component', () => {
   it('should render without crashing', () => {
     shallow(<Slider />);
   });
@@ -20,11 +20,11 @@ describe('testing issue category component', () => {
   describe('#button click event', () => {
     const wrapper = shallow(<Slider />);
     it('should return nav-view', () => {
-      wrapper.find('button').simulate('click');
+      wrapper.find('.menu button').simulate('click');
       expect(wrapper.state().navOutput).toEqual('nav-view');
     });
     it('should return nav', () => {
-      wrapper.find('button').simulate('click');
+      wrapper.find('.menu button').simulate('click');
       expect(wrapper.state().navOutput).toEqual('nav');
     });
   });
