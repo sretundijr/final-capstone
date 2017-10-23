@@ -1,5 +1,6 @@
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default function PasswordInput(props) {
   console.log(props);
@@ -29,3 +30,13 @@ export default function PasswordInput(props) {
     </div>
   );
 }
+
+PasswordInput.defaultProps = {
+  name: '',
+  onChange: () => { },
+};
+
+PasswordInput.propTypes = {
+  name: PropTypes.string,
+  onChange: PropTypes.func,
+};

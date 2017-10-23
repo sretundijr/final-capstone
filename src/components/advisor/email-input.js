@@ -1,4 +1,6 @@
+
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default function EmailInput(props) {
   console.log(props);
@@ -35,3 +37,17 @@ export default function EmailInput(props) {
     </div>
   );
 }
+
+EmailInput.defaultProps = {
+  name: '',
+  value: '',
+  autoComplete: false,
+  onChange: () => { },
+};
+
+EmailInput.propTypes = {
+  name: PropTypes.string,
+  autoComplete: PropTypes.bool,
+  value: PropTypes.string,
+  onChange: PropTypes.func,
+};

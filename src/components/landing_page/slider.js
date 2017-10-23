@@ -1,5 +1,6 @@
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default function Slider(props) {
   return (
@@ -170,3 +171,13 @@ export default function Slider(props) {
     </div>
   );
 }
+
+Slider.defaultProps = {
+  navOutput: '',
+  onClick: () => { },
+};
+
+Slider.propTypes = {
+  navOutput: PropTypes.string,
+  onClick: PropTypes.func,
+};

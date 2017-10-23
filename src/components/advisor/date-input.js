@@ -1,4 +1,6 @@
+
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default function DateInput(props) {
   return (
@@ -31,3 +33,14 @@ export default function DateInput(props) {
     </div>
   );
 }
+
+DateInput.defaultProps = {
+  value: '',
+  onChange: () => { },
+};
+
+DateInput.propTypes = {
+  value: PropTypes.string,
+  onChange: PropTypes.func,
+};
+

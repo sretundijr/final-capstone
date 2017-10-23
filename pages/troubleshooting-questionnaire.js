@@ -133,7 +133,7 @@ export class TroubleShootingQuestionnaire extends React.Component {
     const allQuestions = this.state.questions.length;
     if (this.state.renderSubmit && questionsAnswered === allQuestions) {
       return (
-        <Submit onClick={{}} />
+        <Submit onClick={() => { }} />
       );
     }
     return '';
@@ -187,10 +187,6 @@ export class TroubleShootingQuestionnaire extends React.Component {
     );
   }
 }
-
-TroubleShootingQuestionnaire.defaultProps = {
-  questions: [],
-};
 
 export default TroubleShootingQuestionnaire;
 

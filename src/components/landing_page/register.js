@@ -1,5 +1,6 @@
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import TextInput from '../advisor/text-input';
 import EmailInput from '../advisor/email-input';
@@ -88,7 +89,7 @@ export default function Register(props) {
             border-radius: 5px;
             padding-top: 2vh;
             margin: 0 auto;
-            margin-top: 100px;            
+            margin-top: 50px;            
             width: 350px;
             height: 75vh;
             display: flex;
@@ -195,3 +196,17 @@ export default function Register(props) {
     </div>
   );
 }
+
+Register.defaultProps = {
+  shopName: '',
+  advisorName: '',
+  email: '',
+  onChange: () => { },
+};
+
+Register.propTypes = {
+  shopName: PropTypes.string,
+  advisorName: PropTypes.string,
+  email: PropTypes.string,
+  onChange: PropTypes.func,
+};

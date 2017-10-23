@@ -1,5 +1,6 @@
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import EmailInput from '../advisor/email-input';
 import PasswordInput from '../advisor/password-input';
@@ -53,9 +54,10 @@ export default function Login(props) {
             border-radius: 5px;
             padding-top: 2vh;
             margin: 0 auto;
-            margin-top: 100px;            
+            margin-top: 50px;
+            padding-bottom: 50px;            
             width: 350px;
-            height: 75vh;
+            height: 50vh;
             display: flex;
             justify-content: center;
             background-color: #495C70;
@@ -87,8 +89,8 @@ export default function Login(props) {
           @media only screen and (max-width: 900px) {
             .login-container {
               width: 350px;
-              height: 600px;            
-              margin-top: 2vh;    
+              height: 50vh;      
+              margin-top: 5vh;    
             }
             div {
               font-size: 2.5vw;
@@ -113,6 +115,7 @@ export default function Login(props) {
           @media only screen and (max-width: 750px) {
             .login-container {
               margin-top: 2vh;
+              height: 100vh;            
             }
             div {
              font-size: 2.5vw;
@@ -137,7 +140,7 @@ export default function Login(props) {
           @media only screen and (max-width: 450px) {
             .login-container {
               width: 100vw;
-              height: 100vh; 
+              height: 100vh;           
               margin-top: 2vh;            
             }
             div {
@@ -160,3 +163,16 @@ export default function Login(props) {
     </div>
   );
 }
+
+Login.defaultProps = {
+  email: '',
+  value: '',
+  onChange: () => { },
+  onSubmit: () => { },
+};
+
+Login.propTypes = {
+  email: PropTypes.string,
+  onChange: PropTypes.func,
+  onSubmit: PropTypes.func,
+};

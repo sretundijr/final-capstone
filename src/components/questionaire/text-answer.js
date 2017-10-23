@@ -1,15 +1,18 @@
-import React, { PropTypes } from 'react';
+
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import { flexContainer } from '../../styles/questionnaire/shared-styles';
 import { textInput } from '../../styles/questionnaire/text-answer-styles';
 
 export default function TextAnswer(props) {
-  console.log(props.value)
+  console.log(props.value);
   return (
     <div className="flex-container">
       <div className="content-container">
         <div>
-          <textarea onChange={e => props.onChange(props.question, e.target.value)}
+          <textarea
+            onChange={e => props.onChange(props.question, e.target.value)}
             className="text-input"
             id="single-answer"
             type="text"
@@ -24,11 +27,13 @@ export default function TextAnswer(props) {
 }
 
 TextAnswer.defaultProps = {
-  question: '',
+  value: '',
   onChange: () => { },
+  question: '',
 };
 
 TextAnswer.propTypes = {
-  onChange: PropTypes.func,
   question: PropTypes.string,
+  onChange: PropTypes.func,
+  value: PropTypes.string,
 };

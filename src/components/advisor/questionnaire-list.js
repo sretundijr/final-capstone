@@ -1,4 +1,6 @@
-import React, { PropTypes } from 'react';
+
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import { customerContainer } from '../../styles/advisor/questionnaire-list-style';
 
@@ -39,7 +41,6 @@ ReturnedQuestionnaire.defaultProps = {
   list: [],
 };
 
-// todo
 ReturnedQuestionnaire.propTypes = {
-  list: PropTypes.arrayOf(PropTypes.string),
+  list: PropTypes.arrayOf(PropTypes.object),
 };

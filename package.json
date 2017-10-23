@@ -36,6 +36,7 @@
     "next": "^3.2.2",
     "next-connect-redux": "^0.1.5",
     "next-redux-wrapper": "^1.3.4",
+    "prop-types": "^15.6.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",

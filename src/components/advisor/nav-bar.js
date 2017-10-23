@@ -1,6 +1,6 @@
-/* global */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import Link from 'next/link';
 
 import { navBar } from '../../styles/advisor/nav-styles';
@@ -22,3 +22,12 @@ export default function NavBar(props) {
   );
 }
 
+NavBar.defaultProps = {
+  firstButton: '',
+  secondButton: '',
+};
+
+NavBar.propTypes = {
+  firstButton: PropTypes.string,
+  secondButton: PropTypes.string,
+};

@@ -1,4 +1,6 @@
+
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default function TextInput(props) {
   console.log(props);
@@ -27,3 +29,15 @@ export default function TextInput(props) {
     </div>
   );
 }
+
+TextInput.defaultProps = {
+  name: '',
+  value: '',
+  onChange: () => { },
+};
+
+TextInput.propTypes = {
+  name: PropTypes.string,
+  value: PropTypes.string,
+  onChange: PropTypes.func,
+};

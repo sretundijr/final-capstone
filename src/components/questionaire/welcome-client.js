@@ -1,8 +1,10 @@
+
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { flexContainer } from '../../styles/questionnaire/shared-styles';
 
-export default function (props) {
+export default function WelcomeHeader(props) {
   return (
     <div>
       <div className="flex-container">
@@ -24,3 +26,15 @@ export default function (props) {
     </div >
   );
 }
+
+WelcomeHeader.defaultProps = {
+  customerName: '',
+  appointmentDate: '',
+  shopName: '',
+};
+
+WelcomeHeader.propTypes = {
+  customerName: PropTypes.string,
+  appointmentDate: PropTypes.string,
+  shopName: PropTypes.string,
+};

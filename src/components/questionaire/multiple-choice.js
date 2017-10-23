@@ -1,4 +1,6 @@
-import React, { PropTypes } from 'react';
+
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import { flexContainer } from '../../styles/questionnaire/shared-styles';
 import { radioInput, radioSpacing } from '../../styles/questionnaire/multiChoice-styles';
@@ -36,12 +38,13 @@ export default function MultipleChoice(props) {
 }
 
 MultipleChoice.defaultProps = {
+  checked: {},
   list: [],
   question: '',
 };
 
-// todo
 MultipleChoice.propTypes = {
+  checked: PropTypes.objectOf(PropTypes.string),
   list: PropTypes.arrayOf(PropTypes.string),
   question: PropTypes.string,
 };

@@ -1,6 +1,6 @@
 
-import React, { PropTypes } from 'react';
-import Link from 'next/link';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 // components
 import MultipleChoice from './multiple-choice';
@@ -59,17 +59,31 @@ export default function SingleQuestion(props) {
   );
 }
 
-// Question.defaultProps = {
-//   questions: [],
-// };
+SingleQuestion.defaultProps = {
+  currentQuestion: 0,
+  numberOfQuestions: 0,
+  question: {},
+  checked: {},
+  onChange: () => { },
+  value: '',
+  renderBackButton: '',
+  renderNextButton: '',
+  renderSubmit: '',
+};
 
-// // todo fix proptypes deprecation warning
-// Question.propTypes = {
-//   renderSubmit: PropTypes.func,
-//   questions: PropTypes.arrayOf(PropTypes.shape({
-//     id: PropTypes.string,
-//     question: PropTypes.string,
-//     answer: PropTypes.arrayOf(PropTypes.string),
-//     MultipleChoice: PropTypes.bool,
-//   })),
-// };
+SingleQuestion.propTypes = {
+  currentQuestion: PropTypes.number,
+  numberOfQuestions: PropTypes.number,
+  question: PropTypes.objectOf(PropTypes.shape({
+    question: PropTypes.string,
+    id: PropTypes.number,
+    answer: PropTypes.arrayOf(PropTypes.string),
+    multipleChoice: PropTypes.bool,
+  })),
+  checked: PropTypes.objectOf(PropTypes.object),
+  onChange: PropTypes.func,
+  value: PropTypes.string,
+  renderBackButton: PropTypes.string,
+  renderNextButton: PropTypes.string,
+  renderSubmit: PropTypes.string,
+};

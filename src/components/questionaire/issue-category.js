@@ -1,4 +1,6 @@
-import React, { PropTypes } from 'react';
+
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import { flexContainer } from '../../styles/questionnaire/shared-styles';
 
@@ -24,6 +26,7 @@ export default function IssueCategory(props) {
 
 IssueCategory.defaultProps = {
   categories: [],
+  onChange: () => { },
 };
 
 IssueCategory.propTypes = {
@@ -33,5 +36,5 @@ IssueCategory.propTypes = {
     answer: PropTypes.arrayOf(PropTypes.string),
     MultipleChoice: PropTypes.bool,
   })),
-  onChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func,
 };
