@@ -1,7 +1,7 @@
 
 import React from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
+import Router from 'next/router';
 
 // components
 import WelcomeHeader from '../src/components/questionaire/welcome-client';
@@ -13,7 +13,7 @@ import Submit from '../src/components/questionaire/submit';
 import MockQuestionnaire from '../src/mock-questionnaire';
 
 // api
-// import { getShopAndCustomerData } from '../src/api/questionnaire';
+import { saveCompletedQuestionnaire } from '../src/api/questionnaire';
 
 // styles
 import { flexContainer } from '../src/styles/questionnaire/shared-styles';
@@ -67,7 +67,6 @@ export class TroubleShootingQuestionnaire extends React.Component {
   }
   getUserAnswer() {
     const answer = this.state.userInput[this.state.questions[this.state.questionIndex].question];
-    console.log(answer);
     if (answer === undefined) {
       return '';
     }
@@ -79,24 +78,13 @@ export class TroubleShootingQuestionnaire extends React.Component {
     });
   }
   decrementQuestionIndex() {
-    console.log(this.state.questionIndex);
     this.setState({
       questionIndex: this.state.questionIndex - 1,
     });
   }
-  renderStartButton() {
-    if (this.state.selectedIssue) {
-      return (
-        <div className="flex-container">
-          <Link href="#question-0">
-            <button className="start-btn">Start</button>
-          </Link>
-          <style jsx>{flexContainer}</style>
-          <style jsx>{questionPage}</style>
-        </div>
-      );
-    }
-    return '';
+  saveUserInput() {
+    saveCompletedQuestionnaire(this.state.userInput);
+    Router.push('/thank-you');
   }
   renderNextButton() {
     if (this.state.questionIndex === (this.state.questions.length - 1)) {
@@ -133,7 +121,7 @@ export class TroubleShootingQuestionnaire extends React.Component {
     const allQuestions = this.state.questions.length;
     if (this.state.renderSubmit && questionsAnswered === allQuestions) {
       return (
-        <Submit onClick={() => { }} />
+        <Submit onClick={() => this.saveUserInput()} />
       );
     }
     return '';
@@ -149,7 +137,6 @@ export class TroubleShootingQuestionnaire extends React.Component {
           checked={this.state.userInput}
           renderNextButton={this.renderNextButton()}
           renderBackButton={this.renderBackButton()}
-          renderSubmit={this.renderSubmit()}
           value={this.getUserAnswer()}
         />
       );
@@ -157,7 +144,6 @@ export class TroubleShootingQuestionnaire extends React.Component {
     return '';
   }
   render() {
-    // console.log(this.state);
     return (
       <div>
         <Head>
@@ -179,6 +165,7 @@ export class TroubleShootingQuestionnaire extends React.Component {
           </div>
           <div className="main-container">
             {this.renderQuestion()}
+            {this.renderSubmit()}
           </div>
         </div>
         <style jsx>{flexContainer}</style>

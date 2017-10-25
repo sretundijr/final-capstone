@@ -6,7 +6,7 @@ import { flexContainer } from '../../styles/questionnaire/shared-styles';
 import { textInput } from '../../styles/questionnaire/text-answer-styles';
 
 export default function TextAnswer(props) {
-  console.log(props.value);
+  // console.log(props.value);
   return (
     <div className="flex-container">
       <div className="content-container">
