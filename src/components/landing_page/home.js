@@ -9,37 +9,36 @@ export default function Home() {
       </div>
       <div className="content-container">
         <p>
-          This app allows for a better customer expeirence when visiting a service department
+          This app allows for a better customer experience when visiting a service department
           or dealership for vehicle repairs.
         </p>
         <p>
           <strong>The situation: </strong>The customer expeirences an issue with their vehicle
           and makes an appointment for service.  The service advisor schedules the appointment
-          and gathers as much info as possible about the issue.  The customer delievers vehicle
+          and gathers as much info as possible about the issue.  The customer delievers the vehicle
           for service and the technician receives the work order with customer issue description
           and begins diagnosing the issue.
         </p>
         <p>
-          <strong>The problem: </strong>Alot of times the service advisors notes on the issue
+          <strong>The problem: </strong>A lot of times the service advisors notes on the issue
           can be vague and incomplete.  This usually stems from time constraints on the phone
           when the appointment is made or when the vehicle is delievered.  Many times the customer
-          has a long story explaining the issue and the advisor simply can not type fast enough
+          has a long story explaining the issue and the advisor simply cannot type fast enough
           to capture the description.  There are many cases when the advisor does not know the
-          correct questions to ask, to investigate the issue further.  Important details will
+          correct questions to ask to investigate the issue further.  Important details will
           often get lost between the customer, the advisor, and the technician.
         </p>
         <p>
           <strong>The solution: </strong>This app allows a service advisor to quickly send a
           survey to a customer after the appointment is made. The customer can then fill out the
           survey before their appointment at their leisure.  The survey contains questions that
-          will extract important details of a vehicles faults making the technicians diagnostic
+          will extract important details of a vehicle fault making the technicians diagnostic
           procedure quicker and easier.
         </p>
         <p>
-          <strong>The benefits: </strong>Accurate diagnostics!  Great impressions left with the
-          customer!  Less comebacks!  Less time on the phone, or at time of drop off, spent quizing
-          the customer about the issues they are expierencing.
-          usually
+          <strong>The benefits: </strong>Accurate diagnostics, less comebacks, and less time on the
+          phone or at time of drop off spent quizzing the customer about the issues they are
+          experiencing thus resulting in great impressions with the customer!
         </p>
       </div>
       <style jsx>{`
