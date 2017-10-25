@@ -5,7 +5,7 @@ import DateInput from './date-input';
 import EmailInput from './email-input';
 import TextInput from './text-input';
 
-import { saveCustomer, saveAdvisorInfo } from '../../api/customer-info';
+import { saveCustomer, saveAdvisorInfo } from '../../api/advisor-dash';
 
 import { advisorContainer } from '../../styles/advisor/questionnaire-form';
 
@@ -67,6 +67,7 @@ export default class QuestionnaireForm extends React.Component {
     };
     saveAdvisorInfo(advisorInfo);
   }
+  // todo render with props decisions
   render() {
     return (
       <div>
@@ -80,7 +81,7 @@ export default class QuestionnaireForm extends React.Component {
                 id="shop-name"
                 name="shop-name"
                 onChange={e => this.setShopName(e.target.value)}
-                value={this.state.shopName}
+                value={this.props.shopName}
               />
             </label>
             <label htmlFor="advisor-name">
@@ -90,7 +91,7 @@ export default class QuestionnaireForm extends React.Component {
               <TextInput
                 name="advisor-name"
                 onChange={e => this.setAdvisorName(e.target.value)}
-                value={this.state.advisorName}
+                value={this.props.advisorName}
               />
             </label>
             <label htmlFor="advisor-email">
@@ -100,7 +101,7 @@ export default class QuestionnaireForm extends React.Component {
               <EmailInput
                 name="advisor-email"
                 onChange={e => this.setAdvisorEmail(e.target.value)}
-                value={this.state.advisorEmail}
+                value={this.props.advisorEmail}
                 autocomplete="on"
               />
             </label>

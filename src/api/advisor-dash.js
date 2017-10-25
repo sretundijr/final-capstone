@@ -17,16 +17,34 @@ export function saveCustomer(customer) {
   }
 }
 
+// todo error handling when null
 export function getCustomers() {
   const savedInfo = Promise.resolve(localStorage.getItem('all-customers'));
   return (
     savedInfo
-      .then(info => JSON.parse(info))
+      .then((info) => {
+        // console.log(info);
+        if (info === null) {
+          return [{ id: 'error', customerName: 'none', customerEmail: 'none', appointmentDate: 'none' }];
+        }
+        return JSON.parse(info);
+      })
   );
 }
 
-export function getAdvisorInfo() {
+const getCurrentUser = () => localStorage.getItem('current');
 
+export function getAdvisorInfo() {
+  console.log(getCurrentUser());
+  const currentUser = JSON.parse(getCurrentUser());
+  const savedInfo = Promise.resolve(localStorage.getItem(currentUser));
+  return (
+    savedInfo
+      .then((info) => {
+        console.log(info);
+        return JSON.parse(info);
+      })
+  );
 }
 
 export function saveAdvisorInfo(advisorObj) {

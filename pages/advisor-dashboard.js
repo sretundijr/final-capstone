@@ -9,19 +9,24 @@ import NavBar from '../src/components/advisor/nav-bar';
 import { advisorDash } from '../src/styles/advisor/advisor-dashboard';
 
 // import MockList from '../src/mock-list';
-import { getCustomers } from '../src/api/customer-info';
+import { getCustomers, getAdvisorInfo } from '../src/api/advisor-dash';
 
 export default class AdvisorDashboard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       list: [],
+      advisor: {},
     };
   }
   async componentDidMount() {
     const customers = await getCustomers();
+    const advisorInfo = await getAdvisorInfo();
+    console.log(customers);
+    console.log(advisorInfo);
     this.setState({
       list: customers,
+      advisor: advisorInfo,
     });
   }
   getReturnedQuestionnaires() {
@@ -33,6 +38,7 @@ export default class AdvisorDashboard extends React.Component {
       });
   }
   render() {
+    console.log(this.state.advisor);
     return (
       <div>
         <Head>
@@ -46,7 +52,11 @@ export default class AdvisorDashboard extends React.Component {
           <div id="questionnaire-form" />
           <div className="form-container" >
             <h2 className="title">Send a Questionnaire</h2>
-            <QuestionnaireForm />
+            <QuestionnaireForm
+              advisorName={this.state.advisor.advisorName}
+              shopName={this.state.advisor.shopName}
+              advisorEmail={this.state.advisor.advisorEmail}
+            />
           </div>
           <div id="returned" />
           <div className="list-container">
