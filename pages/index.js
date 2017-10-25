@@ -1,12 +1,16 @@
 
 import React from 'react';
 import Head from 'next/head';
+import Router from 'next/router';
 
+// components
 import Slider from '../src/components/landing_page/slider';
 import Home from '../src/components/landing_page/home';
 import Contact from '../src/components/landing_page/contact';
 import Login from '../src/components/landing_page/login';
 import Register from '../src/components/landing_page/register';
+
+import { saveToLocalStorage } from '../src/api/login';
 
 export default class Index extends React.Component {
   constructor(props) {
@@ -18,7 +22,7 @@ export default class Index extends React.Component {
       advisorName: '',
       advisorEmail: '',
       advisorPassword: '',
-      passwordConfirmation: '',
+      confirmPassword: '',
     };
     this.handleUserSelection = this.handleUserSelection.bind(this);
   }
@@ -41,16 +45,37 @@ export default class Index extends React.Component {
     }
   }
   handleLogin(e) {
-    console.log(e.target.value);
+    // console.log(e.target.value);
     this.setState({
       [e.target.name]: e.target.value,
     });
   }
   handleRegistrationSubmission(e) {
-    console.log(e.target.value);
+    // console.log(e.target.value);
     this.setState({
       [e.target.name]: e.target.value,
     });
+  }
+  submitLogin(e) {
+    e.preventDefault();
+    const advisorLoginCredentials = {
+      advisorEmail: this.state.advisorEmail,
+      advisorPassword: this.state.advisorPassword,
+    };
+    console.log(advisorLoginCredentials);
+    Router.push('/advisor-dashboard');
+  }
+  submitRegistration(e) {
+    e.preventDefault();
+    const newUserCredentials = {
+      shopName: this.state.shopName,
+      advisorName: this.state.advisorName,
+      advisorEmail: this.state.advisorEmail,
+      advisorPassword: this.state.advisorPassword,
+    };
+    console.log(newUserCredentials);
+    saveToLocalStorage(newUserCredentials);
+    Router.push('/advisor-dashboard');
   }
   renderUserSelection() {
     if (this.state.userSelection === 'sign-in') {
@@ -58,6 +83,7 @@ export default class Index extends React.Component {
         <Login
           email={this.state.advisorEmail}
           onChange={e => this.handleLogin(e)}
+          onSubmit={e => this.submitLogin(e)}
         />
       );
     } else if (this.state.userSelection === 'sign-up') {
@@ -67,6 +93,7 @@ export default class Index extends React.Component {
           email={this.state.advisorEmail}
           shopName={this.state.shopName}
           onChange={e => this.handleRegistrationSubmission(e)}
+          onSubmit={e => this.submitRegistration(e)}
         />
       );
     } else if (this.state.userSelection === 'home') {
@@ -86,7 +113,10 @@ export default class Index extends React.Component {
         <div className="landing-page">
           <div>
             <nav>
-              <Slider navOutput={this.state.navOutput} onClick={e => this.handleUserSelection(e.target.value)} />
+              <Slider
+                navOutput={this.state.navOutput}
+                onClick={e => this.handleUserSelection(e.target.value)}
+              />
             </nav>
           </div>
           <main>

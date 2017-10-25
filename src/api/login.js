@@ -1,7 +1,9 @@
+
 /* global localStorage */
 
 export const saveToLocalStorage = (advisorInfo) => {
-  localStorage.setItem('name', advisorInfo);
+  console.log(advisorInfo);
+  localStorage.setItem(advisorInfo.advisorName, JSON.stringify(advisorInfo));
 };
 
 export const getAdvisorInfo = (key) => {

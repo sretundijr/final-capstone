@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export default function PasswordInput(props) {
-  console.log(props);
+  // console.log(props);
   return (
     <div>
       <div>

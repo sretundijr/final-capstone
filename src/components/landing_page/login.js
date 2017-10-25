@@ -6,7 +6,7 @@ import EmailInput from '../advisor/email-input';
 import PasswordInput from '../advisor/password-input';
 
 export default function Login(props) {
-  console.log(props);
+  // console.log(props);
   return (
     <div className="login-container">
       <form onSubmit={props.onSubmit}>

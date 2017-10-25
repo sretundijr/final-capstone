@@ -14,7 +14,7 @@ export default function Register(props) {
           <h4>Sign Up</h4>
         </div>
         <div>
-          <form>
+          <form onSubmit={props.onSubmit}>
             <label htmlFor="shop-name">
               <span>
                 Shop Name
@@ -202,6 +202,7 @@ Register.defaultProps = {
   advisorName: '',
   email: '',
   onChange: () => { },
+  onSubmit: () => { },
 };
 
 Register.propTypes = {
@@ -209,4 +210,5 @@ Register.propTypes = {
   advisorName: PropTypes.string,
   email: PropTypes.string,
   onChange: PropTypes.func,
+  onSubmit: PropTypes.func,
 };
