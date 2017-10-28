@@ -39,15 +39,19 @@ export class TroubleShootingQuestionnaire extends React.Component {
     this.incrementQuestionIndex = this.incrementQuestionIndex.bind(this);
     this.decrementQuestionIndex = this.decrementQuestionIndex.bind(this);
   }
-  // async componentDidMount() {
-  //   const headerData = await getShopAndCustomerData();
-  //   this.setState({
-  //     shopName: headerData.shopName,
-  //     advisorName: headerData.advisorName,
-  //     appointmentDate: headerData.appointmentDate,
-  //     customerName: headerData.customerName,
-  //   });
-  // }
+  // query string used for testing
+  // http://localhost:3000/troubleshooting-questionnaire?shopName=steves%20shop&advisorName=steve%20retundi&appointmentDate=11/112017&customerName=christina
+  async componentDidMount() {
+    console.log(this.props.url.query);
+    const query = this.props.url.query;
+    // const headerData = await getShopAndCustomerData();
+    this.setState({
+      shopName: query.shopName,
+      advisorName: query.advisorName,
+      appointmentDate: query.appointmentDate,
+      customerName: query.customerName,
+    });
+  }
   setCategory(category) {
     const userSelectedQuestionType = MockQuestionnaire()
       .filter(questions => category === questions.issueType);

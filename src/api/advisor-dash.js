@@ -1,5 +1,7 @@
 /* global localStorage */
 
+import Customers from '../mock-list';
+
 export function saveCustomer(customer) {
   const savedInfo = localStorage.getItem('all-customers');
   const customers = JSON.parse(savedInfo);
@@ -20,16 +22,17 @@ export function saveCustomer(customer) {
 // todo error handling when null
 export function getCustomers() {
   const savedInfo = Promise.resolve(localStorage.getItem('all-customers'));
-  return (
-    savedInfo
-      .then((info) => {
-        // console.log(info);
-        if (info === null) {
-          return [{ id: 'error', customerName: 'none', customerEmail: 'none', appointmentDate: 'none' }];
-        }
-        return JSON.parse(info);
-      })
-  );
+  // return (
+  //   savedInfo
+  //     .then((info) => {
+  //       // console.log(info);
+  //       if (info === null) {
+  //         return [{ id: 'error', customerName: 'none', customerEmail: 'none', appointmentDate: 'none' }];
+  //       }
+  //       return JSON.parse(info);
+  //     })
+  // );
+  return Customers();
 }
 
 const getCurrentUser = () => localStorage.getItem('current');
