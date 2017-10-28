@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import { customerContainer } from '../../styles/advisor/questionnaire-list-style';
 
+// todo work out the view and archive functionality
 export default function ReturnedQuestionnaire(props) {
   const list = props.list.map((item) => {
     return (
@@ -11,7 +12,9 @@ export default function ReturnedQuestionnaire(props) {
         <li className="customer-item name">{item.customerName}</li>
         <li className="customer-item">{item.customerEmail}</li>
         <li className="customer-item">{item.appointmentDate}</li>
-        <li className="customer-item"><button>View Questionnaire</button></li>
+        <li className="customer-item">
+          <button onClick={() => props.onClick(item.customerName)}>View Questionnaire</button>
+        </li>
         <li className="customer-item"><button>Archive</button></li>
         <style jsx>{customerContainer}</style>
       </ul>

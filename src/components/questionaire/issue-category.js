@@ -38,3 +38,4 @@ IssueCategory.propTypes = {
   })),
   onChange: PropTypes.func,
 };
+

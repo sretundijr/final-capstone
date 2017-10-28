@@ -1,6 +1,7 @@
 
 import React from 'react';
 import Head from 'next/head';
+import Router from 'next/router';
 
 import QuestionnaireList from '../src/components/advisor/questionnaire-list';
 import QuestionnaireForm from '../src/components/advisor/questionnaire-form';
@@ -11,6 +12,13 @@ import { advisorDash } from '../src/styles/advisor/advisor-dashboard';
 // import MockList from '../src/mock-list';
 import { getCustomers, getAdvisorInfo } from '../src/api/advisor-dash';
 
+// helpers
+const viewQuestionnaire = (name) => {
+  console.log(name);
+  Router.push(`/view-questionnaire?customerName=${name}`);
+};
+
+// todo add redirect for view questionnaire
 export default class AdvisorDashboard extends React.Component {
   constructor(props) {
     super(props);
@@ -38,7 +46,7 @@ export default class AdvisorDashboard extends React.Component {
       });
   }
   render() {
-    console.log(this.state.advisor);
+    // console.log(this.state.advisor);
     return (
       <div>
         <Head>
@@ -61,7 +69,7 @@ export default class AdvisorDashboard extends React.Component {
           <div id="returned" />
           <div className="list-container">
             <h2 className="title">Returned Questionnaires</h2>
-            <QuestionnaireList list={this.state.list} />
+            <QuestionnaireList onClick={viewQuestionnaire} list={this.state.list} />
           </div>
           <div className="footer" />
         </div>
