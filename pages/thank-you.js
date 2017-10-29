@@ -1,8 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 
-import { flexContainer } from '../src/styles/questionnaire/shared-styles';
-
 export default function ThankYou() {
   return (
     <div>
@@ -20,7 +18,22 @@ export default function ThankYou() {
           </h3>
         </div>
       </div>
-      <style jsx>{flexContainer}</style>
+      <style jsx>{`
+        .flex-container { 
+          display: flex; 
+          justify-content: center;
+        }
+        .content-container
+        {
+          text-align: center;
+          max-width: 100%;
+          width: 600px;
+          height: 65vh;
+          background: #495C70;
+          margin-top: 10px;
+          margin-bottom: 150px;
+        }
+      `}</style>
     </div>
   );
 }
