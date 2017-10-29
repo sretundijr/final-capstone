@@ -130,7 +130,7 @@ export default class ViewCompletedQuestionnaire extends React.Component {
             font-size: 20px;    
             margin: 20px;
             width: 200px;
-            height: 40px;
+            height: auto;
             border: none;
             background: #576E86;
             color: #fff;
