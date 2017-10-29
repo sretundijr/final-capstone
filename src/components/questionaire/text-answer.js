@@ -6,7 +6,7 @@ export default function TextAnswer(props) {
   // console.log(props.value);
   return (
     <div className="flex-container">
-      <div className="content-container">
+      <div>
         <div>
           <textarea
             onChange={e => props.onChange(props.question, e.target.value)}

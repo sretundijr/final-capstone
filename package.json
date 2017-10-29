@@ -9,6 +9,7 @@
       "!**/coverage/**",
       "!**/next.config.js",
       "!**/src/mock-questionnaire.js",
+      "!**/src/mock-completed-questionnaire",
       "!**/src/mock-list.js",
       "!**/src/advisor-store.js",
       "!**/src/actions/**",
