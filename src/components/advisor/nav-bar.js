@@ -3,9 +3,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 
-import { navBar } from '../../styles/advisor/nav-styles';
-
-
 export default function NavBar(props) {
   return (
     <nav className="advisor-nav">
@@ -17,7 +14,25 @@ export default function NavBar(props) {
           <button className="nav-button">{props.secondButton}</button>
         </Link>
       </div>
-      <style jsx>{navBar}</style>
+      <style jsx>{`
+        .advisor-nav {
+          height: 100%;
+          background: #576E86;
+        }
+        .flex-container {
+          display: flex;
+          justify-content: center;
+        }
+        .nav-button {
+          font-size: 16px;
+          color: #fff;
+          border: none;
+          background: #576E86;    
+          width: 100%;
+          margin: 10px;
+          outline: none;
+        }
+      `}</style>
     </nav>
   );
 }

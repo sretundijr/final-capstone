@@ -2,9 +2,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { flexContainer } from '../../styles/questionnaire/shared-styles';
-import { radioInput, radioSpacing } from '../../styles/questionnaire/multiChoice-styles';
-
 export default function MultipleChoice(props) {
   // console.log(props.checked);
   const element = props.list.map((item) => {
@@ -22,7 +19,14 @@ export default function MultipleChoice(props) {
           }
           className="radio-spacing"
         />
-        <style jsx>{radioSpacing}</style>
+        <style jsx>{`
+          .radio-input { 
+            margin-top: -5px;
+          }
+          .radio-spacing {
+            margin: 10px;
+          }
+        `}</style>
       </div>
     );
   });
@@ -31,8 +35,12 @@ export default function MultipleChoice(props) {
       <div>
         {element}
       </div>
-      <style jsx>{radioInput}</style>
-      <style jsx>{flexContainer}</style>
+      <style jsx>{`
+        .flex-container { 
+          display: flex; 
+          justify-content: center;
+        }
+      `}</style>
     </div>
   );
 }

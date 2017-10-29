@@ -6,10 +6,6 @@ import PropTypes from 'prop-types';
 import MultipleChoice from './multiple-choice';
 import TextAnswer from './text-answer';
 
-// styles
-import { flexContainer } from '../../styles/questionnaire/shared-styles';
-import { questionPage } from '../../styles/questionnaire/troubleshooting-questionnaire';
-
 export const determineAnswerType = (checked, questionObject, callback, value) => {
   // console.log(questionObject.multipleChoice);
   if (questionObject.multipleChoice) {
@@ -53,8 +49,49 @@ export default function SingleQuestion(props) {
         {props.renderNextButton}
         {props.renderSubmit}
       </div>
-      <style jsx>{questionPage}</style>
-      <style jsx>{flexContainer}</style>
+      <style jsx>{`
+        .flex-container { 
+          display: flex; 
+          justify-content: center;
+        }
+        .content-container
+        {
+          text-align: center;
+          max-width: 100%;
+          width: 600px;
+          height: 65vh;
+          background: #495C70;
+          margin-top: 10px;
+          margin-bottom: 150px;
+        }
+        @media only screen and (max-width: 1400px) {
+          .component-container {
+            width: 100vw;
+            background: #495C70;
+            margin-top: 10px;
+            margin-bottom: 50px;
+            padding: 50px;
+          }
+        }
+        @media only screen and (max-width: 900px) {
+          .content-container {
+            width: 100vw;
+            background: #495C70;
+            margin-top: 10px;
+            margin-bottom: 50px;
+            padding: 50px;
+          }
+        }
+        @media only screen and (max-width: 450px) {
+          .content-container {
+            width: 100vw;
+            background: #495C70;
+            margin-top: 10px;
+            margin-bottom: 50px;
+            padding: 50px;
+          }
+        }
+      `}</style>
     </div >
   );
 }

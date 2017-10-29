@@ -15,11 +15,6 @@ import MockQuestionnaire from '../src/mock-questionnaire';
 // api
 import { saveCompletedQuestionnaire } from '../src/api/questionnaire';
 
-// styles
-import { flexContainer } from '../src/styles/questionnaire/shared-styles';
-import { questionPage } from '../src/styles/questionnaire/troubleshooting-questionnaire';
-
-
 export class TroubleShootingQuestionnaire extends React.Component {
   constructor(props) {
     super(props);
@@ -101,7 +96,18 @@ export class TroubleShootingQuestionnaire extends React.Component {
           className="next-btn"
         >Next
         </button>
-        <style jsx>{questionPage}</style>
+        <style jsx>{`
+          .next-btn {
+            margin: 20px;
+            width: 200px;
+            height: 40px;
+            border: none;
+            background: #576E86;
+            color: #fff;
+            border-radius: 5px;
+          }
+        `}
+        </style>
       </div>
     );
   }
@@ -114,7 +120,17 @@ export class TroubleShootingQuestionnaire extends React.Component {
             className="next-btn"
           >Back
           </button>
-          <style jsx>{questionPage}</style>
+          <style jsx>{`
+            .next-btn {
+              margin: 20px;
+              width: 200px;
+              height: 40px;
+              border: none;
+              background: #576E86;
+              color: #fff;
+              border-radius: 5px;
+            }
+          `}</style>
         </div>
       );
     }
@@ -154,7 +170,7 @@ export class TroubleShootingQuestionnaire extends React.Component {
           <title>Troubleshooting Questionnaire</title>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         </Head>
-        <div className="background">
+        <div className="page">
           <div className="welcome-container">
             <WelcomeHeader
               shopName={this.state.shopName}
@@ -172,8 +188,40 @@ export class TroubleShootingQuestionnaire extends React.Component {
             {this.renderSubmit()}
           </div>
         </div>
-        <style jsx>{flexContainer}</style>
-        <style jsx>{questionPage}</style>
+        <style jsx>{`
+          .main-container {
+            background-color: rgb(181, 186, 189);   
+          }
+          .page {
+            background-color: rgb(181, 186, 189);
+            color: #F5F5F5;
+            font-size: 1.5vw;
+            width: 100vw;   
+            height: 100vh; 
+          }
+          .welcome-container {
+            height: 60vh;
+            width: 100vw;
+            background: #495C70;    
+            text-align: center;    
+          }
+          
+          @media only screen and (max-width: 1400px) {
+            .page {
+              font-size: 1.75vw;
+            }
+          }
+          @media only screen and (max-width: 900px) {
+            .page {
+              font-size: 2.0vw;
+            }
+          }
+          @media only screen and (max-width: 450px) {
+            .page {
+              font-size: 4.0vw;
+            }
+          }
+        `}</style>
       </div>
     );
   }

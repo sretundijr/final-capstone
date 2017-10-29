@@ -7,8 +7,6 @@ import QuestionnaireList from '../src/components/advisor/questionnaire-list';
 import QuestionnaireForm from '../src/components/advisor/questionnaire-form';
 import NavBar from '../src/components/advisor/nav-bar';
 
-import { advisorDash } from '../src/styles/advisor/advisor-dashboard';
-
 // import MockList from '../src/mock-list';
 import { getCustomers, getAdvisorInfo } from '../src/api/advisor-dash';
 
@@ -73,7 +71,55 @@ export default class AdvisorDashboard extends React.Component {
           </div>
           <div className="footer" />
         </div>
-        <style jsx>{advisorDash}</style>
+        <style jsx>{`
+          .page {
+            background-color: rgb(181, 186, 189);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+          }
+          
+          .footer {
+            height: 200px;
+          }
+          
+          .advisor-nav {
+            width: 100%;
+            position: fixed;
+            top: 0;
+          }
+          .title {
+            font-size: 24px;
+            color: #495C70;
+            text-align: center;
+          }
+           .form-container {
+             margin-top: 100px;
+           }
+          
+           .list-container {
+             margin-top: 100px;
+           }
+          
+           #questionnaire-form {
+             height: 100px;
+           }
+            
+           #returned {
+             height: 100px;
+           }
+          
+           @media only screen and (max-width: 900px) {
+            #questionnaire-form {
+             height: 50px;
+           }
+            
+           #returned {
+             height: 50px;
+           }
+          }
+        `}</style>
       </div >
     );
   }

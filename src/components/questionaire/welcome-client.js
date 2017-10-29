@@ -2,8 +2,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { flexContainer } from '../../styles/questionnaire/shared-styles';
-
 export default function WelcomeHeader(props) {
   return (
     <div>
@@ -22,7 +20,18 @@ export default function WelcomeHeader(props) {
           before your appointment on {props.appointmentDate}
         </h3>
       </div>
-      <style jsx>{flexContainer}</style>
+      <style jsx>{`
+        .flex-container { 
+          display: flex; 
+          justify-content: center;
+        }
+        .content-container
+        {
+          text-align: center;
+          max-width: 100%;
+          width: 600px;
+        }
+      `}</style>
     </div >
   );
 }

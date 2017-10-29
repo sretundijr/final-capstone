@@ -2,9 +2,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { flexContainer } from '../../styles/questionnaire/shared-styles';
-import { textInput } from '../../styles/questionnaire/text-answer-styles';
-
 export default function TextAnswer(props) {
   // console.log(props.value);
   return (
@@ -20,8 +17,13 @@ export default function TextAnswer(props) {
           />
         </div>
       </div>
-      <style jsx>{textInput}</style>
-      <style jsx>{flexContainer}</style>
+      <style jsx>{`
+        .text-input { 
+          margin-top: 5px;
+          width: 300px;
+          height: 150px;
+        }
+      `}</style>
     </div>
   );
 }

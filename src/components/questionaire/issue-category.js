@@ -2,8 +2,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { flexContainer } from '../../styles/questionnaire/shared-styles';
-
 export default function IssueCategory(props) {
   const issueSelection = props.categories
     .map(item =>
@@ -19,7 +17,12 @@ export default function IssueCategory(props) {
           {issueSelection}
         </select>
       </div>
-      <style jsx>{flexContainer}</style>
+      <style jsx>{`
+        .flex-container { 
+          display: flex; 
+          justify-content: center;
+        }
+      `}</style>
     </div>
   );
 }
