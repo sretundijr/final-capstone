@@ -8,11 +8,6 @@ import completedQuestionnaire from '../src/mock-completed-quesitons';
 
 import EmailTech from '../src/components/advisor/email-tech';
 
-// helper functions
-const handleBackBtn = () => {
-  Router.push('/advisor-dashboard');
-};
-
 export default class ViewCompletedQuestionnaire extends React.Component {
   constructor(props) {
     super(props);
@@ -87,7 +82,7 @@ export default class ViewCompletedQuestionnaire extends React.Component {
           {this.questionAndAnswerElement()}
         </div>
         <div className="btn-container">
-          <button onClick={() => handleBackBtn()}>Back</button>
+          <button onClick={() => Router.push('/advisor-dashboard')}>Back</button>
           <button onClick={() => this.modalBox()}>Send To Technician</button>
         </div>
         <style jsx>{`
