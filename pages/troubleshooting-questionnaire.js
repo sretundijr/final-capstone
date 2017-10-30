@@ -10,15 +10,16 @@ import SingleQuestion from '../src/components/questionaire/single-question';
 import Submit from '../src/components/questionaire/submit';
 
 // helpers
-import MockQuestionnaire from '../src/mock-questionnaire';
+// import MockQuestionnaire from '../src/mock-questionnaire';
 
 // api
-import { saveCompletedQuestionnaire } from '../src/api/questionnaire';
+import { saveCompletedQuestionnaire, getQuestionnaire } from '../src/api/questionnaire';
 
 export class TroubleShootingQuestionnaire extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      questionniare: [],
       selectedIssue: '',
       questions: [],
       userInput: {},
@@ -37,18 +38,22 @@ export class TroubleShootingQuestionnaire extends React.Component {
   // query string used for testing
   // http://localhost:3000/troubleshooting-questionnaire?shopName=steves%20shop&advisorName=steve%20retundi&appointmentDate=11/112017&customerName=christina
   async componentDidMount() {
-    console.log(this.props.url.query);
+    // console.log(this.props.url.query);
     const query = this.props.url.query;
     // const headerData = await getShopAndCustomerData();
-    this.setState({
-      shopName: query.shopName,
-      advisorName: query.advisorName,
-      appointmentDate: query.appointmentDate,
-      customerName: query.customerName,
-    });
+    await getQuestionnaire()
+      .then((res) => {
+        this.setState({
+          shopName: query.shopName,
+          advisorName: query.advisorName,
+          appointmentDate: query.appointmentDate,
+          customerName: query.customerName,
+          questionniare: res,
+        });
+      });
   }
   setCategory(category) {
-    const userSelectedQuestionType = MockQuestionnaire()
+    const userSelectedQuestionType = this.state.questionniare
       .filter(questions => category === questions.issueType);
     this.setState({
       selectedIssue: category,
@@ -164,6 +169,7 @@ export class TroubleShootingQuestionnaire extends React.Component {
     return '';
   }
   render() {
+    console.log(this.state.questionniare);
     return (
       <div>
         <Head>
@@ -179,7 +185,7 @@ export class TroubleShootingQuestionnaire extends React.Component {
               appointmentDate={this.state.appointmentDate}
             />
             <IssueCategory
-              categories={MockQuestionnaire()}
+              categories={this.state.questionniare}
               onChange={e => this.setCategory(e.target.value)}
             />
           </div>
@@ -215,7 +221,7 @@ export class TroubleShootingQuestionnaire extends React.Component {
             .page {
               font-size: 2.0vw;
             }
-          }
+          } 
           @media only screen and (max-width: 450px) {
             .page {
               font-size: 4.0vw;
