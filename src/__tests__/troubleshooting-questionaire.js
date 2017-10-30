@@ -19,18 +19,18 @@ describe('testing troubleshooting questionaire', () => {
   const wrapper = shallow(<TroubleshootingQuestionnaire />);
 
   describe('#setCategory', () => {
-    it('modify state of property selected issue', () => {
-      mockQuestionObject();
-      wrapper.instance().setCategory('foo');
-      expect(wrapper.state().selectedIssue).toEqual('foo');
-    });
+    // it('modify state of property selected issue', () => {
+    //   mockQuestionObject();
+    //   wrapper.instance().setCategory('foo');
+    //   expect(wrapper.state().selectedIssue).toEqual('foo');
+    // });
 
-    it('modify the state of questions array', () => {
-      mockQuestionObject();
-      MockQuestionaire.mockReturnValueOnce([{ issueType: 'foo', questions: ['hello'] }]);
-      wrapper.instance().setCategory('foo');
-      expect(wrapper.state().questions).toEqual(['hello']);
-    });
+    // it('modify the state of questions array', () => {
+    //   mockQuestionObject();
+    //   MockQuestionaire.mockReturnValueOnce([{ issueType: 'foo', questions: ['hello'] }]);
+    //   wrapper.instance().setCategory('foo');
+    //   expect(wrapper.state().questions).toEqual(['hello']);
+    // });
   });
 
   describe('#setUserAnswer', () => {
