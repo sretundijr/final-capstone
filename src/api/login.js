@@ -15,6 +15,16 @@ export const saveToLocalStorage = (advisorInfo) => {
   saveCurrentUser(advisorName);
 };
 
+export const loginUser = (advisorInfo) => {
+  return fetch(`${API_BASE_URL}/login`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(advisorInfo),
+  });
+};
+
 export const registerNewUser = (advisorInfo) => {
   console.log(advisorInfo);
   return fetch(`${API_BASE_URL}/login/new-user`, {
