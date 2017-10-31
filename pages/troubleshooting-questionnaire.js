@@ -26,7 +26,7 @@ export class TroubleShootingQuestionnaire extends React.Component {
       renderSubmit: false,
       questionsAnswered: 0,
       shopName: '',
-      AdvisorName: '',
+      advisorName: '',
       appointmentDate: '',
       customerName: '',
       questionIndex: 0,
@@ -38,7 +38,7 @@ export class TroubleShootingQuestionnaire extends React.Component {
   // query string used for testing
   // http://localhost:3000/troubleshooting-questionnaire?shopName=steves%20shop&advisorName=steve%20retundi&appointmentDate=11/112017&customerName=christina
   async componentDidMount() {
-    // console.log(this.props.url.query);
+    console.log(this.props.url.query);
     const query = this.props.url.query;
     // const headerData = await getShopAndCustomerData();
     await getQuestionnaire()
@@ -87,8 +87,8 @@ export class TroubleShootingQuestionnaire extends React.Component {
     });
   }
   saveUserInput() {
-    saveCompletedQuestionnaire(this.state.userInput);
-    Router.push('/thank-you');
+    saveCompletedQuestionnaire(this.state.advisorName, this.state.customerName, this.state.userInput)
+      .then(() => Router.push('/thank-you'));
   }
   renderNextButton() {
     if (this.state.questionIndex === (this.state.questions.length - 1)) {
@@ -169,7 +169,7 @@ export class TroubleShootingQuestionnaire extends React.Component {
     return '';
   }
   render() {
-    console.log(this.state.questionniare);
+    console.log(this.state);
     return (
       <div>
         <Head>

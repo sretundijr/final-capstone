@@ -21,7 +21,7 @@ describe('testing troubleshooting questionaire', () => {
 
   describe('#setCategory', () => {
     // it('modify state of property selected issue', () => {
-    //   mockQuestionObject();
+    //   // mockQuestionObject();
     //   wrapper.instance().setCategory('foo');
     //   expect(wrapper.state().selectedIssue).toEqual('foo');
     // });
