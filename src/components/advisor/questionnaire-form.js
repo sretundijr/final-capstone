@@ -5,7 +5,7 @@ import DateInput from './date-input';
 import EmailInput from './email-input';
 import TextInput from './text-input';
 
-import { saveCustomer, saveAdvisorInfo } from '../../api/advisor-dash';
+import { saveCustomer, saveAdvisorInfo, sendEmail } from '../../api/advisor-dash';
 
 export default class QuestionnaireForm extends React.Component {
   constructor(props) {
@@ -57,13 +57,19 @@ export default class QuestionnaireForm extends React.Component {
       customerEmail: this.state.customerEmail,
       appointmentDate: this.state.appointmentDate,
     };
-    saveCustomer(customer);
-    const advisorInfo = {
-      shopName: this.state.shopName,
-      advisorName: this.state.advisorName,
-      advisorEmail: this.state.advisorEmail,
-    };
-    saveAdvisorInfo(advisorInfo);
+    // saveCustomer(customer);
+    // const advisorInfo = {
+    //   shopName: this.state.shopName,
+    //   advisorName: this.state.advisorName,
+    //   advisorEmail: this.state.advisorEmail,
+    // };
+    sendEmail(customer)
+      .then(() => this.setState({
+        customerName: '',
+        customerEmail: '',
+        appointmentDate: '',
+      }));
+    // saveAdvisorInfo(advisorInfo);
   }
   // todo render with props decisions
   render() {

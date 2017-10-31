@@ -1,6 +1,9 @@
-/* global localStorage */
+/* global localStorage fetch */
 
 import Customers from '../mock-list';
+
+import API_BASE_URL from '../../config';
+
 
 export function saveCustomer(customer) {
   const savedInfo = localStorage.getItem('all-customers');
@@ -17,6 +20,17 @@ export function saveCustomer(customer) {
   } else {
     localStorage.setItem('all-customers', JSON.stringify([customerObj]));
   }
+}
+
+// todo finish this
+export function sendEmail(customerInfo) {
+  return fetch(`${API_BASE_URL}/advisor-dashboard`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(customerInfo),
+  });
 }
 
 // todo error handling when null
