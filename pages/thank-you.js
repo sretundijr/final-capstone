@@ -27,11 +27,6 @@ export default function ThankYou() {
         {
           text-align: center;
           max-width: 100%;
-          width: 600px;
-          height: 65vh;
-          background: #495C70;
-          margin-top: 10px;
-          margin-bottom: 150px;
         }
       `}</style>
     </div>
