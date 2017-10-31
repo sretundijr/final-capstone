@@ -10,7 +10,7 @@ import Contact from '../src/components/landing_page/contact';
 import Login from '../src/components/landing_page/login';
 import Register from '../src/components/landing_page/register';
 
-import { saveToLocalStorage } from '../src/api/login';
+import { registerNewUser } from '../src/api/login';
 
 export default class Index extends React.Component {
   constructor(props) {
@@ -73,9 +73,8 @@ export default class Index extends React.Component {
       advisorEmail: this.state.advisorEmail,
       advisorPassword: this.state.advisorPassword,
     };
-    console.log(newUserCredentials);
-    saveToLocalStorage(newUserCredentials);
-    Router.push('/advisor-dashboard');
+    registerNewUser(newUserCredentials)
+      .then(() => Router.push('/advisor-dashboard'));
   }
   renderUserSelection() {
     if (this.state.userSelection === 'sign-in') {

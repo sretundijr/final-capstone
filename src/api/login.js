@@ -1,5 +1,7 @@
 
-/* global localStorage */
+/* global localStorage fetch */
+
+import API_BASE_URL from '../../config';
 
 export const saveCurrentUser = (name) => {
   localStorage.setItem('current', JSON.stringify(name));
@@ -11,5 +13,16 @@ export const saveToLocalStorage = (advisorInfo) => {
   const advisorName = advisorInfo.advisorName;
   localStorage.setItem(advisorName, JSON.stringify(advisorInfo));
   saveCurrentUser(advisorName);
+};
+
+export const registerNewUser = (advisorInfo) => {
+  console.log(advisorInfo);
+  return fetch(`${API_BASE_URL}/login/new-user`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(advisorInfo),
+  });
 };
 
