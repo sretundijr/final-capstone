@@ -44,7 +44,7 @@ export default class AdvisorDashboard extends React.Component {
       });
   }
   render() {
-    // console.log(this.state.advisor);
+    console.log(this.state.list);
     return (
       <div>
         <Head>

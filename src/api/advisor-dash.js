@@ -22,9 +22,8 @@ export function saveCustomer(customer) {
   }
 }
 
-// todo finish this
 export function sendEmail(customerInfo) {
-  return fetch(`${API_BASE_URL}/advisor-dashboard`, {
+  return fetch(`${API_BASE_URL}/advisor-dashboard/send-email`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -35,18 +34,15 @@ export function sendEmail(customerInfo) {
 
 // todo error handling when null
 export function getCustomers() {
-  const savedInfo = Promise.resolve(localStorage.getItem('all-customers'));
-  // return (
-  //   savedInfo
-  //     .then((info) => {
-  //       // console.log(info);
-  //       if (info === null) {
-  //         return [{ id: 'error', customerName: 'none', customerEmail: 'none', appointmentDate: 'none' }];
-  //       }
-  //       return JSON.parse(info);
-  //     })
-  // );
-  return Customers();
+  return fetch(`${API_BASE_URL}/advisor-dashboard/returned`, {
+    method: 'GET',
+  })
+    .then((res) => {
+      if (!res.ok) {
+        return Promise.reject(res.statusText);
+      }
+      return res.json();
+    });
 }
 
 const getCurrentUser = () => localStorage.getItem('current');
