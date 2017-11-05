@@ -4,7 +4,9 @@ import Head from 'next/head';
 import Router from 'next/router';
 
 // helper
-import completedQuestionnaire from '../src/mock-completed-quesitons';
+// import completedQuestionnaire from '../src/mock-completed-quesitons';
+
+import { getCompletedQuestionnaire } from '../src/api/advisor-dash';
 
 import EmailTech from '../src/components/advisor/email-tech';
 
@@ -21,13 +23,13 @@ export default class ViewCompletedQuestionnaire extends React.Component {
   }
   // todo this might change when server is implemented
   async componentDidMount() {
-    console.log(this.props.url.pathname);
     const query = this.props.url.query;
     const link = `${this.props.url.pathname}?customerName=${query.customerName}`;
+    const answers = await getCompletedQuestionnaire(query.id);
     this.setState({
       customerLink: link,
       customerName: query.customerName,
-      returnedQuestionnaire: completedQuestionnaire(),
+      returnedQuestionnaire: answers[0],
     });
   }
   modalBox() {
@@ -92,7 +94,7 @@ export default class ViewCompletedQuestionnaire extends React.Component {
             justify-content: center;
             background-color: #495C70;
             width: auto;
-            height: 100vh;
+            height: auto;
             color: rgb(73, 92, 112);
             font-size: 1.7vw;     
           }

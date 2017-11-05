@@ -1,6 +1,6 @@
 /* global localStorage fetch */
 
-import Customers from '../mock-list';
+// import Customers from '../mock-list';
 
 import API_BASE_URL from '../../config';
 
@@ -35,6 +35,18 @@ export function sendEmail(customerInfo) {
 // todo error handling when null
 export function getCustomers() {
   return fetch(`${API_BASE_URL}/advisor-dashboard/returned`, {
+    method: 'GET',
+  })
+    .then((res) => {
+      if (!res.ok) {
+        return Promise.reject(res.statusText);
+      }
+      return res.json();
+    });
+}
+
+export function getCompletedQuestionnaire(id) {
+  return fetch(`${API_BASE_URL}/advisor-dashboard/completed-questionnaire/${id}`, {
     method: 'GET',
   })
     .then((res) => {

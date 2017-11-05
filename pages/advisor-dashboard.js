@@ -11,9 +11,9 @@ import NavBar from '../src/components/advisor/nav-bar';
 import { getCustomers, getAdvisorInfo } from '../src/api/advisor-dash';
 
 // helpers
-const viewQuestionnaire = (name) => {
-  console.log(name);
-  Router.push(`/view-questionnaire?customerName=${name}`);
+const viewQuestionnaire = (id, name) => {
+  console.log(id);
+  Router.push(`/view-questionnaire?id=${id}&customerName=${name}`);
 };
 
 // todo add redirect for view questionnaire
@@ -34,14 +34,6 @@ export default class AdvisorDashboard extends React.Component {
       list: customers,
       advisor: advisorInfo,
     });
-  }
-  getReturnedQuestionnaires() {
-    getCustomers()
-      .then((returnedQuestions) => {
-        this.setState({
-          list: returnedQuestions,
-        });
-      });
   }
   render() {
     console.log(this.state.list);

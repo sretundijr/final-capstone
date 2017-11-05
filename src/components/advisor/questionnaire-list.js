@@ -11,7 +11,7 @@ export default function ReturnedQuestionnaire(props) {
         <li className="customer-item">{item.customerEmail}</li>
         <li className="customer-item">{item.appointmentDate}</li>
         <li className="customer-item">
-          <button onClick={() => props.onClick(item.customerName)}>View Questionnaire</button>
+          <button onClick={() => props.onClick(item.id, item.customerName)}>View Questionnaire</button>
         </li>
         <li className="customer-item"><button>Archive</button></li>
         <style jsx>{`
