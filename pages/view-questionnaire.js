@@ -6,7 +6,7 @@ import Router from 'next/router';
 // helper
 // import completedQuestionnaire from '../src/mock-completed-quesitons';
 
-import { getCompletedQuestionnaire } from '../src/api/advisor-dash';
+import { getCompletedQuestionnaire, sendQuestionnaireToTech } from '../src/api/advisor-dash';
 
 import EmailTech from '../src/components/advisor/email-tech';
 
@@ -24,10 +24,10 @@ export default class ViewCompletedQuestionnaire extends React.Component {
   // todo this might change when server is implemented
   async componentDidMount() {
     const query = this.props.url.query;
-    const link = `${this.props.url.pathname}?customerName=${query.customerName}`;
+    const customerLink = `${this.props.url.pathname}?id=${query.id}customerName=${query.customerName}`;
     const answers = await getCompletedQuestionnaire(query.id);
     this.setState({
-      customerLink: link,
+      customerLink,
       customerName: query.customerName,
       returnedQuestionnaire: answers[0],
     });
@@ -49,10 +49,20 @@ export default class ViewCompletedQuestionnaire extends React.Component {
     });
   }
   sendQuestionnaireLink() {
-    console.log(this.state.customerLink);
+    // console.log(this.state.customerLink);
+    const linkObj = {
+      customerLink: this.state.customerLink,
+      technicianEmail: this.state.technicianEmail,
+    };
+    sendQuestionnaireToTech(linkObj)
+      .then(() => {
+        this.setState({
+          techContainerStatus: 'hide-container',
+        });
+      });
   }
   questionAndAnswerElement() {
-    console.log(this.state.customerLink);
+    // console.log(this.state.customerLink);
     const element = Object.keys(this.state.returnedQuestionnaire).map((key) => {
       return (
         <div key={key}>

@@ -18,7 +18,7 @@ export default function EmailTech(props) {
         <EmailInput value={props.value} onChange={props.onChange} />
       </div>
       <div>
-        <button className="submit">Submit</button>
+        <button onClick={props.onClick} className="submit">Submit</button>
       </div>
       <style jsx>{`
           .submit {

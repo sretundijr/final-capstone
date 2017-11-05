@@ -57,6 +57,16 @@ export function getCompletedQuestionnaire(id) {
     });
 }
 
+export function sendQuestionnaireToTech(linkObj) {
+  return fetch(`${API_BASE_URL}/advisor-dashboard/send-questionnaire-link`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(linkObj),
+  });
+}
+
 const getCurrentUser = () => localStorage.getItem('current');
 
 export function getAdvisorInfo() {
