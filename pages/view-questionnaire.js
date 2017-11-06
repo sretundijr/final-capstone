@@ -16,7 +16,7 @@ export default class ViewCompletedQuestionnaire extends React.Component {
     this.state = {
       customerLink: '',
       customerName: '',
-      returnedQuestionnaire: {},
+      returnedQuestionnaire: [],
       techContainerStatus: 'hide-container',
       technicianEmail: '',
     };
@@ -26,10 +26,11 @@ export default class ViewCompletedQuestionnaire extends React.Component {
     const query = this.props.url.query;
     const customerLink = `${this.props.url.pathname}?id=${query.id}customerName=${query.customerName}`;
     const answers = await getCompletedQuestionnaire(query.id);
+    console.log(answers);
     this.setState({
       customerLink,
       customerName: query.customerName,
-      returnedQuestionnaire: answers[0],
+      returnedQuestionnaire: answers,
     });
   }
   modalBox() {
@@ -62,14 +63,16 @@ export default class ViewCompletedQuestionnaire extends React.Component {
       });
   }
   questionAndAnswerElement() {
-    // console.log(this.state.customerLink);
-    const element = Object.keys(this.state.returnedQuestionnaire).map((key) => {
-      return (
-        <div key={key}>
-          <h4 className="questions">{key}</h4>
-          <p className="answers">{this.state.returnedQuestionnaire[key]}</p>
-        </div>
-      );
+    const element = this.state.returnedQuestionnaire.map((obj) => {
+      return Object.keys(obj.answers).map((item) => {
+        console.log(item);
+        return (
+          <div key={item}>
+            <h4 className="questions">{item}</h4>
+            <p className="answers">{obj.answers[item]}</p>
+          </div>
+        );
+      });
     });
     return element;
   }
