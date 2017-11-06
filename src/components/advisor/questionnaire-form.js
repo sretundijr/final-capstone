@@ -53,6 +53,7 @@ export default class QuestionnaireForm extends React.Component {
     // makes api call behind the scenes
     event.preventDefault();
     const customer = {
+      _id: this.props.id,
       customerName: this.state.customerName,
       customerEmail: this.state.customerEmail,
       appointmentDate: this.state.appointmentDate,
