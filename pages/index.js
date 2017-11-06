@@ -75,7 +75,9 @@ export default class Index extends React.Component {
       advisorPassword: this.state.advisorPassword,
     };
     registerNewUser(newUserCredentials)
-      .then(() => Router.push('/advisor-dashboard'));
+      .then((res) => {
+        Router.push(`/advisor-dashboard?_id=${res._id}`);
+      });
   }
   renderUserSelection() {
     if (this.state.userSelection === 'sign-in') {

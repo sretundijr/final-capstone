@@ -26,13 +26,15 @@ export default class AdvisorDashboard extends React.Component {
     };
   }
   async componentDidMount() {
+    console.log(this.props.url.query._id);
+    const id = this.props.url.query._id;
     const customers = await getCustomers();
-    const advisorInfo = await getAdvisorInfo();
+    const advisorInfo = await getAdvisorInfo(id);
     console.log(customers);
-    console.log(advisorInfo);
+    // console.log(advisorInfo);
     this.setState({
       list: customers,
-      advisor: advisorInfo,
+      advisor: advisorInfo[0],
     });
   }
   render() {

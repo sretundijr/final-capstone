@@ -26,13 +26,19 @@ export const loginUser = (advisorInfo) => {
 };
 
 export const registerNewUser = (advisorInfo) => {
-  console.log(advisorInfo);
+  // console.log(advisorInfo);
   return fetch(`${API_BASE_URL}/login/new-user`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(advisorInfo),
-  });
+  })
+    .then((res) => {
+      if (!res.ok) {
+        return Promise.reject(res.statusText);
+      }
+      return res.json();
+    });
 };
 

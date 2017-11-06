@@ -67,19 +67,16 @@ export function sendQuestionnaireToTech(linkObj) {
   });
 }
 
-const getCurrentUser = () => localStorage.getItem('current');
-
-export function getAdvisorInfo() {
-  console.log(getCurrentUser());
-  const currentUser = JSON.parse(getCurrentUser());
-  const savedInfo = Promise.resolve(localStorage.getItem(currentUser));
-  return (
-    savedInfo
-      .then((info) => {
-        console.log(info);
-        return JSON.parse(info);
-      })
-  );
+export function getAdvisorInfo(id) {
+  return fetch(`${API_BASE_URL}/advisor-dashboard/user/${id}`, {
+    method: 'GET',
+  })
+    .then((res) => {
+      if (!res.ok) {
+        return Promise.reject(res.statusText);
+      }
+      return res.json();
+    });
 }
 
 export function saveAdvisorInfo(advisorObj) {
