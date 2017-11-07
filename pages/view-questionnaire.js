@@ -14,6 +14,7 @@ export default class ViewCompletedQuestionnaire extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      advisorId: '',
       customerLink: '',
       customerName: '',
       returnedQuestionnaire: [],
@@ -28,6 +29,7 @@ export default class ViewCompletedQuestionnaire extends React.Component {
     const answers = await getCompletedQuestionnaire(query.id);
     console.log(answers);
     this.setState({
+      advisorId: query.advisorId,
       customerLink,
       customerName: query.customerName,
       returnedQuestionnaire: answers,
@@ -97,7 +99,7 @@ export default class ViewCompletedQuestionnaire extends React.Component {
           {this.questionAndAnswerElement()}
         </div>
         <div className="btn-container">
-          <button onClick={() => Router.push('/advisor-dashboard')}>Back</button>
+          <button onClick={() => Router.push(`/advisor-dashboard?_id=${this.state.advisorId}`)}>Back</button>
           <button onClick={() => this.modalBox()}>Send To Technician</button>
         </div>
         <style jsx>{`
@@ -109,7 +111,7 @@ export default class ViewCompletedQuestionnaire extends React.Component {
             width: auto;
             height: auto;
             color: rgb(73, 92, 112);
-            font-size: 1.7vw;     
+            font-size: 1.7vw;
           }
           .hide-container {
             display: none;
@@ -124,7 +126,7 @@ export default class ViewCompletedQuestionnaire extends React.Component {
             text-align: center;
             width: auto;
             height: max-content;
-            color: white;            
+            color: white;
           }
           .customer-container {
             background-color: rgb(181, 186, 189);
@@ -137,7 +139,7 @@ export default class ViewCompletedQuestionnaire extends React.Component {
             align-self: center;
           }
           button {
-            font-size: 20px;    
+            font-size: 20px;
             margin: 20px;
             width: 200px;
             height: auto;
@@ -149,20 +151,20 @@ export default class ViewCompletedQuestionnaire extends React.Component {
           }
           @media only screen and (max-width: 900px) {
             main {
-            }
+          }
            }
            @media only screen and (max-width: 750px) {
             .page {
-              height: auto;
-              font-size: 2.8vw;                 
+          height: auto;
+              font-size: 2.8vw;
             }
-           } 
+           }
            @media only screen and (max-width: 450px) {
             .page {
-              font-size: 5.2vw;                 
+          font-size: 5.2vw;
             }
             button {
-              width: 100%;
+            width: 100%;
               margin-left: 0;
             }
            }

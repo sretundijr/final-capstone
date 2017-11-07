@@ -10,13 +10,6 @@ import NavBar from '../src/components/advisor/nav-bar';
 // import MockList from '../src/mock-list';
 import { getCustomers, getAdvisorInfo } from '../src/api/advisor-dash';
 
-// helpers
-const viewQuestionnaire = (id, name) => {
-  console.log(id);
-  Router.push(`/view-questionnaire?id=${id}&customerName=${name}`);
-};
-
-// todo add redirect for view questionnaire
 export default class AdvisorDashboard extends React.Component {
   constructor(props) {
     super(props);
@@ -62,7 +55,14 @@ export default class AdvisorDashboard extends React.Component {
           <div id="returned" />
           <div className="list-container">
             <h2 className="title">Returned Questionnaires</h2>
-            <QuestionnaireList onClick={viewQuestionnaire} list={this.state.list} />
+            <QuestionnaireList
+              onClick={(id, name) => {
+                Router.push(
+                  `/view-questionnaire?advisorId=${this.state.advisor._id}&id=${id}&customerName=${name}`,
+                );
+              }}
+              list={this.state.list}
+            />
           </div>
           <div className="footer" />
         </div>
