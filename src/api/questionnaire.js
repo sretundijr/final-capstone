@@ -1,7 +1,7 @@
 /* global localStorage fetch */
 
 // api
-import API_BASE_URL from '../../config';
+import API_BASE_URL from '../../env-config';
 
 // import MockQuestionnaire from './mock-questionnaire';
 

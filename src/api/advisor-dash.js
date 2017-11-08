@@ -2,8 +2,7 @@
 
 // import Customers from '../mock-list';
 
-import API_BASE_URL from '../../config';
-
+import API_BASE_URL from '../../env-config';
 
 export function saveCustomer(customer) {
   const savedInfo = localStorage.getItem('all-customers');
