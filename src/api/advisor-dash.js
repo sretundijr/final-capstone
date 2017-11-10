@@ -1,8 +1,8 @@
 /* global localStorage fetch */
 
-// import Customers from '../mock-list';
+const API_BASE_URL = process.env.BACKEND_URL;
 
-import API_BASE_URL from '../../env-config';
+// import Customers from '../mock-list';
 
 export function saveCustomer(customer) {
   const savedInfo = localStorage.getItem('all-customers');

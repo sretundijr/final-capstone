@@ -1,7 +1,7 @@
 
 /* global localStorage fetch */
 
-import API_BASE_URL from '../../env-config';
+const API_BASE_URL = process.env.BACKEND_URL;
 
 export const saveCurrentUser = (name) => {
   localStorage.setItem('current', JSON.stringify(name));

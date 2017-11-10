@@ -1,5 +1,6 @@
 
-const API_BASE_URL =
-  process.env.REACT_APP_API_BASE_URL || 'http://localhost:8080/api';
+const prod = process.env.NODE_ENV === 'production';
 
-export default API_BASE_URL;
+module.exports = {
+  'process.env.BACKEND_URL': prod ? 'https://stark-scrubland-67367.herokuapp.com/api' : 'https://localhost:8080/api',
+};

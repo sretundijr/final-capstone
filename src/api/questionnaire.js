@@ -1,7 +1,7 @@
 /* global localStorage fetch */
 
 // api
-import API_BASE_URL from '../../env-config';
+const API_BASE_URL = process.env.BACKEND_URL;
 
 // import MockQuestionnaire from './mock-questionnaire';
 
