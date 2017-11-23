@@ -3,15 +3,13 @@
 
 import Auth0Lock from 'auth0-lock';
 
-const authRedirectUrl = process.env.AUTH0_URL;
-
 const lock = () => new Auth0Lock(
   'ZUnbJR4LHk83x4iVA0yqo2wBoHxW2PXQ',
   'advisor-login.auth0.com',
   {
     auth: {
       audience: 'https://advisor-login.auth0.com/userinfo',
-      redirectUrl: authRedirectUrl,
+      redirectUrl: process.env.AUTH_URL,
       responseType: 'token',
       params: {
         scope: 'openid email user_metadata',
