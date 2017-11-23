@@ -35,19 +35,17 @@ export class TroubleShootingQuestionnaire extends React.Component {
     this.incrementQuestionIndex = this.incrementQuestionIndex.bind(this);
     this.decrementQuestionIndex = this.decrementQuestionIndex.bind(this);
   }
-  // query string used for testing
-  // http://localhost:3000/troubleshooting-questionnaire?shopName=steves%20shop&advisorName=steve%20retundi&appointmentDate=11/112017&customerName=christina
   async componentDidMount() {
-    console.log(this.props.url.query);
     const query = this.props.url.query;
+    console.log(query);
     // const headerData = await getShopAndCustomerData();
     await getQuestionnaire()
       .then((res) => {
         this.setState({
-          shopName: query.shopName,
-          advisorName: query.advisorName,
-          appointmentDate: query.appointmentDate,
-          customerName: query.customerName,
+          shopName: query.shopname,
+          advisorName: query.advisorname,
+          appointmentDate: new Date(query.appointmentdate).toLocaleDateString(),
+          customerName: query.customername,
           questionniare: res,
         });
       });
@@ -169,7 +167,7 @@ export class TroubleShootingQuestionnaire extends React.Component {
     return '';
   }
   render() {
-    console.log(this.state);
+    // console.log(this.state);
     return (
       <div>
         <Head>
