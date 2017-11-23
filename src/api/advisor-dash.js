@@ -21,13 +21,17 @@ export function saveCustomer(customer) {
   }
 }
 
-export function sendEmail(customerInfo) {
+export function sendEmail(advisorId, customerInfo) {
+  const customerObj = {
+    advisorId,
+    customer: customerInfo,
+  };
   return fetch(`${API_BASE_URL}/advisor-dashboard/send-email`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(customerInfo),
+    body: JSON.stringify(customerObj),
   });
 }
 
