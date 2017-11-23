@@ -19,19 +19,15 @@ export default class AdvisorDashboard extends React.Component {
     };
   }
   async componentDidMount() {
-    console.log(this.props.url.query._id);
     const id = this.props.url.query._id;
     const customers = await getCustomers();
     const advisorInfo = await getAdvisorInfo(id);
-    console.log(customers);
-    // console.log(advisorInfo);
     this.setState({
       list: customers,
       advisor: advisorInfo[0],
     });
   }
   render() {
-    console.log(this.state.list);
     return (
       <div>
         <Head>
@@ -46,7 +42,7 @@ export default class AdvisorDashboard extends React.Component {
           <div className="form-container" >
             <h2 className="title">Send a Questionnaire</h2>
             <QuestionnaireForm
-              id={this.state.advisor._id}
+              advisorId={this.state.advisor._id}
               advisorName={this.state.advisor.advisorName}
               shopName={this.state.advisor.shopName}
               advisorEmail={this.state.advisor.advisorEmail}
