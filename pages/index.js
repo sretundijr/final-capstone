@@ -7,10 +7,10 @@ import Router from 'next/router';
 import Slider from '../src/components/landing_page/slider';
 import Home from '../src/components/landing_page/home';
 import Contact from '../src/components/landing_page/contact';
-import Login from '../src/components/landing_page/login';
-import Register from '../src/components/landing_page/register';
 
-import { registerNewUser, loginUser } from '../src/api/login';
+import { loginUser } from '../src/api/login';
+
+import { showLock } from '../src/components/auth-login';
 
 export default class Index extends React.Component {
   constructor(props) {
@@ -23,6 +23,7 @@ export default class Index extends React.Component {
       advisorEmail: '',
       advisorPassword: '',
       confirmPassword: '',
+      advisorAccessToken: '',
     };
     this.handleUserSelection = this.handleUserSelection.bind(this);
   }
@@ -50,53 +51,30 @@ export default class Index extends React.Component {
       [e.target.name]: e.target.value,
     });
   }
-  handleRegistrationSubmission(e) {
-    // console.log(e.target.value);
-    this.setState({
-      [e.target.name]: e.target.value,
-    });
-  }
-  submitLogin(e) {
-    e.preventDefault();
-    const advisorLoginCredentials = {
-      advisorEmail: this.state.advisorEmail,
-      advisorPassword: this.state.advisorPassword,
-    };
-    console.log(advisorLoginCredentials);
-    loginUser(advisorLoginCredentials)
+  submitLogin() {
+    loginUser(this.state.advisorAccessToken)
       .then(() => Router.push('/advisor-dashboard'));
   }
-  submitRegistration(e) {
-    e.preventDefault();
-    const newUserCredentials = {
-      shopName: this.state.shopName,
-      advisorName: this.state.advisorName,
-      advisorEmail: this.state.advisorEmail,
-      advisorPassword: this.state.advisorPassword,
-    };
-    registerNewUser(newUserCredentials)
-      .then((res) => {
-        Router.push(`/advisor-dashboard?_id=${res._id}`);
-      });
-  }
+  // submitRegistration(e) {
+  //   e.preventDefault();
+  //   const newUserCredentials = {
+  //     shopName: this.state.shopName,
+  //     advisorName: this.state.advisorName,
+  //     advisorEmail: this.state.advisorEmail,
+  //     advisorPassword: this.state.advisorPassword,
+  //   };
+  //   registerNewUser(newUserCredentials)
+  //     .then((res) => {
+  //       Router.push(`/advisor-dashboard?_id=${res._id}`);
+  //     });
+  // }
   renderUserSelection() {
     if (this.state.userSelection === 'sign-in') {
+      this.state.userSelection = 'home';
       return (
-        <Login
-          email={this.state.advisorEmail}
-          onChange={e => this.handleLogin(e)}
-          onSubmit={e => this.submitLogin(e)}
-        />
-      );
-    } else if (this.state.userSelection === 'sign-up') {
-      return (
-        <Register
-          advisorName={this.state.advisorName}
-          email={this.state.advisorEmail}
-          shopName={this.state.shopName}
-          onChange={e => this.handleRegistrationSubmission(e)}
-          onSubmit={e => this.submitRegistration(e)}
-        />
+        <div>
+          {showLock()}
+        </div>
       );
     } else if (this.state.userSelection === 'home') {
       return <Home />;

@@ -16,17 +16,27 @@ export const saveToLocalStorage = (advisorInfo) => {
 };
 
 export const loginUser = (advisorInfo) => {
+  // console.log(advisorInfo);
+  const accessToken = {
+    advisorInfo,
+  };
   return fetch(`${API_BASE_URL}/login`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(advisorInfo),
-  });
+    body: JSON.stringify(accessToken),
+  })
+    .then((res) => {
+      if (!res.ok) {
+        return Promise.reject(res.statusText);
+      }
+      return res.json();
+    });
 };
 
 export const registerNewUser = (advisorInfo) => {
-  // console.log(advisorInfo);
+  console.log(advisorInfo);
   return fetch(`${API_BASE_URL}/login/new-user`, {
     method: 'POST',
     headers: {

@@ -11,7 +11,7 @@ describe('testing slider component', () => {
   });
   it('should render 4 menu buttons', () => {
     const wrapper = shallow(<Slider />);
-    expect(wrapper.find('ul li button').length).toEqual(4);
+    expect(wrapper.find('ul li button').length).toEqual(3);
   });
   describe('#menu button click event', () => {
     const mockFn = jest.fn();
