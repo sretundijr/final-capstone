@@ -9,7 +9,7 @@ module.exports = {
       '/thank-you': { page: '/thank-you' },
       '/advisor-dashboard': { page: '/advisor-dashboard' },
       '/view-questionnaire': { page: '/view-questionnaire' },
-      'auth-callback': { page: '/auth-callback' },
+      '/auth-callback': { page: '/auth-callback' },
     };
   },
   webpack: (cfg) => {
