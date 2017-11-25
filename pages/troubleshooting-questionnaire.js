@@ -29,10 +29,10 @@ export class TroubleShootingQuestionnaire extends React.Component {
       userInput: {},
       renderSubmit: false,
       questionsAnswered: 0,
-      shopName: this.props.query.shopname,
-      advisorName: this.props.query.advisorname,
-      appointmentDate: this.props.query.appointmentdate,
-      customerName: this.props.query.customername,
+      shopName: '',
+      advisorName: '',
+      appointmentDate: '',
+      customerName: '',
       questionIndex: 0,
     };
     this.setUserAnswer = this.setUserAnswer.bind(this);
@@ -47,10 +47,10 @@ export class TroubleShootingQuestionnaire extends React.Component {
     await getQuestionnaire()
       .then((res) => {
         this.setState({
-          // shopName: query.shopname,
-          // advisorName: query.advisorname,
-          // appointmentDate: new Date(query.appointmentdate).toLocaleDateString(),
-          // customerName: query.customername,
+          shopName: query.shopname,
+          advisorName: query.advisorname,
+          appointmentDate: new Date(query.appointmentdate).toLocaleDateString(),
+          customerName: query.customername,
           questionniare: res,
         });
       });
