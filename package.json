@@ -29,7 +29,7 @@
     "preexport": "npm run build",
     "export": "next export",
     "prestart": "npm run export",
-    "start": "next start"
+    "start": "serve out"
   },
   "author": "steve",
   "license": "ISC",
