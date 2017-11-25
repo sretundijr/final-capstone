@@ -29,10 +29,10 @@ export class TroubleShootingQuestionnaire extends React.Component {
       userInput: {},
       renderSubmit: false,
       questionsAnswered: 0,
-      shopName: '',
-      advisorName: '',
-      appointmentDate: '',
-      customerName: '',
+      shopName: this.props.query.shopname,
+      advisorName: this.props.query.advisorname,
+      appointmentDate: this.props.query.appointmentdate,
+      customerName: this.props.query.customername,
       questionIndex: 0,
     };
     this.setUserAnswer = this.setUserAnswer.bind(this);
@@ -40,17 +40,17 @@ export class TroubleShootingQuestionnaire extends React.Component {
     this.decrementQuestionIndex = this.decrementQuestionIndex.bind(this);
   }
   async componentDidMount() {
-    // const query = this.props.url.query;
-    // console.log(this.props.url);
-    // console.log(this.props.query);
+    const query = this.props.url.query;
+    console.log(this.props.url);
+    console.log(this.props.query);
     // const headerData = await getShopAndCustomerData();
     await getQuestionnaire()
       .then((res) => {
         this.setState({
-          shopName: this.props.query.shopname,
-          advisorName: this.props.query.advisorname,
-          appointmentDate: new Date(this.props.query.appointmentdate).toLocaleDateString(),
-          customerName: this.props.query.customername,
+          // shopName: query.shopname,
+          // advisorName: query.advisorname,
+          // appointmentDate: new Date(query.appointmentdate).toLocaleDateString(),
+          // customerName: query.customername,
           questionniare: res,
         });
       });

@@ -25,7 +25,7 @@
     "test": "jest",
     "test-watch": "jest --watchAll",
     "dev": "next",
-    "build": "next build && next export",
+    "build": "next build && next start",
     "preexport": "npm run build",
     "export": "next export",
     "prestart": "npm run export",
