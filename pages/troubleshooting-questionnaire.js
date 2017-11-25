@@ -2,6 +2,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Router from 'next/router';
+import queryString from 'query-string';
 
 // components
 import WelcomeHeader from '../src/components/questionaire/welcome-client';
@@ -36,7 +37,7 @@ export class TroubleShootingQuestionnaire extends React.Component {
     this.decrementQuestionIndex = this.decrementQuestionIndex.bind(this);
   }
   async componentDidMount() {
-    const query = this.props.url.query;
+    const query = queryString.parse(location.search);
     await getQuestionnaire()
       .then((res) => {
         console.log(query);
