@@ -6,9 +6,6 @@ import Head from 'next/head';
 import Router from 'next/router';
 import queryString from 'query-string';
 
-// helper
-// import completedQuestionnaire from '../src/mock-completed-quesitons';
-
 import { getCompletedQuestionnaire, sendQuestionnaireToTech } from '../src/api/advisor-dash';
 
 import EmailTech from '../src/components/advisor/email-tech';
