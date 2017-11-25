@@ -1,7 +1,10 @@
 
+/* global location */
+
 import React from 'react';
 import Head from 'next/head';
 import Router from 'next/router';
+import queryString from 'query-string';
 
 import QuestionnaireList from '../src/components/advisor/questionnaire-list';
 import QuestionnaireForm from '../src/components/advisor/questionnaire-form';
@@ -19,9 +22,9 @@ export default class AdvisorDashboard extends React.Component {
     };
   }
   async componentDidMount() {
-    const id = this.props.url.query._id;
+    const parsed = queryString.parse(location.search);
     const customers = await getCustomers();
-    const advisorInfo = await getAdvisorInfo(id);
+    const advisorInfo = await getAdvisorInfo(parsed._id);
     this.setState({
       list: customers,
       advisor: advisorInfo[0],
