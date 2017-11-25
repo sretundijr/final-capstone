@@ -18,6 +18,7 @@ import { saveCompletedQuestionnaire, getQuestionnaire } from '../src/api/questio
 export class TroubleShootingQuestionnaire extends React.Component {
   static async getInitialProps({ query }) {
     console.log(query);
+    return { query };
   }
   constructor(props) {
     super(props);
