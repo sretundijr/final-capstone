@@ -1,7 +1,11 @@
 
+/* global location */
+
 import React from 'react';
 import Head from 'next/head';
 import Router from 'next/router';
+import queryString from 'query-string';
+import strictUriEncode from 'strict-uri-encode';
 
 // helper
 // import completedQuestionnaire from '../src/mock-completed-quesitons';
@@ -24,10 +28,10 @@ export default class ViewCompletedQuestionnaire extends React.Component {
   }
   // todo this might change when server is implemented
   async componentDidMount() {
-    const query = this.props.url.query;
-    const customerLink = `${this.props.url.pathname}?id=${query.id}customerName=${query.customerName}`;
+    const query = queryString.parse(location.search);
+    const encodeCustomerName = strictUriEncode(query.customerName);
+    const customerLink = `${location.origin}${location.pathname}?id=${query.id}&customerName=${encodeCustomerName}`;
     const answers = await getCompletedQuestionnaire(query.id);
-    console.log(answers);
     this.setState({
       advisorId: query.advisorId,
       customerLink,
@@ -65,8 +69,7 @@ export default class ViewCompletedQuestionnaire extends React.Component {
       });
   }
   questionAndAnswerElement() {
-    const element = this.state.returnedQuestionnaire.map((obj) => {
-      return Object.keys(obj.answers).map((item) => {
+    const element = this.state.returnedQuestionnaire.map((obj) => Object.keys(obj.answers).map((item) => {
         console.log(item);
         return (
           <div key={item}>
@@ -74,8 +77,7 @@ export default class ViewCompletedQuestionnaire extends React.Component {
             <p className="answers">{obj.answers[item]}</p>
           </div>
         );
-      });
-    });
+      }));
     return element;
   }
   render() {
