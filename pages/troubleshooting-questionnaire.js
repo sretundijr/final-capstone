@@ -40,17 +40,17 @@ export class TroubleShootingQuestionnaire extends React.Component {
     this.decrementQuestionIndex = this.decrementQuestionIndex.bind(this);
   }
   async componentDidMount() {
-    const query = this.props.url.query;
+    // const query = this.props.url.query;
     // console.log(this.props.url);
-    // console.log(query);
+    // console.log(this.props.query);
     // const headerData = await getShopAndCustomerData();
     await getQuestionnaire()
       .then((res) => {
         this.setState({
-          shopName: query.shopname,
-          advisorName: query.advisorname,
-          appointmentDate: new Date(query.appointmentdate).toLocaleDateString(),
-          customerName: query.customername,
+          shopName: this.props.query.shopname,
+          advisorName: this.props.query.advisorname,
+          appointmentDate: new Date(this.props.query.appointmentdate).toLocaleDateString(),
+          customerName: this.props.query.customername,
           questionniare: res,
         });
       });
