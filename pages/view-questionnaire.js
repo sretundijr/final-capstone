@@ -59,10 +59,10 @@ export default class ViewCompletedQuestionnaire extends React.Component {
     });
   }
   sendQuestionnaireLink() {
-    // console.log(this.state.customerLink);
     const linkObj = {
       customerLink: this.state.customerLink,
       technicianEmail: this.state.technicianEmail,
+      customerName: this.state.customerName,
     };
     sendQuestionnaireToTech(linkObj)
       .then(() => {
@@ -84,6 +84,40 @@ export default class ViewCompletedQuestionnaire extends React.Component {
       }));
     return element;
   }
+  navButtons() {
+    if (this.state.advisorId) {
+      return (
+        <div className="btn-container">
+          <button onClick={() => Router.push(`/advisor-dashboard?_id=${this.state.advisorId}`)}>Back</button>
+          <button onClick={() => this.modalBox()}>Send To Technician</button>
+          <style jsx>{`
+             .btn-container {
+              align-self: center;
+            }
+            button {
+              font-size: 20px;
+              margin: 20px;
+              width: 200px;
+              height: auto;
+              border: none;
+              background: #576E86;
+              color: #fff;
+              border-radius: 5px;
+              outline: none;
+            }
+           @media only screen and (max-width: 450px) {
+            button {
+              width: 100%;
+              margin-left: 0;
+              }
+           }            
+          `}
+          </style>
+        </div>
+      );
+    }
+    return null;
+  }
   render() {
     return (
       <div className="page">
@@ -104,10 +138,7 @@ export default class ViewCompletedQuestionnaire extends React.Component {
           <p>{this.state.customerName}</p>
           {this.questionAndAnswerElement()}
         </div>
-        <div className="btn-container">
-          <button onClick={() => Router.push(`/advisor-dashboard?_id=${this.state.advisorId}`)}>Back</button>
-          <button onClick={() => this.modalBox()}>Send To Technician</button>
-        </div>
+        {this.navButtons()}
         <style jsx>{`
           .page {
             display: flex;
@@ -141,20 +172,7 @@ export default class ViewCompletedQuestionnaire extends React.Component {
             width: auto;
             height: max-content;
           }
-          .btn-container {
-            align-self: center;
-          }
-          button {
-            font-size: 20px;
-            margin: 20px;
-            width: 200px;
-            height: auto;
-            border: none;
-            background: #576E86;
-            color: #fff;
-            border-radius: 5px;
-            outline: none;
-          }
+          
           @media only screen and (max-width: 900px) {
             main {
           }
@@ -168,10 +186,6 @@ export default class ViewCompletedQuestionnaire extends React.Component {
            @media only screen and (max-width: 450px) {
             .page {
           font-size: 5.2vw;
-            }
-            button {
-            width: 100%;
-              margin-left: 0;
             }
            }
           `}
