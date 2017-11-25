@@ -16,6 +16,9 @@ import Submit from '../src/components/questionaire/submit';
 import { saveCompletedQuestionnaire, getQuestionnaire } from '../src/api/questionnaire';
 
 export class TroubleShootingQuestionnaire extends React.Component {
+  static async getInitialProps({ query }) {
+    console.log(query);
+  }
   constructor(props) {
     super(props);
     this.state = {
@@ -37,7 +40,8 @@ export class TroubleShootingQuestionnaire extends React.Component {
   }
   async componentDidMount() {
     const query = this.props.url.query;
-    console.log(query);
+    // console.log(this.props.url);
+    // console.log(query);
     // const headerData = await getShopAndCustomerData();
     await getQuestionnaire()
       .then((res) => {
