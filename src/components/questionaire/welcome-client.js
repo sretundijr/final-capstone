@@ -15,7 +15,7 @@ export default function WelcomeHeader(props) {
       </div>
       <div className="flex-container">
         <h3 className="content-container">
-          The following is a brief a questionaire to help us better understand
+          The following is a brief questionaire to help us better understand
           the issues that you are experiencing.  Please complete this questionaire
           before your appointment on {props.appointmentDate}
         </h3>
