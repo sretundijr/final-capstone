@@ -5,7 +5,6 @@ import React from 'react';
 import Head from 'next/head';
 import Router from 'next/router';
 import queryString from 'query-string';
-import strictUriEncode from 'strict-uri-encode';
 
 // helper
 // import completedQuestionnaire from '../src/mock-completed-quesitons';
@@ -29,8 +28,7 @@ export default class ViewCompletedQuestionnaire extends React.Component {
   // todo this might change when server is implemented
   async componentDidMount() {
     const query = queryString.parse(location.search);
-    const encodeCustomerName = strictUriEncode(query.customerName);
-    const customerLink = `${location.origin}${location.pathname}?id=${query.id}&customerName=${encodeCustomerName}`;
+    const customerLink = `${location.origin}${location.pathname}?id=${query.id}&customerName=${queryString.stringify(query.customerName)}`;
     const answers = await getCompletedQuestionnaire(query.id);
     this.setState({
       advisorId: query.advisorId,
@@ -69,7 +67,8 @@ export default class ViewCompletedQuestionnaire extends React.Component {
       });
   }
   questionAndAnswerElement() {
-    const element = this.state.returnedQuestionnaire.map((obj) => Object.keys(obj.answers).map((item) => {
+    const element = this.state.returnedQuestionnaire.map(obj =>
+      Object.keys(obj.answers).map((item) => {
         console.log(item);
         return (
           <div key={item}>
