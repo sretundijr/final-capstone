@@ -17,8 +17,9 @@ export function getQuestionnaire() {
     });
 }
 
-export function saveCompletedQuestionnaire(advisorInfo, customerName, userInput) {
+export function saveCompletedQuestionnaire(customerId, advisorInfo, customerName, userInput) {
   const completedQuestionnaire = {
+    customerId,
     advisorName: advisorInfo,
     customerName,
     customerAnswers: userInput,

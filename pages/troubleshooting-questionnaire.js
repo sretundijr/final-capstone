@@ -30,6 +30,7 @@ export class TroubleShootingQuestionnaire extends React.Component {
       questionsAnswered: 0,
       shopName: '',
       advisorName: '',
+      customerId: '',
       appointmentDate: '',
       customerName: '',
       questionIndex: 0,
@@ -42,9 +43,9 @@ export class TroubleShootingQuestionnaire extends React.Component {
     const query = queryString.parse(location.search);
     await getQuestionnaire()
       .then((res) => {
-        console.log(query);
         this.setState({
           shopName: query.shopname,
+          customerId: query.customerid,
           advisorName: query.advisorname,
           appointmentDate: new Date(query.appointmentdate).toLocaleDateString(),
           customerName: query.customername,
@@ -87,7 +88,7 @@ export class TroubleShootingQuestionnaire extends React.Component {
     });
   }
   saveUserInput() {
-    saveCompletedQuestionnaire(this.state.advisorName, this.state.customerName, this.state.userInput)
+    saveCompletedQuestionnaire(this.state.customerId, this.state.advisorName, this.state.customerName, this.state.userInput)
       .then(() => Router.push('/thank-you'));
   }
   renderNextButton() {
@@ -169,7 +170,7 @@ export class TroubleShootingQuestionnaire extends React.Component {
     return '';
   }
   render() {
-    // console.log(this.state);
+    console.log(this.state);
     return (
       <div>
         <Head>
