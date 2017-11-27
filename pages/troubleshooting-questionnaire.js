@@ -88,7 +88,14 @@ export class TroubleShootingQuestionnaire extends React.Component {
     });
   }
   saveUserInput() {
-    saveCompletedQuestionnaire(this.state.customerId, this.state.advisorName, this.state.customerName, this.state.userInput)
+    const userInputObj = {
+      selectedIssue: this.state.selectedIssue,
+      customerId: this.state.customerId,
+      customerName: this.state.customerName,
+      advisorName: this.state.advisorName,
+      customerAnswers: this.state.userInput,
+    };
+    saveCompletedQuestionnaire(userInputObj)
       .then(() => Router.push('/thank-you'));
   }
   renderNextButton() {

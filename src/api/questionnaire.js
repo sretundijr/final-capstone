@@ -17,22 +17,14 @@ export function getQuestionnaire() {
     });
 }
 
-export function saveCompletedQuestionnaire(customerId, advisorInfo, customerName, userInput) {
-  const completedQuestionnaire = {
-    customerId,
-    advisorName: advisorInfo,
-    customerName,
-    customerAnswers: userInput,
-  };
+export function saveCompletedQuestionnaire(userInput) {
   return fetch(`${API_BASE_URL}/questionnaire`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(completedQuestionnaire),
+    body: JSON.stringify(userInput),
   });
-  // console.log(completedQuestionnaire);
-  // localStorage.setItem('user-input', JSON.stringify(completedQuestionnaire));
 }
 
 export function getShopAndCustomerData() {
