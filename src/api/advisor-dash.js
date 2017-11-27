@@ -36,8 +36,8 @@ export function sendEmail(advisorId, customerInfo) {
 }
 
 // todo error handling when null
-export function getCustomers() {
-  return fetch(`${API_BASE_URL}/advisor-dashboard/returned`, {
+export function getCustomersWithCompletedQuestionnaire(id) {
+  return fetch(`${API_BASE_URL}/advisor-dashboard/returned/${id}`, {
     method: 'GET',
   })
     .then((res) => {
@@ -82,6 +82,3 @@ export function getAdvisorInfo(id) {
     });
 }
 
-export function saveAdvisorInfo(advisorObj) {
-  localStorage.setItem('advisor', JSON.stringify(advisorObj));
-}

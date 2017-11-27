@@ -11,7 +11,10 @@ import QuestionnaireForm from '../src/components/advisor/questionnaire-form';
 import NavBar from '../src/components/advisor/nav-bar';
 
 // import MockList from '../src/mock-list';
-import { getCustomers, getAdvisorInfo } from '../src/api/advisor-dash';
+import {
+  getCustomersWithCompletedQuestionnaire,
+  getAdvisorInfo,
+} from '../src/api/advisor-dash';
 
 export default class AdvisorDashboard extends React.Component {
   constructor(props) {
@@ -23,7 +26,7 @@ export default class AdvisorDashboard extends React.Component {
   }
   async componentDidMount() {
     const parsed = queryString.parse(location.search);
-    const customers = await getCustomers();
+    const customers = await getCustomersWithCompletedQuestionnaire(parsed._id);
     const advisorInfo = await getAdvisorInfo(parsed._id);
     this.setState({
       list: customers,
