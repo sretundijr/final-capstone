@@ -17,9 +17,11 @@ export default class ViewCompletedQuestionnaire extends React.Component {
       advisorId: '',
       customerLink: '',
       customerName: '',
-      returnedQuestionnaire: [],
       techContainerStatus: 'hide-container',
       technicianEmail: '',
+      questons: [],
+      answers: [],
+      selectedIssue: '',
     };
   }
   // todo this might change when server is implemented
@@ -32,11 +34,14 @@ export default class ViewCompletedQuestionnaire extends React.Component {
     const stringifiedCustomer = queryString.stringify(customerInfo);
     const customerLink = `${location.origin}${location.pathname}?${stringifiedCustomer}`;
     const answers = await getCompletedQuestionnaire(query.id);
+    console.log(answers);
     this.setState({
       advisorId: query.advisorId,
       customerLink,
       customerName: query.customerName,
-      returnedQuestionnaire: answers,
+      questions: answers.questions,
+      answers: answers.answers,
+      selectedIssue: answers.selectedIssue,
     });
   }
   modalBox() {
@@ -69,17 +74,18 @@ export default class ViewCompletedQuestionnaire extends React.Component {
       });
   }
   questionAndAnswerElement() {
-    const element = this.state.returnedQuestionnaire.map(obj =>
-      Object.keys(obj.answers).map((item) => {
-        console.log(item);
+    if (this.state.questions) {
+      const element = this.state.questions.map((question, index) => {
         return (
-          <div key={item}>
-            <h4 className="questions">{item}</h4>
-            <p className="answers">{obj.answers[item]}</p>
+          <div key={question}>
+            <h4 className="questions">{question}</h4>
+            <p className="answers">{this.state.answers[index]}</p>
           </div>
         );
-      }));
-    return element;
+      });
+      return element;
+    }
+    return '';
   }
   navButtons() {
     if (this.state.advisorId) {
@@ -133,6 +139,8 @@ export default class ViewCompletedQuestionnaire extends React.Component {
         <div className="customer-container">
           <h4>Customer Name</h4>
           <p>{this.state.customerName}</p>
+          <h4>Selected Issue</h4>
+          <p>{this.state.selectedIssue}</p>
           {this.questionAndAnswerElement()}
         </div>
         {this.navButtons()}

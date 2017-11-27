@@ -9,7 +9,7 @@ export default function ReturnedQuestionnaire(props) {
       <ul className="customer-row" key={item.id}>
         <li className="customer-item name">{item.customerName}</li>
         <li className="customer-item">{item.customerEmail}</li>
-        <li className="customer-item">{item.appointmentDate}</li>
+        <li className="customer-item">{new Date(item.appointmentDate).toLocaleDateString()}</li>
         <li className="customer-item">
           <button onClick={() => props.onClick(item.id, item.customerName)}>View Questionnaire</button>
         </li>
