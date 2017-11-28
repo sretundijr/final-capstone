@@ -21,6 +21,7 @@ export default class AdvisorDashboard extends React.Component {
     this.state = {
       list: [],
       advisor: {},
+      date: new Date(),
     };
   }
   async componentDidMount() {
@@ -56,6 +57,9 @@ export default class AdvisorDashboard extends React.Component {
           <div id="returned" />
           <div className="list-container">
             <h2 className="title">Returned Questionnaires</h2>
+            <p className="last-updated">
+              Last Updated @ {this.state.date.toLocaleTimeString(Date.now())}
+            </p>
             <QuestionnaireList
               onClick={(id, name) => {
                 Router.push(
@@ -75,11 +79,12 @@ export default class AdvisorDashboard extends React.Component {
             left: 0;
             right: 0;
           }
-          
+          .last-updated {
+            text-align: center;
+          }
           .footer {
             height: 200px;
           }
-          
           .advisor-nav {
             width: 100%;
             position: fixed;
@@ -97,7 +102,6 @@ export default class AdvisorDashboard extends React.Component {
            .list-container {
              margin-top: 100px;
            }
-          
            #questionnaire-form {
              height: 100px;
            }
@@ -105,12 +109,10 @@ export default class AdvisorDashboard extends React.Component {
            #returned {
              height: 100px;
            }
-          
            @media only screen and (max-width: 900px) {
             #questionnaire-form {
              height: 50px;
            }
-            
            #returned {
              height: 50px;
            }
