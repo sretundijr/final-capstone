@@ -1,22 +1,9 @@
 
-/* global localStorage fetch */
+/* global fetch */
 
 const API_BASE_URL = process.env.BACKEND_URL;
 
-export const saveCurrentUser = (name) => {
-  localStorage.setItem('current', JSON.stringify(name));
-};
-
-// todo rename - used to register a user
-export const saveToLocalStorage = (advisorInfo) => {
-  console.log(advisorInfo);
-  const advisorName = advisorInfo.advisorName;
-  localStorage.setItem(advisorName, JSON.stringify(advisorInfo));
-  saveCurrentUser(advisorName);
-};
-
 export const loginUser = (advisorInfo) => {
-  // console.log(advisorInfo);
   const accessToken = {
     advisorInfo,
   };
@@ -36,7 +23,6 @@ export const loginUser = (advisorInfo) => {
 };
 
 export const registerNewUser = (advisorInfo) => {
-  console.log(advisorInfo);
   return fetch(`${API_BASE_URL}/login/new-user`, {
     method: 'POST',
     headers: {

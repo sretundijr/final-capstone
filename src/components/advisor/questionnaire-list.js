@@ -2,7 +2,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// todo work out the view and archive functionality
 export default function ReturnedQuestionnaire(props) {
   const list = props.list.map((item) => {
     return (

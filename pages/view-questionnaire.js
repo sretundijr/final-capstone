@@ -24,7 +24,6 @@ export default class ViewCompletedQuestionnaire extends React.Component {
       selectedIssue: '',
     };
   }
-  // todo this might change when server is implemented
   async componentDidMount() {
     const query = queryString.parse(location.search);
     const customerInfo = {
@@ -34,7 +33,6 @@ export default class ViewCompletedQuestionnaire extends React.Component {
     const stringifiedCustomer = queryString.stringify(customerInfo);
     const customerLink = `${location.origin}${location.pathname}?${stringifiedCustomer}`;
     const answers = await getCompletedQuestionnaire(query.id);
-    console.log(answers);
     this.setState({
       advisorId: query.advisorId,
       customerLink,

@@ -1,25 +1,6 @@
-/* global localStorage fetch */
+/* global fetch */
 
 const API_BASE_URL = process.env.BACKEND_URL;
-
-// import Customers from '../mock-list';
-
-export function saveCustomer(customer) {
-  const savedInfo = localStorage.getItem('all-customers');
-  const customers = JSON.parse(savedInfo);
-  const customerObj = {
-    id: Math.floor(Math.random() * 10000) + 1,
-    customerName: customer.customerName,
-    customerEmail: customer.customerEmail,
-    appointmentDate: customer.appointmentDate,
-  };
-  if (customers !== null) {
-    customers.push(customerObj);
-    localStorage.setItem('all-customers', JSON.stringify(customers));
-  } else {
-    localStorage.setItem('all-customers', JSON.stringify([customerObj]));
-  }
-}
 
 export function sendEmail(advisorId, customerInfo) {
   const customerObj = {

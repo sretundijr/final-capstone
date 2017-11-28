@@ -12,9 +12,6 @@ import IssueCategory from '../src/components/questionaire/issue-category';
 import SingleQuestion from '../src/components/questionaire/single-question';
 import Submit from '../src/components/questionaire/submit';
 
-// helpers
-// import MockQuestionnaire from '../src/mock-questionnaire';
-
 // api
 import { saveCompletedQuestionnaire, getQuestionnaire } from '../src/api/questionnaire';
 
@@ -177,7 +174,6 @@ export class TroubleShootingQuestionnaire extends React.Component {
     return '';
   }
   render() {
-    console.log(this.state);
     return (
       <div>
         <Head>
