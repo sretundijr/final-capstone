@@ -5,12 +5,6 @@ import { shallow } from 'enzyme';
 
 import TroubleshootingQuestionnaire from '../../pages/troubleshooting-questionnaire';
 
-jest.mock('../mock-questionnaire');
-import MockQuestionaire from '../mock-questionnaire';
-
-const mockQuestionObject = () => MockQuestionaire
-  .mockReturnValueOnce([{ issueType: 'foo', questions: ['hello'] }]);
-
 // todo change tests to account for api call
 describe('testing troubleshooting questionaire', () => {
   it('should render without crashing', () => {
