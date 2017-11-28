@@ -43,9 +43,9 @@ export default function SingleQuestion(props) {
         <div>
           {determineAnswerType(props.checked, props.question, props.onChange, props.value)}
         </div>
-        {props.renderBackButton}
         {props.renderNextButton}
         {props.renderSubmit}
+        {props.renderBackButton}
       </div>
       <style jsx>{`
         .flex-container { 
@@ -57,7 +57,7 @@ export default function SingleQuestion(props) {
           text-align: center;
           max-width: 100%;
           width: 600px;
-          height: 65vh;
+          height: auto;
           background: #495C70;
           margin-top: 10px;
           margin-bottom: 150px;

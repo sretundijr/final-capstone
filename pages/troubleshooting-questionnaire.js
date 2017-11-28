@@ -108,6 +108,7 @@ export class TroubleShootingQuestionnaire extends React.Component {
         </button>
         <style jsx>{`
           .next-btn {
+            font-size: 20px;    
             margin: 20px;
             width: 200px;
             height: 40px;
@@ -115,6 +116,7 @@ export class TroubleShootingQuestionnaire extends React.Component {
             background: #576E86;
             color: #fff;
             border-radius: 5px;
+            outline: none;
           }
         `}
         </style>
@@ -132,6 +134,7 @@ export class TroubleShootingQuestionnaire extends React.Component {
           </button>
           <style jsx>{`
             .next-btn {
+              font-size: 20px;    
               margin: 20px;
               width: 200px;
               height: 40px;
@@ -139,6 +142,7 @@ export class TroubleShootingQuestionnaire extends React.Component {
               background: #576E86;
               color: #fff;
               border-radius: 5px;
+              outline: none;
             }
           `}</style>
         </div>
@@ -167,6 +171,7 @@ export class TroubleShootingQuestionnaire extends React.Component {
           checked={this.state.userInput}
           renderNextButton={this.renderNextButton()}
           renderBackButton={this.renderBackButton()}
+          renderSubmit={this.renderSubmit()}
           value={this.getUserAnswer()}
         />
       );
@@ -195,7 +200,6 @@ export class TroubleShootingQuestionnaire extends React.Component {
           </div>
           <div className="main-container">
             {this.renderQuestion()}
-            {this.renderSubmit()}
           </div>
         </div>
         <style jsx>{`
