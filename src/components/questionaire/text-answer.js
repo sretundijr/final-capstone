@@ -3,7 +3,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export default function TextAnswer(props) {
-  // console.log(props.value);
   return (
     <div className="flex-container">
       <div>

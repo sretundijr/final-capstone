@@ -7,7 +7,6 @@ import MultipleChoice from './multiple-choice';
 import TextAnswer from './text-answer';
 
 export const determineAnswerType = (checked, questionObject, callback, value) => {
-  // console.log(questionObject.multipleChoice);
   if (questionObject.multipleChoice) {
     return (
       <div className="multi-choice-container">
@@ -32,7 +31,6 @@ export const determineAnswerType = (checked, questionObject, callback, value) =>
 };
 
 export default function SingleQuestion(props) {
-  // console.log(props);
   return (
     <div key={0} className="flex-container">
       <div id={`question-${0}`} className="content-container component-container">

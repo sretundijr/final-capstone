@@ -46,7 +46,6 @@ export default class Index extends React.Component {
     }
   }
   handleLogin(e) {
-    // console.log(e.target.value);
     this.setState({
       [e.target.name]: e.target.value,
     });
@@ -55,19 +54,6 @@ export default class Index extends React.Component {
     loginUser(this.state.advisorAccessToken)
       .then(() => Router.push('/advisor-dashboard'));
   }
-  // submitRegistration(e) {
-  //   e.preventDefault();
-  //   const newUserCredentials = {
-  //     shopName: this.state.shopName,
-  //     advisorName: this.state.advisorName,
-  //     advisorEmail: this.state.advisorEmail,
-  //     advisorPassword: this.state.advisorPassword,
-  //   };
-  //   registerNewUser(newUserCredentials)
-  //     .then((res) => {
-  //       Router.push(`/advisor-dashboard?_id=${res._id}`);
-  //     });
-  // }
   renderUserSelection() {
     if (this.state.userSelection === 'sign-in') {
       this.state.userSelection = 'home';
@@ -87,7 +73,7 @@ export default class Index extends React.Component {
     return (
       <div>
         <Head>
-          <title>My page title</title>
+          <title>Technician Assist</title>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         </Head>
         <div className="landing-page">
