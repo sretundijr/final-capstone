@@ -1,14 +1,11 @@
 
 import React from 'react';
 import Head from 'next/head';
-import Router from 'next/router';
 
 // components
 import Slider from '../src/components/landing_page/slider';
 import Home from '../src/components/landing_page/home';
 import Contact from '../src/components/landing_page/contact';
-
-import { loginUser } from '../src/api/login';
 
 import { showLock } from '../src/components/auth-login';
 
@@ -49,10 +46,6 @@ export default class Index extends React.Component {
     this.setState({
       [e.target.name]: e.target.value,
     });
-  }
-  submitLogin() {
-    loginUser(this.state.advisorAccessToken)
-      .then(() => Router.push('/advisor-dashboard'));
   }
   renderUserSelection() {
     if (this.state.userSelection === 'sign-in') {
