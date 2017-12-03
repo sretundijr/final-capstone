@@ -26,6 +26,8 @@ Why react?  React was a requirement of [Thinkful](https://www.thinkful.com/) and
 
 Authorization was handled using Auth0.  This presented some challenges at first, but after initial setup and understanding the api I felt this was the best choice.  Auth lock was used which embedded the auth login form into the app.  Call back redirects and routing were handled using next/Router.  
 
+Component testing was done with enzyme and jest.  Each component received basic rendering tests.  Several components were tested in more depth, these components were typically the stateful top level classses.  Testing is not complete and there will be more tests to come to bring the coverage levels up.  As this app moves from MVP scope testing will ensure existing components are still working correctly.  Testing will continue while the app remains in the current MVP scope.
+
 
 
 

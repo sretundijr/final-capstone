@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export default function WelcomeHeader(props) {
+  console.log(props.appointmentDate);
   return (
     <div>
       <div className="flex-container">
@@ -17,7 +18,7 @@ export default function WelcomeHeader(props) {
         <h3 className="content-container">
           The following is a brief questionaire to help us better understand
           the issues that you are experiencing.  Please complete this questionaire
-          before your appointment on {props.appointmentDate}
+          before your appointment, thanks and we look forward to seeing you!
         </h3>
       </div>
       <style jsx>{`

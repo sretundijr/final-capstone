@@ -22,6 +22,7 @@ export default class AdvisorDashboard extends React.Component {
       list: [],
       advisor: {},
       date: new Date(),
+      query: '',
     };
   }
   async componentDidMount() {
@@ -31,6 +32,7 @@ export default class AdvisorDashboard extends React.Component {
     this.setState({
       list: customers,
       advisor: advisorInfo[0],
+      query: location.search,
     });
   }
   render() {
@@ -42,7 +44,11 @@ export default class AdvisorDashboard extends React.Component {
         </Head>
         <div className="page">
           <div className="advisor-nav">
-            <NavBar firstButton={'Send Questionnaire'} secondButton={'Returned Questionnaires'} />
+            <NavBar
+              firstButton={'Send Questionnaire'} 
+              secondButton={'Returned Questionnaires'}
+              query={this.state.query}
+            />
           </div>
           <div id="questionnaire-form" />
           <div className="form-container" >

@@ -79,9 +79,15 @@ export default class Index extends React.Component {
             </nav>
           </div>
           <main>
+            <div>
+              <h1>Please use demo123@demo.com and password 123 for login</h1>
+            </div>
             {this.renderUserSelection()}
           </main>
           <style jsx>{`
+            h1 {
+              text-align: center;
+            }
             main {
               background-color: rgb(181, 186, 189);
               height: 100vh;

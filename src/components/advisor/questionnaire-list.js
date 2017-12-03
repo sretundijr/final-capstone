@@ -7,12 +7,18 @@ export default function ReturnedQuestionnaire(props) {
     return (
       <ul className="customer-row" key={item.id}>
         <li className="customer-item name">{item.customerName}</li>
-        <li className="customer-item">{item.customerEmail}</li>
+        {/* <li className="customer-item">{item.customerEmail}</li> */}
+        <li className="customer-item">
+          Currently hidden for the demo version.
+          This allows curious vistors to send thenselves a Questionnaire
+          without having their email address exposed.
+        </li>
         <li className="customer-item">{new Date(item.appointmentDate).toLocaleDateString()}</li>
         <li className="customer-item">
           <button onClick={() => props.onClick(item.id, item.customerName)}>View Questionnaire</button>
         </li>
-        <li className="customer-item"><button>Archive</button></li>
+        {/* <li className="customer-item"><button>Archive</button></li> */}
+        <li className="customer-item">Feature not available for demo version</li>
         <style jsx>{`
           .customer-item {
             margin: 10px;

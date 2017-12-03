@@ -38,6 +38,7 @@ export class TroubleShootingQuestionnaire extends React.Component {
   }
   async componentDidMount() {
     const query = queryString.parse(location.search);
+    console.log(query.appointmentdate);
     await getQuestionnaire()
       .then((res) => {
         this.setState({
