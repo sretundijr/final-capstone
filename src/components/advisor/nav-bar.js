@@ -7,10 +7,10 @@ export default function NavBar(props) {
   return (
     <nav className="advisor-nav">
       <div className="flex-container">
-        <Link href="#questionnaire-form">
+        <Link href={`${props.query}#questionnaire-form`}>
           <button className="nav-button">{props.firstButton}</button>
         </Link>
-        <Link href="#returned">
+        <Link href={`${props.query}#returned`}>
           <button className="nav-button">{props.secondButton}</button>
         </Link>
       </div>
