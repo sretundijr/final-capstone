@@ -82,7 +82,7 @@ export default class Index extends React.Component {
           </div>
           <main>
             <div>
-              <h1>Please use demo123@demo.com and password 123 for login</h1>
+              <h1>Please use demo123@demo.com and password: 123 for login</h1>
             </div>
             {this.renderUserSelection()}
           </main>
