@@ -16,7 +16,7 @@ export default function Slider(props) {
       <div id="nav-container" className={props.navOutput}>
         <ul>
           <li><button onClick={props.onClick} href="#" value="home">HOME</button></li>
-          <li><button onClick={props.onClick} href="#" value="sign-in">SIGN IN</button></li>
+          <li><button onClick={props.lockEvent} href="#" value="sign-in">SIGN IN</button></li>
           <li><button onClick={props.onClick} href="#" value="contact">CONTACT</button></li>
         </ul>
       </div>

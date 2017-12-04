@@ -48,14 +48,15 @@ export default class Index extends React.Component {
     });
   }
   renderUserSelection() {
-    if (this.state.userSelection === 'sign-in') {
-      this.state.userSelection = 'home';
-      return (
-        <div>
-          {showLock()}
-        </div>
-      );
-    } else if (this.state.userSelection === 'home') {
+    // if (this.state.userSelection === 'sign-in') {
+    //   this.state.userSelection = 'home';
+    //   return (
+    //     <div>
+    //       {showLock()}
+    //     </div>
+    //   );
+    // } 
+    if (this.state.userSelection === 'home') {
       return <Home />;
     } else if (this.state.userSelection === 'contact') {
       return <Contact />;
@@ -75,6 +76,7 @@ export default class Index extends React.Component {
               <Slider
                 navOutput={this.state.navOutput}
                 onClick={e => this.handleUserSelection(e.target.value)}
+                lockEvent={() => showLock()}
               />
             </nav>
           </div>
