@@ -45,7 +45,7 @@ export default class AdvisorDashboard extends React.Component {
         <div className="page">
           <div className="advisor-nav">
             <NavBar
-              firstButton={'Send Questionnaire'} 
+              firstButton={'Send Questionnaire'}
               secondButton={'Returned Questionnaires'}
               query={this.state.query}
             />
