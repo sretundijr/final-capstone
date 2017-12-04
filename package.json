@@ -14,7 +14,9 @@
       "!**/src/advisor-store.js",
       "!**/src/actions/**",
       "!**/src/reducers/**",
-      "!**/stories/**"
+      "!**/stories/**",
+      "!**/env-config.js",
+      "!**/pages/auth-callback.js"
     ]
   },
   "version": "1.0.0",
