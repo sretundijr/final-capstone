@@ -4,11 +4,15 @@ import React from 'react';
 export default function Home() {
   return (
     <div>
-      <div className="home-container" />
+      <div className="home-container none" />
       <div className="login-header-container">
         <h1 className="login-header">Please use demo123@demo.com and password: 123 for login</h1>
+
       </div>
       <style jsx>{`
+          .none {
+            display: none;
+          }
           .home-container {
             position: absolute;
             top: 0;
@@ -42,10 +46,18 @@ export default function Home() {
           }
            @media only screen and (max-width: 750px) {
             .home-container {
+              display: none;
+            }
+            .login-header-container {
+              height: 100vh;
             }
           }
           @media only screen and (max-width: 450px) {
             .home-container {
+              display: none;
+            }
+            .login-header-container {
+              height: 100vh;
             }
           }
         `}
