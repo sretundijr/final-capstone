@@ -42,14 +42,14 @@ export default function ReturnedQuestionnaire(props) {
           @media only screen and (max-width: 900px) {
             .customer-row {
               border: 5px solid #53687E;         
-              margin-left: -20px;
-              text-align: left;
-              width: 100%;
+              width: 80%;
+              margin: 0 auto;
             }
             .customer-item {
-              width: 100%;
+              width: 80%;
               margin-top: 10px;
               float: none;
+              text-align: left;              
             }
           }
         `}</style>

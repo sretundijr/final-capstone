@@ -10,6 +10,8 @@ import QuestionnaireList from '../src/components/advisor/questionnaire-list';
 import QuestionnaireForm from '../src/components/advisor/questionnaire-form';
 import NavBar from '../src/components/advisor/nav-bar';
 
+import { logout } from '../src/components/auth-login';
+
 import {
   getCustomersWithCompletedQuestionnaire,
   getAdvisorInfo,
@@ -48,6 +50,7 @@ export default class AdvisorDashboard extends React.Component {
               firstButton={'Send Questionnaire'}
               secondButton={'Returned Questionnaires'}
               query={this.state.query}
+              onClick={() => logout().then(Router.push('/index'))}
             />
           </div>
           <div id="questionnaire-form" />
@@ -80,6 +83,7 @@ export default class AdvisorDashboard extends React.Component {
         <style jsx>{`
           .page {
             background-color: rgb(181, 186, 189);
+            width: 100%;
             position: absolute;
             top: 0;
             left: 0;

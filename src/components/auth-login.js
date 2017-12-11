@@ -31,6 +31,10 @@ const lock = () => new Auth0Lock(
 
 export const showLock = () => lock().show();
 
+export const logout = () => {
+  return Promise.resolve(localStorage.removeItem('access_token'));
+};
+
 export const getAccessToken = () => {
   const accessToken = localStorage.getItem('access_token');
   if (!accessToken) {

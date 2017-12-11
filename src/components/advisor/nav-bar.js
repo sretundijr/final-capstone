@@ -13,6 +13,7 @@ export default function NavBar(props) {
         <Link href={`${props.query}#returned`}>
           <button className="nav-button">{props.secondButton}</button>
         </Link>
+        <button onClick={props.onClick} className="nav-button">Logout</button>
       </div>
       <style jsx>{`
         .advisor-nav {
