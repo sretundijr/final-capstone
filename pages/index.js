@@ -87,13 +87,17 @@ export default class Index extends React.Component {
             h1 {
               text-align: center;
             }
+            .landing-page {
+              margin: 0;
+              padding: 0;
+            }
             main {
               background-color: rgb(181, 186, 189);
-              height: 100vh;
+              height: auto;
               width: 100vw;
-              position: fixed;
-              top: 8vh;
+              position: absolute;
               left: 0;
+              margin-top: 50px;
             }
             @media only screen and (max-width: 900px) {
              main {
@@ -102,8 +106,8 @@ export default class Index extends React.Component {
             @media only screen and (max-width: 750px) {
               main {
                 position: absolute;
-                top: 12vh;
                 height: auto;
+                margin-top: 20px;             
               }
             } 
             @media only screen and (max-width: 450px) {
@@ -111,6 +115,7 @@ export default class Index extends React.Component {
                 position: absolute;
                 top: 8vh;
                 height: auto;
+                margin-top: 20px;              
               }
             }
           `}
