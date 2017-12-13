@@ -38,7 +38,6 @@ export class TroubleShootingQuestionnaire extends React.Component {
   }
   async componentDidMount() {
     const query = queryString.parse(location.search);
-    console.log(query.appointmentdate);
     await getQuestionnaire()
       .then((res) => {
         this.setState({
@@ -205,10 +204,10 @@ export class TroubleShootingQuestionnaire extends React.Component {
         </div>
         <style jsx>{`
           .main-container {
-            background-color: rgb(181, 186, 189);   
+            background-color: #F5F5F5;            
           }
           .page {
-            background-color: rgb(181, 186, 189);
+            background-color: #F5F5F5;                       
             color: #F5F5F5;
             font-size: 1.5vw;
             width: 100vw;   
