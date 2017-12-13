@@ -76,15 +76,12 @@ export default class Index extends React.Component {
             {this.renderUserSelection()}
           </main>
           <style jsx>{`
-            h1 {
-              text-align: center;
-            }
             .landing-page {
               margin: 0;
               padding: 0;
             }
             main {
-              background-color: rgb(181, 186, 189);
+              background-color: #F5F5F5;            
               height: auto;
               width: 100vw;
               position: absolute;
@@ -117,4 +114,5 @@ export default class Index extends React.Component {
     );
   }
 }
+// background-color: rgb(181, 186, 189);
 

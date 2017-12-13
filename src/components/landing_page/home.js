@@ -25,6 +25,10 @@ export default function Home() {
           <h3>Technician Assist solves many of the problems with the communication chain between the customer, advisor, and the technician. Please use the demo log in and take a tour of what Technician Assist can do for you.</h3>
         </div>
       </div>
+      <div className="tech-assist-explained-container">
+        <h2 className="tech-assist-header">So what does Technician Assist do for you?</h2>
+        <p className="tech-assist-p">Technician Assist allows a service advisor to send an email containing a link to a survey.  This survey will contain questions that allow a customer to go into greater detail about the vehicle issues they are experiencing.  Once the survey is complete, the customer simply submits and the advisor gets updated.  The advisor can then send this survey to the technician assigned to the vehicle.  Sometimes the greatest chanllenge a service department faces is getting a clear picture of what is happening with a customers vehicle. Technician Assist aims to eliminate this problem. The tool presented today is the first in a series of tools aimed to assist a service department in delivering a great customer experience.</p>
+      </div>
       <div className="footer" />
       <style jsx>{`
           .none {
@@ -77,11 +81,18 @@ export default function Home() {
             width: 300px;
             height: 100px;
           }
-          
+          .tech-assist-explained-container {
+            margin: 40px 10px 0 10px;
+          }
+          .tech-assist-header {
+            text-align: center;
+          }
+          .tech-assist-p {
+            font-weight: bold;
+            margin: -10px 20px 0 20px;
+            padding: 0 20px 0 20px;
+          }
           @media only screen and (max-width: 1100px) {
-            .unhappy-customer-content {
-              
-            }
             .unhappy-customer {
               width: 30%;
               height: 300px;
@@ -101,9 +112,16 @@ export default function Home() {
               height: 50px;
               margin-left: 10px;
             }
+            .tech-assist-header {
+              width: 40%;        
+            }
+            .tech-assist-p {
+              width: 90%;
+              margin-left: 0;
+              padding-left: 0;
+            }
           }
-          }
-           @media only screen and (max-width: 850px) {
+          @media only screen and (max-width: 850px) {
             .unhappy-customer-content {
               margin: 20px;
               width: 100%;
@@ -128,6 +146,15 @@ export default function Home() {
             }
             .arrow {
               display: none;
+            }
+            .tech-assist-header {
+              text-align: left;
+              width: 100%;
+              margin-left: 10px;    
+            }
+            .tech-assist-p {
+              width: 95%;
+              margin: -10px 20px 0 15px;
             }
           }
           @media only screen and (max-width: 450px) {
