@@ -89,8 +89,6 @@ export default class Index extends React.Component {
               margin-top: 50px;
             }
             @media only screen and (max-width: 900px) {
-             main {
-             }
             }
             @media only screen and (max-width: 750px) {
               main {

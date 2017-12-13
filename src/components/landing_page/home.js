@@ -18,10 +18,7 @@ export default function Home() {
       <div className="happy-customer-container">
         <img className="happy-customer-img" src="/static/happyCustomer.jpeg" alt="happy customer" />
         <div className="happy-customer-content">
-          <div className="arrow-container">
-            <h2>Do you want more of this?</h2>
-            <img className="arrow" src="/static/arrow.png" alt="arrow" />
-          </div>
+          <h2 className="happy-customer-header">Do you want more of this?</h2>
           <h3>Technician Assist solves many of the problems with the communication chain between the customer, advisor, and the technician. Please use the demo log in and take a tour of what Technician Assist can do for you.</h3>
         </div>
       </div>
@@ -41,58 +38,52 @@ export default function Home() {
           .unhappy-image-container {
             display: flex;
             flex-direction: row;
-            flex-wrap: wrap;
           }
           .unhappy-customer {
-            margin: 0 auto;
+            margin-left: 20px;
+            width: 40%;
           }
           .unhappy-customer-content {
-            width: 50%;
+            width: 45%;
+            margin-left: 10px;
+            margin-right: 10px;
           }
           .login-header-container {
-            position: relative;
             display: flex;
             justify-content: center;
             z-index: 1;
+            margin: 20px;
           }
-          .happy-customer-container {
-            display: flex;
-            flex-direction: row-reverse;
-            flex-wrap: wrap;
-            justify-content: flex-end;
+          .happy-customer-header {
+            text-align: right;
+            margin-right: 10px;
           }
           .happy-customer-content {
             width: 50%;
-            margin-left: 20px;
+            margin-top: 60px;
+            margin-left: 50px;
           }
           .happy-customer-img {
             position: absolute;
             top: 320px;
             right: 30px;
-          }
-          .arrow-container {
-            display: flex;
-            flex-direction: row;
-            margin: 20px auto;
-            margin-left: 55px;
-          }
-          .arrow {
-            margin-left: 20px;
-            width: 300px;
-            height: 100px;
+            width: 40%;
+            margin: 10px;
           }
           .tech-assist-explained-container {
-            margin: 40px 10px 0 10px;
+            margin: 50px 10px 0 10px;
           }
           .tech-assist-header {
             text-align: center;
           }
           .tech-assist-p {
             font-weight: bold;
-            margin: -10px 20px 0 20px;
-            padding: 0 20px 0 20px;
+            margin-top: -10px;
           }
           @media only screen and (max-width: 1100px) {
+            .unhappy-image-container {
+              flex-wrap: wrap;            
+            }
             .unhappy-customer {
               width: 30%;
               height: 300px;
@@ -101,22 +92,14 @@ export default function Home() {
               width: 40%;
             }
             .happy-customer-img {
-              top: 350px;
+              top: 400px;
               width: 50%;
-            }
-            .arrow-container {
-              margin-left: 30px;
-            }
-            .arrow {
-              width: 100px;
-              height: 50px;
-              margin-left: 10px;
             }
             .tech-assist-header {
               width: 40%;        
             }
             .tech-assist-p {
-              width: 90%;
+              margin-top: 40px;
               margin-left: 0;
               padding-left: 0;
             }
@@ -131,21 +114,19 @@ export default function Home() {
               width: 50%;
               height: 200px;
             }
-            .arrow-container {
-              margin-left: 0; 
-            }
             .happy-customer-content {
-              width: 100%;
+              width: 90%;
+              margin-left: 20px;
             }
             .happy-customer-img {
               position: relative;
               top: 0;
               right: 0;
               width: 90%;
-              margin: 0 auto;
+              margin-left: 20px;
             }
-            .arrow {
-              display: none;
+            .happy-customer-header {
+              text-align: left;
             }
             .tech-assist-header {
               text-align: left;
@@ -154,7 +135,8 @@ export default function Home() {
             }
             .tech-assist-p {
               width: 95%;
-              margin: -10px 20px 0 15px;
+              margin: -10px 20px 0 10px;
+              padding: 0;
             }
           }
           @media only screen and (max-width: 450px) {
@@ -167,24 +149,25 @@ export default function Home() {
               width: 90%;
               height: 200px;
             }
-            .happy-customer-content {
-              width: 100%;
-              margin: 0 20px 0 20px;
+            .happy-customer-header {
               text-align: center;
+              margin-right: 0;
+            }
+            .happy-customer-content {
+              width: 90%;
+              margin: 0 20px 0 20px;
+              text-align: left;
             }
             .happy-customer-img {
               position: relative;
               top: 0;
               right: 0;
               width: 90%;
-              margin: 0 auto;
             }
-            .arrow-container {
-              margin: 0 20px 0 20px;
-              text-align: center;              
-            }
-            .arrow {
-              display: none;
+            .tech-assist-header {
+              text-align: center;
+              width: 90%;
+              margin-left: 10px;    
             }
           }
         `}
@@ -192,3 +175,4 @@ export default function Home() {
     </div >
   );
 }
+

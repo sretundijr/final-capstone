@@ -11,6 +11,7 @@ export default function ContactUs() {
         h4 {
           text-align: center;
           padding-top: 200px;
+          height: 100vh;
         }
       `}
       </style>
