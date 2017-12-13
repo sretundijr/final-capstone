@@ -65,7 +65,7 @@ export default function Home() {
           }
           .happy-customer-img {
             position: absolute;
-            top: 320px;
+            top: 350px;
             right: 30px;
             width: 40%;
             margin: 10px;
