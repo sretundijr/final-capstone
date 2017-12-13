@@ -82,7 +82,7 @@ export default class AdvisorDashboard extends React.Component {
         </div>
         <style jsx>{`
           .page {
-            background-color: rgb(181, 186, 189);
+            background-color: #F5F5F5;                        
             width: 100%;
             position: absolute;
             top: 0;

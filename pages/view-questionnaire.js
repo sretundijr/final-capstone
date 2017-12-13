@@ -98,12 +98,13 @@ export default class ViewCompletedQuestionnaire extends React.Component {
             button {
               font-size: 20px;
               margin: 20px;
+              padding: 8px;
               width: 200px;
               height: auto;
               border: none;
               background: #576E86;
               color: #fff;
-              border-radius: 5px;
+              border-radius: 3px;
               outline: none;
             }
            @media only screen and (max-width: 450px) {
@@ -135,6 +136,7 @@ export default class ViewCompletedQuestionnaire extends React.Component {
           />
         </div>
         <div className="customer-container">
+          <h2>Customer Survey</h2>
           <h4>Customer Name</h4>
           <p>{this.state.customerName}</p>
           <h4>Selected Issue</h4>
@@ -147,7 +149,7 @@ export default class ViewCompletedQuestionnaire extends React.Component {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            background-color: #495C70;
+            background-color: white;
             width: auto;
             height: auto;
             color: rgb(73, 92, 112);
@@ -169,7 +171,7 @@ export default class ViewCompletedQuestionnaire extends React.Component {
             color: white;
           }
           .customer-container {
-            background-color: rgb(181, 186, 189);
+            background-color: #F5F5F5;                        
             padding: 20px;
             text-align: center;
             width: auto;
@@ -188,7 +190,7 @@ export default class ViewCompletedQuestionnaire extends React.Component {
            }
            @media only screen and (max-width: 450px) {
             .page {
-          font-size: 5.2vw;
+              font-size: 5.2vw;
             }
            }
           `}
