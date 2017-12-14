@@ -111,7 +111,7 @@ export default function Slider(props) {
             }
             @media only screen and (max-width: 750px) {
               .nav-view {
-                top: 12vh;
+                top: 8vh;
                 width: 20vw;
               }
               .nav-view button {
@@ -119,7 +119,7 @@ export default function Slider(props) {
                 font-size: 2vw;                
               }
               .top-bar {
-                height: 12vh;                
+                height: 8vh;           
               }
               .top-bar .logo button {
                 font-size: 2.5vw;              
@@ -128,10 +128,18 @@ export default function Slider(props) {
                 font-size: 2.5vw;
               }
             }
+            @media only screen and (max-width: 750px) and (orientation: landscape) {
+              .top-bar {
+                height: 10vh;
+              }
+              .nav-view {
+                top: 10vh;
+              }
+            }
             @media only screen and (max-width: 450px) {
               .nav-view {
                 text-align: center;
-                position: absolute;
+                position: fixed;
                 width: 100vw;
                 top: 10vh;
               }

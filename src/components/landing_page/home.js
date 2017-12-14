@@ -53,7 +53,7 @@ export default function Home() {
             display: flex;
             justify-content: center;
             z-index: 1;
-            margin: 20px;
+            margin: 30px;
           }
           .happy-customer-header {
             text-align: right;
@@ -79,7 +79,7 @@ export default function Home() {
           }
           .tech-assist-p {
             font-weight: bold;
-            margin-top: -10px;
+            margin-top: 10px;
           }
           @media only screen and (max-width: 1100px) {
             .unhappy-image-container {
@@ -95,13 +95,14 @@ export default function Home() {
             }
             .happy-customer-img {
               top: 400px;
-              width: 50%;
+              width: 45%;
+              height: 35%;
             }
             .tech-assist-header {
               width: 40%;        
             }
             .tech-assist-p {
-              margin-top: 40px;
+              margin-top: 50px;
               margin-left: 0;
               padding-left: 0;
             }
