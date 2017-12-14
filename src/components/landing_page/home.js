@@ -42,6 +42,7 @@ export default function Home() {
           .unhappy-customer {
             margin-left: 20px;
             width: 40%;
+            height: 30%;
           }
           .unhappy-customer-content {
             width: 45%;
@@ -86,7 +87,8 @@ export default function Home() {
             }
             .unhappy-customer {
               width: 30%;
-              height: 300px;
+              height: 20%;
+              width: 400px;
             }
             .happy-customer-content {
               width: 40%;
@@ -112,7 +114,7 @@ export default function Home() {
             .unhappy-customer {
               margin: 0 auto;
               width: 50%;
-              height: 200px;
+              height: 45%;
             }
             .happy-customer-content {
               width: 90%;
@@ -147,7 +149,7 @@ export default function Home() {
             .unhappy-customer {
               margin: 0 auto;
               width: 90%;
-              height: 200px;
+              height: 80%;
             }
             .happy-customer-header {
               text-align: center;
