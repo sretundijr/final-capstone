@@ -71,7 +71,7 @@ export default function Home() {
             margin: 10px;
           }
           .tech-assist-explained-container {
-            margin: 50px 10px 0 10px;
+            margin: 85px 10px 0 10px;
           }
           .tech-assist-header {
             text-align: center;
