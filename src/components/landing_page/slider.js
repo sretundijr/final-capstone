@@ -10,13 +10,13 @@ export default function Slider(props) {
           <button>Technician Assist</button>
         </div>
         <div className="menu">
-          <button onClick={props.onClick} className="menu-btn">Menu</button>
+          <button className="menu-btn" onClick={props.lockEvent} href="#" value="sign-in">SIGN IN</button>
         </div>
       </div>
       <div id="nav-container" className={props.navOutput}>
         <ul>
           <li><button onClick={props.onClick} href="#" value="home">HOME</button></li>
-          <li><button onClick={props.lockEvent} href="#" value="sign-in">SIGN IN</button></li>
+          <li></li>
           <li><button onClick={props.onClick} href="#" value="contact">CONTACT</button></li>
         </ul>
       </div>
@@ -55,10 +55,13 @@ export default function Slider(props) {
               outline: none;
               background-color: #495C70;              
               color: #fff;
-              font-size: 2.0vw;
+              font-size: 1.5vw;
               text-transform: uppercase;
               text-decoration: none;
-              letter-spacing: 5px;            
+              letter-spacing: 5px;
+            }
+            button {
+              cursor: pointer;                        
             }
             /*nav*/
             

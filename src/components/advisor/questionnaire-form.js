@@ -189,6 +189,9 @@ export default class QuestionnaireForm extends React.Component {
             .form-style-4 input[type=submit]:hover {
               background: #394D61;
             }
+            input {
+              cursor: pointer;
+            }
           `}</style>
         </div>
       </div>

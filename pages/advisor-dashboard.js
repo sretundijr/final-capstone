@@ -106,18 +106,18 @@ export default class AdvisorDashboard extends React.Component {
             text-align: center;
           }
            .form-container {
-             margin-top: 100px;
+             margin-top: 20px;
            }
           
            .list-container {
-             margin-top: 100px;
+             margin-top: 20px;
            }
            #questionnaire-form {
-             height: 100px;
+             height: 50px;
            }
             
            #returned {
-             height: 100px;
+             height: 50px;
            }
            @media only screen and (max-width: 900px) {
             #questionnaire-form {

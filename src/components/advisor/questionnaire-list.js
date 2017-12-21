@@ -10,7 +10,7 @@ export default function ReturnedQuestionnaire(props) {
         {/* <li className="customer-item">{item.customerEmail}</li> */}
         <li className="customer-item">
           Currently hidden for the demo version.
-          This allows curious vistors to send thenselves a Questionnaire
+          This allows curious vistors to send themselves a Questionnaire
           without having their email address exposed.
         </li>
         <li className="customer-item">{new Date(item.appointmentDate).toLocaleDateString()}</li>
@@ -38,6 +38,7 @@ export default function ReturnedQuestionnaire(props) {
             background: #576E86;
             color: #fff;
             border-radius: 5px;
+            cursor: pointer;
           }
           @media only screen and (max-width: 900px) {
             .customer-row {

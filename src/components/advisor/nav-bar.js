@@ -33,6 +33,9 @@ export default function NavBar(props) {
           margin: 10px;
           outline: none;
         }
+        button {
+          cursor: pointer;
+        }
       `}</style>
     </nav>
   );
