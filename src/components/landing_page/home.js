@@ -46,8 +46,7 @@ export default function Home() {
           }
           .unhappy-customer-content {
             width: 45%;
-            margin-left: 10px;
-            margin-right: 10px;
+            margin: 0 auto;
           }
           .login-header-container {
             display: flex;
@@ -55,24 +54,24 @@ export default function Home() {
             z-index: 1;
             margin: 30px;
           }
+          .happy-customer-container {
+            display: flex;
+            flex-direction: row;
+            margin-top: 20px;
+          }
           .happy-customer-header {
-            text-align: right;
-            margin-right: 10px;
           }
           .happy-customer-content {
-            width: 50%;
-            margin-top: 60px;
-            margin-left: 50px;
+            width: 45%;
+            margin: 0 auto;
           }
           .happy-customer-img {
-            position: absolute;
-            top: 350px;
-            right: 30px;
+            margin-left: 20px;
             width: 40%;
-            margin: 10px;
+            height: 30%;
           }
           .tech-assist-explained-container {
-            margin: 85px 10px 0 10px;
+            margin: 20px 10px 0 10px;
           }
           .tech-assist-header {
             text-align: center;
@@ -81,6 +80,15 @@ export default function Home() {
             font-weight: bold;
             margin-top: 10px;
           }
+          h2 {
+            display: block;
+            font-size: 1.5em;
+            -webkit-margin-before: 0;
+            -webkit-margin-after: 0;
+            -webkit-margin-start: 0px;
+            -webkit-margin-end: 0px;
+            font-weight: bold;
+        }
           @media only screen and (max-width: 1100px) {
             .unhappy-image-container {
               flex-wrap: wrap;            
@@ -90,8 +98,10 @@ export default function Home() {
               height: 20%;
               width: 400px;
             }
+            .happy-customer-container {
+              flex-wrap: wrap;                          
+            }
             .happy-customer-content {
-              width: 40%;
             }
             .happy-customer-img {
               top: 400px;
@@ -126,7 +136,6 @@ export default function Home() {
               top: 0;
               right: 0;
               width: 90%;
-              margin-left: 20px;
             }
             .happy-customer-header {
               text-align: left;
