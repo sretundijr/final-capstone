@@ -59,6 +59,18 @@ export default class Index extends React.Component {
     return (
       <div>
         <Head>
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112263083-2" />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-112263083-2');
+            `,
+            }}
+          />
           <title>Technician Assist</title>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         </Head>
